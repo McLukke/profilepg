@@ -6,8 +6,8 @@
 		<div class="mobileBG"></div>
 
 		<div class="parallaxBG">
-			<img class="foreground" src="images/voilah-teaser-pLayer-z1@1x.png" />
-			<img class="background" src="images/voilah-teaser-pLayer-z2@1x.png" />
+			<img id="foreground" class="desktop-bg" src="images/voilah-teaser-pLayer-z1@1x.png" />
+			<img id="background" class="desktop-bg" src="images/voilah-teaser-pLayer-z2@1x.png" />
 		</div>
 
 		<div id="logo"></div>

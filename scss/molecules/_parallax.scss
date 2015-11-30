@@ -57,3 +57,33 @@ TITLE: Parallax Container
 	}
 }
 
+.desktop-bg {
+  backface-visibility: hidden;
+  /* fixes a FF bug - images not correctly rendering*/
+  background-color: rgba(255, 255, 255, 0.01);
+
+  &:not(:first-child){
+    position: absolute;
+    // top: 0;
+
+    // left: 0;
+  }
+}
+
+#foreground {
+  transform: translateZ(50px);
+  width: 100%;
+}
+
+#background {
+  transform: translateZ(400px);
+  width: 83%;
+  top: 10%;
+  left: 10%;
+
+  @include breakpoint(1440px) {
+    width: 90%;
+    top: 5%;
+    left: 5%;
+  }
+}
