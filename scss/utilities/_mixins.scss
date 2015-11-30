@@ -12,7 +12,7 @@ TITLE: SASS Mixins
 
 //**
 //* GENERATE REM UNITS WITH PIXEL FALLBACK
-//**
+//**/
 
 // Baseline, measured in pixels
 // The value should be the same as the font-size value for the html element
@@ -47,7 +47,7 @@ $baseline-px: 16px;
 
 //**
 //* PREFIX CSS calc()
-//**
+//**/
 
 // Must manually specify a fallback for browsers that don't support calc()
 
@@ -59,7 +59,7 @@ $baseline-px: 16px;
 
 //**
 //* PREFIX placeholder STYLES
-//**
+//**/
 
 @mixin placeholder {
   &::-webkit-input-placeholder {@content};
@@ -70,7 +70,7 @@ $baseline-px: 16px;
 
 //**
 //* OPENTYPE FEATURES IN CSS
-//**
+//**/
 
 @mixin font-feature-settings($feature-list: false) {
   // Only proceed if a list of arguments was passed
@@ -106,3 +106,34 @@ $baseline-px: 16px;
   }
 }
 
+@mixin breakpoint($point) {
+  @if $point == $iPhoneSix {
+    @media (min-width: $iPhoneSix) {
+      @content;
+    }
+  } @else if $point == $iPhoneSixPlus {
+    @media (min-width: $iPhoneSixPlus) {
+      @content;
+    }
+  } @else if $point == $phoneLarge {
+    @media (min-width: $phoneLarge) {
+      @content;
+    }
+  } @else if $point == $tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  } @else if $point == $laptop {
+    @media (min-width: $laptop) {
+      @content;
+    }
+  } @else if $point == $desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  } @else if $point == $wide {
+    @media (min-width: $wide) {
+      @content;
+    }
+  } 
+}

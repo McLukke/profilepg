@@ -25,16 +25,18 @@ TITLE: SCSS Manifest
   @import "lib/animate";
 
 // ATOMS
-
+  @import "atoms/scaffolding";
 
 // MOLECULES
-
+  @import "molecules/parallax";
+  @import "molecules/content-desktop";
+  @import "molecules/content-mobile";
 
 // ORGANISMS
   @import "organisms/logo";
 
 // TEMPLATES
-
+  @import "templates/backgrounds";
 
 // DEBUG
   // @import "debug";

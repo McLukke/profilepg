@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 <?php include('partials/head.html'); ?>
 <body>
-	<main id="landingPage">
+	<main id="landingPage" class="main">
 		<div class="mobileBG"></div>
 
 		<div class="parallaxBG">
