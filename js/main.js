@@ -15,22 +15,16 @@ $(function () {
   // set aspect ratio
   $('.parallaxBG').find('img').eq(0).load(function() {
   	aspectRatio = $(this).width() / $(this).height();
-  	
+
   	if (mediaQuery == 'web') {
   		initBackground();
   	}
   });
 
-  // init textillate
-  loadTextillate(jQuery);
 });
 
 
 // $(function() {
-//   //init textillate
-//   loadTextillate(jQuery);
-
-
 //   if ($(window).width() >= 980) {
 //     // animate heading
 //     $('.teaser-heading--enhanced').textillate({
