@@ -47,9 +47,3 @@ body::-webkit-scrollbar {
   // min-height: 100%;
   // min-height: 100vh;
 }
-
-// hack so height:100% propagates through this div created by
-// kadira:blaze-layout and enables vertical centering to work
-#__blaze-root {
-  height: 100%;
-}

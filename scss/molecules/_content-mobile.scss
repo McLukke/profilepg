@@ -10,3 +10,50 @@ TITLE: Mobile Content
 ===========================================================================
 */
 
+%all-title-base {
+  position: relative;
+  max-width: 100%;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#mobile_content .title {
+  @extend %all-title-base;
+
+  @include breakpoint($iPhoneSix) {
+    font-size: 2.75rem;
+  }
+
+  @include breakpoint($phoneLarge) {
+    font-size: 3.125rem;
+    letter-spacing: 0.0625rem;
+  }
+
+  @include breakpoint($tablet) {
+    font-size: 3.25rem;
+  }
+
+  @include breakpoint($laptop) {
+    display: none;
+  }
+}
+
+#mobile_content .text {
+  margin: 0 auto;
+  font-size: 0.8rem;
+
+  @include breakpoint($iPhoneSix) {
+    font-size: 0.9rem;
+    max-width: 20rem;
+  }
+
+  @include breakpoint($phoneLarge) {
+    font-size: 1.0625rem;
+    max-width: 23rem;
+  }
+
+  @include breakpoint($laptop) {
+    display: none;
+  }
+}

@@ -13,5 +13,13 @@ TITLE: Logo
 #logo {
 	background: transparent url('../images/coding.jpg') no-repeat center center;
 	background-size: contain;
-	width: 200px;
+	width: 8em;
+	height: 8em;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 300;
+	top: 4.8em;
+	left: 0;
+	right: 0;
+	position: absolute;
 }

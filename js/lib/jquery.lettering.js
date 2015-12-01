@@ -1010,5 +1010,3 @@
   </body>
 </html>
 
-
-// js goes here

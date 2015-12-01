@@ -23,7 +23,7 @@ TITLE: Parallax Container
 		content: 'mobile';
 	}
 
-	@include breakpoint($tablet) {
+	@include breakpoint($laptop) {
 		display: block;
 		visibility: visible;
 
@@ -61,13 +61,6 @@ TITLE: Parallax Container
   backface-visibility: hidden;
   /* fixes a FF bug - images not correctly rendering*/
   background-color: rgba(255, 255, 255, 0.01);
-
-  &:not(:first-child){
-    position: absolute;
-    // top: 0;
-
-    // left: 0;
-  }
 }
 
 #foreground {
@@ -76,6 +69,7 @@ TITLE: Parallax Container
 }
 
 #background {
+	position: absolute;
   transform: translateZ(400px);
   width: 83%;
   top: 10%;

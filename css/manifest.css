@@ -350,7 +350,7 @@ TITLE: Font Definitions – GT Walsheim
   src: url("../fonts/GT-Walsheim-Bold.eot");
   src: url("../fonts/GT-Walsheim-Bold.ttf") format("truetype"), url("../fonts/GT-Walsheim-Bold.woff") format("woff"); }
 
-body {
+body, #desktop_content .text li {
   font-family: 'gt-walsheim-medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal; }
@@ -446,9 +446,6 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%; }
 
-#__blaze-root {
-  height: 100%; }
-
 /*
 ===========================================================================
                                   KENNY LU
@@ -468,7 +465,7 @@ TITLE: Parallax Container
   perspective: 4000px; }
   .parallaxBG:before {
     content: 'mobile'; }
-  @media (min-width: 768px) {
+  @media (min-width: 980px) {
     .parallaxBG {
       display: block;
       visibility: visible;
@@ -491,6 +488,22 @@ TITLE: Parallax Container
         content: 'web';
         display: none; } }
 
+.desktop-bg {
+  backface-visibility: hidden;
+  /* fixes a FF bug - images not correctly rendering*/
+  background-color: rgba(255, 255, 255, 0.01); }
+
+#foreground {
+  transform: translateZ(50px);
+  width: 100%; }
+
+#background {
+  position: absolute;
+  transform: translateZ(400px);
+  width: 83%;
+  top: 10%;
+  left: 10%; }
+
 /*
 ===========================================================================
                                   KENNY LU
@@ -502,6 +515,33 @@ CLASS: Molecule
 TITLE: Desktop Content
 ===========================================================================
 */
+#desktop_content .title li {
+  font-weight: bold;
+  display: none;
+  visibility: hidden; }
+  @media (min-width: 980px) {
+    #desktop_content .title li {
+      display: block;
+      visibility: visible;
+      font-size: 2rem;
+      letter-spacing: 0.125rem; } }
+  @media (min-width: 1024px) {
+    #desktop_content .title li {
+      margin-bottom: 1.5rem; } }
+
+#desktop_content .text li {
+  display: none;
+  visibility: hidden; }
+  @media (min-width: 980px) {
+    #desktop_content .text li {
+      display: block;
+      visibility: visible;
+      max-width: 32rem;
+      min-height: 5rem;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.2; } }
+
 /*
 ===========================================================================
                                   KENNY LU
@@ -513,6 +553,45 @@ CLASS: Molecule
 TITLE: Mobile Content
 ===========================================================================
 */
+#desktop_content .title li, #mobile_content .title {
+  position: relative;
+  max-width: 100%;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 1rem; }
+
+@media (min-width: 375px) {
+  #mobile_content .title {
+    font-size: 2.75rem; } }
+
+@media (min-width: 533px) {
+  #mobile_content .title {
+    font-size: 3.125rem;
+    letter-spacing: 0.0625rem; } }
+
+@media (min-width: 768px) {
+  #mobile_content .title {
+    font-size: 3.25rem; } }
+
+@media (min-width: 980px) {
+  #mobile_content .title {
+    display: none; } }
+
+#mobile_content .text {
+  margin: 0 auto;
+  font-size: 0.8rem; }
+  @media (min-width: 375px) {
+    #mobile_content .text {
+      font-size: 0.9rem;
+      max-width: 20rem; } }
+  @media (min-width: 533px) {
+    #mobile_content .text {
+      font-size: 1.0625rem;
+      max-width: 23rem; } }
+  @media (min-width: 980px) {
+    #mobile_content .text {
+      display: none; } }
+
 /*
 ===========================================================================
                                   KENNY LU
@@ -527,7 +606,15 @@ TITLE: Logo
 #logo {
   background: transparent url("../images/coding.jpg") no-repeat center center;
   background-size: contain;
-  width: 200px; }
+  width: 8em;
+  height: 8em;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 300;
+  top: 4.8em;
+  left: 0;
+  right: 0;
+  position: absolute; }
 
 /*
 ===========================================================================
@@ -550,6 +637,32 @@ TITLE: Backgrounds
   bottom: 0;
   z-index: 100;
   display: block; }
-  @media (min-width: 768px) {
+  @media (min-width: 980px) {
     .mobileBG {
       display: none; } }
+
+.content {
+  position: relative;
+  z-index: 400;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: content-box; }
+  .content:before {
+    content: '';
+    display: inline-block;
+    width: 0px;
+    height: 100%;
+    vertical-align: middle; }
+  .content__text-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    width: 90%; }
+  @media (min-width: 980px) {
+    .content {
+      position: absolute;
+      z-index: 900;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; } }
