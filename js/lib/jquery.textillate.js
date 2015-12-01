@@ -25,7 +25,7 @@
       <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
     <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
     <link rel="assets" href="https://assets-cdn.github.com/">
-    <link rel="web-socket" href="wss://live.github.com/_sockets/MTE0MzUzMjk6YjQxZGM1M2IyMTY5YzM1Njg3MmU4MDZiN2Y5OTA4ZGI6NzhlNDUzZmVlZDQ5NjAwNjg0ZjdkNjZjNGVhNGZlMjQyYTFkNjg1MDBiZmY2ZmJjYTAzNWJiN2E0MWM4NmIyZQ==--b2ab51c3ddc148bd144e31cfd7100bb16cf6ecd6">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/MTE0MzUzMjk6YjQxZGM1M2IyMTY5YzM1Njg3MmU4MDZiN2Y5OTA4ZGI6YmJjMjZhNjhhNDk0ZDUwNDMyNWQ0OGJiNWVkYWU3YTQwYjZjNzY1NDMyOGE5YzIzY2QyNjBiNTQyZGJlZTNlYQ==--a01c09d75044a655257374d6596c6c6fef02f517">
     <meta name="pjax-timeout" content="1000">
     <link rel="sudo-modal" href="/sessions/sudo_modal">
 
@@ -36,7 +36,7 @@
     <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="3D5DCBAA:26AB:130C80AE:565D46CB" name="octolytics-dimension-request_id" /><meta content="11435329" name="octolytics-actor-id" /><meta content="McLukke" name="octolytics-actor-login" /><meta content="d831604b8df078074f2ca78191ec30904ff80b506ab161878154196a27d729b7" name="octolytics-actor-hash" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="3D5DCBAA:26AC:172FAA1E:565D6300" name="octolytics-dimension-request_id" /><meta content="11435329" name="octolytics-actor-id" /><meta content="McLukke" name="octolytics-actor-login" /><meta content="d831604b8df078074f2ca78191ec30904ff80b506ab161878154196a27d729b7" name="octolytics-actor-hash" />
 <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
 <meta content="Rails, view, blob#show" data-pjax-transient="true" name="analytics-event" />
 
@@ -211,7 +211,7 @@
             Settings
           </a>
 
-          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="yVFNFNCmxdqaMwYmkxxP7g1nmXSxk+rbpiV84D3W1IwOEIuZp+mRdPEISU7dpHZ8/jMXPhp9XDCBHJYZamxVwg==" /></div>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="YU1/BkWtNhHBFfJNT4xfbcgLlTqU9L2dtMae1A1m0EvrqtvGatGRktBaaOmjenI9e71hJc9nSsUGcBTbFcOPUw==" /></div>
             <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
               Sign out
             </button>
@@ -249,7 +249,7 @@
 <ul class="pagehead-actions">
 
   <li>
-        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="awyctwx9r4Afrjr+Pc8LTiGQryBNLI7huAkKJP815v1b7SpuIqJHWRtJR2XfOCYzq6WtFozutZdH6kD5J5upSQ==" /></div>      <input id="repository_id" name="repository_id" type="hidden" value="7814311" />
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="cBF+3r6awsSJbzgpa1lLeIDwEZXM/jtC8d6BsUz/3CJ7/ZD2FzWM350d4oJKCySHk/Qzzq1LLbXohfZ7mcQWzQ==" /></div>      <input id="repository_id" name="repository_id" type="hidden" value="7814311" />
 
         <div class="select-menu js-menu-container js-select-menu">
           <a href="/jschr/textillate/subscription"
@@ -324,7 +324,7 @@
     
   <div class="js-toggler-container js-social-container starring-container ">
 
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jschr/textillate/unstar" class="js-toggler-form starred js-unstar-button" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="9tBtzEbhvuGtYcoMH9UGD475aiq+Gh6rFWmH00SlPsS6WVcR0hdmw5oYs+Vym2m7y7uczT8GpGXdZoCv/ZF8JQ==" /></div>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jschr/textillate/unstar" class="js-toggler-form starred js-unstar-button" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7qFxB3TdhKEDFJhhnz/Zhf1VuVxLMGRSpcRTkXgqpAUOchqb674sWXySPo5ZNHXwNbg+YkVSlorBlvULb2WKqw==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
         aria-label="Unstar this repository" title="Unstar jschr/textillate"
@@ -333,10 +333,10 @@
         Unstar
       </button>
         <a class="social-count js-social-count" href="/jschr/textillate/stargazers">
-          2,294
+          2,295
         </a>
 </form>
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jschr/textillate/star" class="js-toggler-form unstarred js-star-button" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JUDMsnr46wLSiyfbURP8g0Aerb2TdvC6FPH3now2uR6Wt3B1lJziEg94trt3jtpHQdSihO+gh22p83ZCKuL0aA==" /></div>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jschr/textillate/star" class="js-toggler-form unstarred js-star-button" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="vtelGPHkQfi9lqwOv/NaIIVsGNmcsRPN62bjkTdbVif4qXX8GqssPzO8FliLj1A5/2m/AID25o/UB4sTxJ8nvw==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
         aria-label="Star this repository" title="Star jschr/textillate"
@@ -345,7 +345,7 @@
         Star
       </button>
         <a class="social-count js-social-count" href="/jschr/textillate/stargazers">
-          2,294
+          2,295
         </a>
 </form>  </div>
 
@@ -621,12 +621,12 @@
             <span class="octicon octicon-device-desktop"></span>
         </a>
 
-        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jschr/textillate/edit/master/jquery.textillate.js" class="inline-form js-update-url-with-hash" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="/+/mD6M7suhkw/x3vQz9OL4tz89umshRNVu1yC+wLY/tQX7uSufdi04MfYhVHe68wyeJ+xL/BR+Kfg+MspHNPw==" /></div>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jschr/textillate/edit/master/jquery.textillate.js" class="inline-form js-update-url-with-hash" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="qBA6WRLfvK/3SdO4bAV6leSgzoDlsp70h7W6By9bhDlIo9ZDm77miRieZ/Amr/ou4Ij9PsqRGQDEYqmdOYnxVA==" /></div>
           <button class="octicon-btn tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
             <span class="octicon octicon-pencil"></span>
           </button>
-</form>        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jschr/textillate/delete/master/jquery.textillate.js" class="inline-form" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="XDBBcGwkUpJAh4J+BvExQT+pc+q9GiqBubjtMocAjr2OGzhIzfNxm0quA3Li9vMisG9yK20PF9JQEnikDgNTCA==" /></div>
+</form>        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/jschr/textillate/delete/master/jquery.textillate.js" class="inline-form" data-form-nonce="2a020e2145c4b8539ff7b1ae90f4fd4457739f27" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ARcRD6yIEL0kbpfvl9vNgHosEllObPc1c3f3wwMyayTGLONUtEkhYkK7zegnleqn2SKj8QtYeVR8e6sCb6D7+w==" /></div>
           <button class="octicon-btn octicon-btn-danger tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and delete the file" data-disable-with>
             <span class="octicon octicon-trashcan"></span>
@@ -1885,7 +1885,7 @@
       <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2015 <span title="0.10283s from github-fe124-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+      <li>&copy; 2015 <span title="0.12134s from github-fe137-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
