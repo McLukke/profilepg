@@ -417,7 +417,7 @@ $(function () {
   var maxRotationY = 5;
   var aspectRatio;
 
-  // set aspect ratio
+  // set aspect ratio & first load background
   $('.parallaxBG').find('img').eq(0).load(function() {
   	aspectRatio = $(this).width() / $(this).height();
 
@@ -426,47 +426,51 @@ $(function () {
   	}
   });
 
+  // animate text on laptop
+  if ($(window).width() >= 980) {
+  	// animate titles
+  	$('.title').textillate({
+  		minDisplayTime: 5000,
+  		in: {
+  			effect: 'fadeIn',
+  			shuffle: false,
+  			sync: true
+  		},
+  		out: {
+  			effect: 'fadeIn',
+  			shuffle: false,
+  			sync: true
+  		},
+  		loop: true
+  	});
+
+  	// animate text
+		$('.text').textillate({
+  		minDisplayTime: 5000,
+  		in: {
+  			effect: 'fadeIn',
+  			shuffle: false,
+  			sync: true
+  		},
+  		out: {
+  			effect: 'fadeIn',
+  			shuffle: false,
+  			sync: true
+  		},
+  		loop: true
+  	});
+  }
+
+  // detect mouse movement
+  $(window).on('mousemove', function(e) {
+  	if (mediaQuery == 'web') {
+  		
+  	}
+  });
 });
 
 
 // $(function() {
-//   if ($(window).width() >= 980) {
-//     // animate heading
-//     $('.teaser-heading--enhanced').textillate({
-//       minDisplayTime: 8000,
-//       in: {
-//         effect: 'fadeIn',
-//         shuffle: false,
-//         sync: true
-//       },
-//       out: {
-//         effect: 'fadeOut',
-//         shuffle: false,
-//         sync: true
-//       },
-//       loop: true
-//     });
-
-//     // animate text
-//     $('.teaser-copy--enhanced').textillate({
-//       // initialDelay: 120,
-//       minDisplayTime: 8000,
-//       in: {
-//         effect: 'fadeIn',
-//         shuffle: false,
-//         sync: true
-//       },
-//       out: {
-//         effect: 'fadeOut',
-//         shuffle: false,
-//         sync: true
-//       },
-//       loop: true
-//     });
-//   } else {
-//     console.log(`not initializing textillate`);
-//   }
-
 //   //detect mouse movement
 //   // $('.parallax-wrapper').on('mousemove', function(e) {
 //   $(window).on('mousemove', function(e) {
