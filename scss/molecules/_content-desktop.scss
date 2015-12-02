@@ -10,6 +10,22 @@ TITLE: Desktop Content
 ===========================================================================
 */
 
+#desktop_content .text li {
+	@extend %gtWalsheimMedium;
+  display: none;
+  visibility: hidden;
+
+  @include breakpoint($laptop) {
+    display: block;
+    visibility: visible;;
+    max-width: 32rem;
+    min-height: 5rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+}
+
 #desktop_content .title li {
   @extend %all-title-base;
   font-weight: bold;
@@ -25,21 +41,5 @@ TITLE: Desktop Content
 
   @include breakpoint($desktop) {
     margin-bottom: 1.5rem;
-  }
-}
-
-#desktop_content .text li {
-	@extend %gtWalsheimMedium;
-  display: none;
-  visibility: hidden;
-
-  @include breakpoint($laptop) {
-    display: block;
-    visibility: visible;;
-    max-width: 32rem;
-    min-height: 5rem;
-    margin: 0 auto;
-    font-size: 1rem;
-    line-height: 1.2;
   }
 }

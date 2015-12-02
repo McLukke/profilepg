@@ -457,16 +457,16 @@ CLASS: Molecule
 TITLE: Parallax Container
 ===========================================================================
 */
-.parallaxBG {
+.parallaxWrapper {
   display: none;
   visibility: hidden;
   -webkit-perspective: 4000px;
   -moz-perspective: 4000px;
   perspective: 4000px; }
-  .parallaxBG:before {
+  .parallaxWrapper:before {
     content: 'mobile'; }
   @media (min-width: 980px) {
-    .parallaxBG {
+    .parallaxWrapper {
       display: block;
       visibility: visible;
       position: relative;
@@ -484,7 +484,7 @@ TITLE: Parallax Container
       -ms-transform: translateZ(0);
       -o-transform: translateZ(0);
       transform: translateZ(0); }
-      .parallaxBG:before {
+      .parallaxWrapper:before {
         content: 'web';
         display: none; } }
 
@@ -515,6 +515,19 @@ CLASS: Molecule
 TITLE: Desktop Content
 ===========================================================================
 */
+#desktop_content .text li {
+  display: none;
+  visibility: hidden; }
+  @media (min-width: 980px) {
+    #desktop_content .text li {
+      display: block;
+      visibility: visible;
+      max-width: 32rem;
+      min-height: 5rem;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.2; } }
+
 #desktop_content .title li {
   font-weight: bold;
   display: none;
@@ -529,19 +542,6 @@ TITLE: Desktop Content
     #desktop_content .title li {
       margin-bottom: 1.5rem; } }
 
-#desktop_content .text li {
-  display: none;
-  visibility: hidden; }
-  @media (min-width: 980px) {
-    #desktop_content .text li {
-      display: block;
-      visibility: visible;
-      max-width: 32rem;
-      min-height: 5rem;
-      margin: 0 auto;
-      font-size: 1rem;
-      line-height: 1.2; } }
-
 /*
 ===========================================================================
                                   KENNY LU
@@ -553,7 +553,7 @@ CLASS: Molecule
 TITLE: Mobile Content
 ===========================================================================
 */
-#desktop_content .title li, #mobile_content .title {
+#desktop_content .title li, .mobile_title {
   position: relative;
   max-width: 100%;
   text-transform: uppercase;
@@ -561,35 +561,35 @@ TITLE: Mobile Content
   margin-bottom: 1rem; }
 
 @media (min-width: 375px) {
-  #mobile_content .title {
+  .mobile_title {
     font-size: 2.75rem; } }
 
 @media (min-width: 533px) {
-  #mobile_content .title {
+  .mobile_title {
     font-size: 3.125rem;
     letter-spacing: 0.0625rem; } }
 
 @media (min-width: 768px) {
-  #mobile_content .title {
+  .mobile_title {
     font-size: 3.25rem; } }
 
 @media (min-width: 980px) {
-  #mobile_content .title {
+  .mobile_title {
     display: none; } }
 
-#mobile_content .text {
+.mobile_text {
   margin: 0 auto;
   font-size: 0.8rem; }
   @media (min-width: 375px) {
-    #mobile_content .text {
+    .mobile_text {
       font-size: 0.9rem;
       max-width: 20rem; } }
   @media (min-width: 533px) {
-    #mobile_content .text {
+    .mobile_text {
       font-size: 1.0625rem;
       max-width: 23rem; } }
   @media (min-width: 980px) {
-    #mobile_content .text {
+    .mobile_text {
       display: none; } }
 
 /*

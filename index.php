@@ -16,20 +16,20 @@
 
 		<div class="content">
 			<div class="content__text-wrapper">
-				<div id="mobile_content">
-					<h1 class="title">Hello There!</h1>
-					<p class="text">Hey, this is where I introduce myself and talk about what I do...</p>
-				</div>
+				<h1 class="mobile_title">Hello There Mobile!</h1>
+				<p class="mobile_text">Hey, this is MOBILE where I introduce myself and talk about what I do...</p>
 
 				<div id="desktop_content">
 					<ul class="title">
 						<li>Hello There!</li>
 						<li>Check out cool stuff</li>
+						<li>yaya test</li>
 					</ul>
 
 					<ul class="text">
 						<li>Hey, this is where I introduce myself and talk about what I do...</li>
 						<li>Move the mouse to the browser edges to see more!</li>
+						<li>um...testing?!</li>
 					</ul>
 				</div>
 
