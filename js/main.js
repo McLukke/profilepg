@@ -29,14 +29,16 @@ $(function () {
 	  		selector: '.title',
 	  		effect: 'fadeIn',
 	  		shuffle: false,
-	  		sync: true
+	  		sync: true,
+	  		autoStart: false
 	  	},
 	  	out: {
 	  		selector: '.title',
 	  		delay: 6,
 	  		effect: 'fadeIn',
 	  		shuffle: false,
-	  		sync: true
+	  		sync: true,
+	  		autoStart: false
 	  	},
 	  	loop: true
 	  });
@@ -48,19 +50,20 @@ $(function () {
 	  		selector: '.text',
 	  		effect: 'fadeIn',
 	  		shuffle: false,
-	  		sync: true
+	  		sync: true,
+	  		autoStart: false
 	  	},
 	  	out: {
 	  		selector: '.text',
 	  		delay: 6,
 	  		effect: 'fadeIn',
 	  		shuffle: false,
-	  		sync: true
+	  		sync: true,
+	  		autoStart: false
 	  	},
 	  	loop: true
 	  });
   }
-
 
   // detect mouse movement
   $(window).on('mousemove', function(e) {
@@ -72,44 +75,22 @@ $(function () {
   });
 
   // on resize
-  $(window).resize(debounce(function() {
-  	// start / stop textillate
-  	if ($(window).width() >= 980) {
-  		$('#desktop_content .title').textillate('start');
-  		$('#desktop_content .text').textillate('start');
-  	} else {
-  		$('#desktop_content .title').textillate('stop');
-  		$('#desktop_content .text').textillate('stop');
-  	}
-
+  $(window).on('resize', function() {
   	// adjust image sizes
   	mediaQuery = window.getComputedStyle(document.querySelector('.parallaxWrapper'), ':before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, "");
+  	console.log('window.width() = ' + $(window).width());
+  	console.log('window.height() = ' + $(window).height());
   	if (mediaQuery == 'web') {
   		window.requestAnimationFrame(function() {
   			halfWidth = $(window).width() * 0.5;
   			halfHeight = $(window).height() * 0.5;
+  			aspectRatio = halfWidth*2 / halfHeight*2;
 	  		initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspectRatio);
   		});
   	} else {
-
+  		$('.parallaxWrapper').attr('style', '');
   	}
-  }, 100));
+  });
 });
 
-
-
-
-//     if (mediaQuery == 'web' && $('html').hasClass('preserve-3d')) {
-//       window.requestAnimationFrame(function() {
-//         halfWindowH = $(window).height() * 0.5;
-//         halfWindowW = $(window).width() * 0.5;
-
-//         // console.log('reexecuting initBackground()');
-//         initBackground();
-//       });
-//     } else {
-//       $('.parallax-wrapper').attr('style', '');
-//       $('.parallax-bg').attr('style', '').removeClass('is-absolute');
-//     }
-//   });
 
