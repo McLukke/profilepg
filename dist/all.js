@@ -1,449 +1,356 @@
-/*global jQuery */
-/*!	
-* FitText.js 1.1
-*
-* Copyright 2011, Dave Rupert http://daverupert.com
-* Released under the WTFPL license 
-* http://sam.zoy.org/wtfpl/
-*
-* Date: Thu May 05 14:23:00 2011 -0600
-*/
-
-(function( $ ){
-	
-  $.fn.fitText = function( kompressor, options ) {
-	   
-    // Setup options
-    var compressor = kompressor || 1,
-        settings = $.extend({
-          'minFontSize' : Number.NEGATIVE_INFINITY,
-          'maxFontSize' : Number.POSITIVE_INFINITY
-        }, options);
-	
-    return this.each(function(){
-
-      // Store the object
-      var $this = $(this); 
-        
-      // Resizer() resizes items based on the object width divided by the compressor * 10
-      var resizer = function () {
-        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
-      };
-
-      // Call once to set.
-      resizer();
-				
-      // Call on resize. Opera debounces their resize by default. 
-      $(window).on('resize', resizer);
-      	
-    });
-
-  };
-
-})( jQuery );
-/*global jQuery */
 /*!
-* Lettering.JS 0.7.0
-*
-* Copyright 2010, Dave Rupert http://daverupert.com
-* Released under the WTFPL license
-* http://sam.zoy.org/wtfpl/
-*
-* Thanks to Paul Irish - http://paulirish.com - for the feedback.
-*
-* Date: Mon Sep 20 17:14:00 2010 -0600
-*/
-(function($){
-  function injector(t, splitter, klass, after) {
-    var text = t.text()
-    , a = text.split(splitter)
-    , inject = '';
-    if (a.length) {
-      $(a).each(function(i, item) {
-        inject += '<span class="'+klass+(i+1)+'" aria-hidden="true">'+item+'</span>'+after;
-      });
-      t.attr('aria-label',text)
-      .empty()
-      .append(inject)
-
-    }
-  }
-
-
-  var methods = {
-    init : function() {
-
-      return this.each(function() {
-        injector($(this), '', 'char', '');
-      });
-
-    },
-
-    words : function() {
-
-      return this.each(function() {
-        injector($(this), ' ', 'word', ' ');
-      });
-
-    },
-
-    lines : function() {
-
-      return this.each(function() {
-        var r = "eefec303079ad17405c889e092e105b0";
-        // Because it's hard to split a <br/> tag consistently across browsers,
-        // (*ahem* IE *ahem*), we replace all <br/> instances with an md5 hash
-        // (of the word "split").  If you're trying to use this plugin on that
-        // md5 hash string, it will fail because you're being ridiculous.
-        injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
-      });
-
-    }
-  };
-
-  $.fn.lettering = function( method ) {
-    // Method calling logic
-    if ( method && methods[method] ) {
-      return methods[ method ].apply( this, [].slice.call( arguments, 1 ));
-    } else if ( method === 'letters' || ! method ) {
-      return methods.init.apply( this, [].slice.call( arguments, 0 ) ); // always pass an array
-    }
-    $.error( 'Method ' +  method + ' does not exist on jQuery.lettering' );
-    return this;
-  };
-
-})(jQuery);
-/*global jQuery */
-/*!	
-* Lettering.JS 0.6.1
-*
-* Copyright 2010, Dave Rupert http://daverupert.com
-* Released under the WTFPL license 
-* http://sam.zoy.org/wtfpl/
-*
-* Thanks to Paul Irish - http://paulirish.com - for the feedback.
-*
-* Date: Mon Sep 20 17:14:00 2010 -0600
-*/
-(function($){
-	function injector(t, splitter, klass, after) {
-		var a = t.text().split(splitter), inject = '';
-		if (a.length) {
-			$(a).each(function(i, item) {
-				inject += '<span class="'+klass+(i+1)+'">'+item+'</span>'+after;
-			});	
-			t.empty().append(inject);
-		}
-	}
-
-	var methods = {
-		init : function() {
-
-			return this.each(function() {
-				injector($(this), '', 'char', '');
-			});
-
-		},
-
-		words : function() {
-
-			return this.each(function() {
-				injector($(this), ' ', 'word', ' ');
-			});
-
-		},
-
-		lines : function() {
-
-			return this.each(function() {
-				var r = "eefec303079ad17405c889e092e105b0";
-				// Because it's hard to split a <br/> tag consistently across browsers,
-				// (*ahem* IE *ahem*), we replace all <br/> instances with an md5 hash 
-				// (of the word "split").  If you're trying to use this plugin on that 
-				// md5 hash string, it will fail because you're being ridiculous.
-				injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
-			});
-
-		}
-	};
-
-	$.fn.lettering = function( method ) {
-		// Method calling logic
-		if ( method && methods[method] ) {
-			return methods[ method ].apply( this, [].slice.call( arguments, 1 ));
-		} else if ( method === 'letters' || ! method ) {
-			return methods.init.apply( this, [].slice.call( arguments, 0 ) ); // always pass an array
-		}
-		$.error( 'Method ' +  method + ' does not exist on jQuery.lettering' );
-		return this;
-	};
-
-})(jQuery);
-
-
-/*
- * textillate.js
- * http://jschr.github.com/textillate
- * MIT licensed
+ * Text Animation v1.2.0
+ * http://sideroad.secret.jp/
  *
- * Copyright (C) 2012-2013 Jordan Schroter
+ * Copyright (c) 2009 sideroad
+ *
+ * licensed under the MIT licenses.
+ * Date: 2009-03-01
  */
-
-(function ($) {
-  "use strict"; 
-
-  function isInEffect (effect) {
-    return /In/.test(effect) || $.inArray(effect, $.fn.textillate.defaults.inEffects) >= 0;
-  };
-
-  function isOutEffect (effect) {
-    return /Out/.test(effect) || $.inArray(effect, $.fn.textillate.defaults.outEffects) >= 0;
-  };
-
-  // custom get data api method
-  function getData (node) {
-    var attrs = node.attributes || []
-      , data = {};
-
-    if (!attrs.length) return data;
-
-    $.each(attrs, function (i, attr) {
-      if (/^data-in-*/.test(attr.nodeName)) {
-        data.in = data.in || {};
-        data.in[attr.nodeName.replace(/data-in-/, '')] = attr.nodeValue;
-      } else if (/^data-out-*/.test(attr.nodeName)) {
-        data.out = data.out || {};
-        data.out[attr.nodeName.replace(/data-out-/, '')] = attr.nodeValue;
-      } else if (/^data-*/.test(attr.nodeName)) {
-        data[attr.nodeName] = attr.nodeValue;
-      }
-    })
-
-    return data;
-  }
-
-  function shuffle (o) {
-      for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-      return o;
-  }
-
-  function animate ($c, effect, cb) {
-    $c.addClass('animated ' + effect)
-      .css('visibility', 'visible')
-      .show();
-
-    $c.one('animationend webkitAnimationEnd oAnimationEnd', function () {
-        $c.removeClass('animated ' + effect);
-        cb && cb();
-    });
-  }
-
-  function animateChars ($chars, options, cb) {
-    var that = this
-      , count = $chars.length;
-
-    if (!count) {
-      cb && cb();
-      return;
-    } 
-
-    if (options.shuffle) $chars = shuffle($chars);
-    if (options.reverse) $chars = $chars.toArray().reverse();
-
-    $.each($chars, function (i, c) {
-      var $char = $(c);
+//TextAnimation Plugin
+(function($) {  
       
-      function complete () {
-        if (isInEffect(options.effect)) {
-          $char.css('visibility', 'visible');
-        } else if (isOutEffect(options.effect)) {
-          $char.css('visibility', 'hidden');
+    $.fn.textAnimation = function(settings) {  
+      
+        var container = this;
+        settings = $.extend({  
+            mode : "roll"
+        }, settings);
+            
+        function parse(e){
+            if(e.hasClass("isTextAnimated")) return;
+            var text = e.text();
+            e.html("");
+            for(var i=0;i< text.length;i++) {
+                var span = $("<span></span>").text(text.charAt(i));
+                e.append(span);
+            }
+            e.addClass("isTextAnimated");
         }
-        count -= 1;
-        if (!count && cb) cb();
-      }
-
-      var delay = options.sync ? options.delay : options.delay * i * options.delayScale;
-
-      $char.text() ? 
-        setTimeout(function () { animate($char, options.effect, complete) }, delay) :
-        complete();
-    });
-  };
-
-  var Textillate = function (element, options) {
-    var base = this
-      , $element = $(element);
-
-    base.init = function () {
-      base.$texts = $element.find(options.selector);
-      
-      if (!base.$texts.length) {
-        base.$texts = $('<ul class="texts"><li>' + $element.html() + '</li></ul>');
-        $element.html(base.$texts);
-      }
-
-      base.$texts.hide();
-
-      base.$current = $('<span>')
-        .text(base.$texts.find(':first-child').html())
-        .prependTo($element);
-
-      if (isInEffect(options.effect)) {
-        base.$current.css('visibility', 'hidden');
-      } else if (isOutEffect(options.effect)) {
-        base.$current.css('visibility', 'visible');
-      }
-
-      base.setOptions(options);
-
-      setTimeout(function () {
-        base.options.autoStart && base.start();
-      }, base.options.initialDelay)
-    };
-
-    base.setOptions = function (options) {
-      base.options = options;
-    };
-
-    base.triggerEvent = function (name) {
-      var e = $.Event(name + '.tlt', { data: base });
-      $element.trigger(e);
-      return e;
-    };
-
-    base.in = function (index, cb) {
-      index = index || 0;
-       
-      var $elem = base.$texts.find(':nth-child(' + (index + 1) + ')')
-        , options = $.extend({}, base.options, getData($elem))
-        , $chars;
-
-      base.triggerEvent('inAnimationBegin');
-
-      base.$current
-        .text($elem.html())
-        .lettering('words');
-
-      base.$current.find('[class^="word"]')
-          .css({ 
-            'display': 'inline-block',
-            // fix for poor ios performance
-            '-webkit-transform': 'translate3d(0,0,0)',
-               '-moz-transform': 'translate3d(0,0,0)',
-                 '-o-transform': 'translate3d(0,0,0)',
-                    'transform': 'translate3d(0,0,0)'
-          })
-          .each(function () { $(this).lettering() });
-
-      $chars = base.$current
-        .find('[class^="char"]')
-        .css('display', 'inline-block');
-
-      if (isInEffect(options.in.effect)) {
-        $chars.css('visibility', 'hidden');
-      } else if (isOutEffect(options.in.effect)) {
-        $chars.css('visibility', 'visible');
-      }
-
-      base.currentIndex = index;
-
-      animateChars($chars, options.in, function () {
-        base.triggerEvent('inAnimationEnd');
-        if (options.in.callback) options.in.callback();
-        if (cb) cb(base);
-      });
-    };
-
-    base.out = function (cb) {
-      var $elem = base.$texts.find(':nth-child(' + (base.currentIndex + 1) + ')')
-        , $chars = base.$current.find('[class^="char"]')
-        , options = $.extend({}, base.options, getData($elem));
-
-      base.triggerEvent('outAnimationBegin');
-
-      animateChars($chars, options.out, function () {
-        base.triggerEvent('outAnimationEnd');
-        if (options.out.callback) options.out.callback();
-        if (cb) cb(base);
-      });
-    };
-
-    base.start = function (index) {
-      base.triggerEvent('start');
-
-      (function run (index) {
-        base.in(index, function () {
-          var length = base.$texts.children().length;
-
-          index += 1;
-          
-          if (!base.options.loop && index >= length) {
-            if (base.options.callback) base.options.callback();
-            base.triggerEvent('end');
-          } else {
-            index = index % length;
-
-            setTimeout(function () {
-              base.out(function () {
-                run(index)
-              });
-            }, base.options.minDisplayTime);
-          }
+            
+        function parseDiv(e,width,verticalAlign){
+            if(e.hasClass("isTextAnimated")) return;
+            var text = e.text();
+            e.html("");
+			
+			//css setting
+			var css = {position:"absolute"};
+			verticalAlign = verticalAlign || "bottom";
+			css[verticalAlign] = "0px";
+            
+			//width setting
+			if(width === false) width = e.css("fontSize").replace(/px/,"")/1.25;
+			
+			for(var i=0;i< text.length;i++) {
+				css.left = width*i;
+                var div = $("<div></div>").text(text.charAt(i)).css(css);
+				e.append(div);
+            }
+            e.addClass("isTextAnimated").css({position:"relative"});
+        }
+		
+		function execute(options,start,finish){
+			var time  = options.time;
+			var interval = options.interval;
+            var repeat = options.repeat;
+            var startId;
+			var amountInterval = interval + time;
+			if(finish) amountInterval*=2;
+			var e = options.e;
+			
+			if (options.onStart) {
+				e.bind(options.onStart, function(){
+					if (startId) return;
+					start();
+					if (repeat) {
+						startId = setInterval(start, amountInterval);
+						if (finish) {
+							setTimeout(function(){
+								finish();
+								if (repeat) 
+									setInterval(finish, amountInterval);
+							}, amountInterval / 2);
+						}
+					}
+				});
+			} else {
+                start();
+                if(repeat) setInterval(start, amountInterval);
+				if(finish) {
+					setTimeout(function(){
+                        finish();
+                        if(repeat) setInterval(finish, amountInterval);
+					},amountInterval/2);
+				}
+			}
+			if (options.onFinish) {
+                e.bind(options.onFinish, function(){
+                    if (startId && repeat) {
+						clearInterval(startId);
+						startId = false;
+					}
+					if(finish) finish();
+					
+                });
+			}
+		}
+			
+        
+		var f = {
+			roll: function(e){
+                var options = $.extend({
+                    e : e,
+					minsize : 15,
+					magnification:15,
+					delay : 30,
+					interval : 0,
+					repeat : true,
+                    onStart : false,
+					onFinish : false,
+					onToggle : false,
+					stuff : 1,
+					fixed : "bottom",
+					top : 1
+                },settings);
+                
+                parseDiv(e,options.minsize/options.stuff,options.fixed);
+				var i = 0;
+                var minsize = options.minsize;
+                var magnification = options.magnification;
+                e.css({height:minsize+magnification+"px",textAlign:"center"});
+				var elements = e.children();
+				var de = options.delay;
+                var duration = de * elements.length;
+                var keepExec = false;
+                var start = function(){
+                    elements.each(function( i, elem ){
+                        elem.style.width=minsize+"px";
+                        $(elem).transition({ 
+                                fontSize: minsize + magnification,
+                                duration : duration,
+                                easing : "in-out",
+                                delay : de*i
+                            })
+                            .transition({ 
+                                fontSize : minsize,
+                                duration : duration,
+                                easing : "in-out"
+                            });
+                    });
+                }
+				
+                options.time = (duration*3);
+                execute( options, start );
+				
+			},
+			
+			step : function(e) {
+                var options = $.extend({
+                    e : e,
+                    minsize : 12,
+                    maxsize :35,
+					fixed : "bottom",
+					upper : true,
+					stuff: 2.0,
+                    delay : 50,
+                    interval : 3000,
+                    duration : 300,
+					repeat: true,
+                    onStart : false,
+                    onFinish : false
+                },settings);
+                
+                parseDiv(e,options.minsize,options.fixed);
+                e.css({height:options.maxsize+"px",textAlign:"center"});
+				var elements = e.children().css({
+					fontSize: "0px",
+					width: "0px",
+					left: "0px",
+					opacity: 0
+				});
+				var length = elements.length;
+				var m = (options.maxsize-options.minsize) / (length-1);
+			    var ba = options.minsize;
+				var upper = options.upper;
+				if (!upper) {
+					m *= -1;
+					ba = options.maxsize;
+				}
+                var du = options.duration;
+                var de = options.delay;
+				var st = options.stuff;
+				var interval = options.interval;
+				
+                var start = function(){
+                    var left = 0;
+                    elements.each(function( i, elem ){
+                        
+                        var fs = ba + (m * i);
+                        $(elem).transition({
+                            fontSize: fs+"px",
+                            width : fs,
+                            left: left,
+                            opacity:1.0,
+                            duration : du,
+                            delay : de * i
+                        });
+                        left += (fs / st);
+                    });
+                };
+                var finish = function(){
+                    elements.each(function( i, elem ){
+                        $(elem).transition({
+                            fontSize: "0px",
+                            width: 0,
+                            left: 0,
+                            opacity:0,
+                            delay : de*i,
+                            duration: du
+                        });
+                    });
+                };
+				
+				options.time = (options.delay * length)+du;
+				execute(options,start, finish);
+			},
+            
+            highlight:function(e){
+                var options = $.extend({
+                    e : e,
+                    baseColor : "#AAAAAA",
+                    highlightColor : "#FDFF00",
+                    delay : 50,
+                    interval : 100,
+                    duration : 300,
+                    repeat: true,
+                    onStart : false,
+                    onFinish : false
+                },settings);
+                
+                parse(e);
+                var i = 0;
+                var elements = e.children().css({color:options.baseColor});
+                var length = elements.length;
+                if(!options.interval && !options.delay) options.interval = 100;
+                var hc = options.highlightColor;
+                var bc = options.baseColor;
+                var du = options.duration;
+                var de = options.delay;
+                
+                var start = function(){
+                    elements.each(function( i, elem ){
+                        $(elem).transition({
+                            color : hc,
+                            delay : de*i,
+                            duration : du
+                        }).transition({
+                            color : bc,
+                            duration : du
+                        });
+                    });
+                };
+                
+                options.time = (options.delay * length)+(du*3);
+                execute(options,start);
+            },
+            
+            jump:function(e){
+                var options = $.extend({
+                    e : e,
+                    altitude : 30,
+					bound : true,
+                    delay : 400,
+                    interval : 300,
+                    duration : 600,
+                    fixed : "bottom",
+                    repeat: true,
+                    onStart : false,
+                    onFinish : false
+                },settings);
+                
+                parseDiv(e,false,options.fixed);
+                e.css({height:e.css("fontSize")});
+                var i = 0;
+                var elements = e.children();
+                var length = elements.length;
+                if(!options.interval && !options.delay) options.interval = 100;
+                var al = options.altitude;
+                var bo = options.bound;
+                var du = options.duration;
+                var de = options.delay;
+				var ea = options.bound ? "in" : "in-out";
+				var fi = options.fixed;
+                
+                var start = function(){
+                    elements.each(function( i, elem ){
+                        var cssleave = {
+                            duration: du,
+                            delay : de*i,
+                            easing : "out"
+                        };
+                        cssleave[fi] = al;
+                        var cssarrive = {
+                            duration: du,
+                            easing : ea
+                        };
+                        cssarrive[fi] = 0;
+                        $(elem).transition(cssleave)
+                               .transition(cssarrive);
+                        
+                    });
+                };
+                
+                options.time = (options.delay * length)+(du*2);
+                execute(options,start);
+            } ,
+            
+            puff : function( e ) {
+                var options = $.extend({
+                    e : e,
+                    duration : 600,
+                    interval : 600,
+                    onStart : false,
+                    onFinish : false,
+                    repeat : true,
+                    percent : 300,
+                    color : false,
+					times : 1
+                },settings);
+                
+                var start = function(){
+					var position = e.position();
+                    var css = {
+                        "position": "absolute",
+                        "left": position.left + "px",
+                        "top": position.top + "px",
+                        "z-index": -1000
+                    };
+                    
+                    if (options.color) 
+                        css.color = options.color;
+                    if (options.backgroundColor) 
+                        css.backgroundColor = options.backgroundColor;
+					e.clone().attr("id", "").insertBefore(e).css(css).transition({
+                        opacity: 0,
+                        scale: 1.6,
+                        duration : options.duration
+                    }, function(){
+                        $(this).remove();
+                    });
+					
+                };
+                options.time = options.duration;
+                execute(options,start);
+            }
+		};
+		
+        return container.each(function(){  
+            f[settings.mode]($(this));
         });
-      }(index || 0));
     };
-
-    base.init();
-  }
-
-  $.fn.textillate = function (settings, args) {
-    return this.each(function () {
-      var $this = $(this)
-        , data = $this.data('textillate')
-        , options = $.extend(true, {}, $.fn.textillate.defaults, getData(this), typeof settings == 'object' && settings);
-
-      if (!data) { 
-        $this.data('textillate', (data = new Textillate(this, options)));
-      } else if (typeof settings == 'string') {
-        data[settings].apply(data, [].concat(args));
-      } else {
-        data.setOptions.call(data, options);
-      }
-    })
-  };
   
-  $.fn.textillate.defaults = {
-    selector: '.texts',
-    loop: false,
-    minDisplayTime: 2000,
-    initialDelay: 0,
-    in: {
-      effect: 'fadeInLeftBig',
-      delayScale: 1.5,
-      delay: 50,
-      sync: false,
-      reverse: false,
-      shuffle: false,
-      callback: function () {}
-    },
-    out: {
-      effect: 'hinge',
-      delayScale: 1.5,
-      delay: 50,
-      sync: false,
-      reverse: false,
-      shuffle: false,
-      callback: function () {}
-    },
-    autoStart: true,
-    inEffects: [],
-    outEffects: [ 'hinge' ],
-    callback: function () {}
-  };
-
-}(jQuery));
-
+})(jQuery);
+(function(t,e){if(typeof define==="function"&&define.amd){define(["jquery"],e)}else if(typeof exports==="object"){module.exports=e(require("jquery"))}else{e(t.jQuery)}})(this,function(t){t.transit={version:"0.9.12",propertyMap:{marginLeft:"margin",marginRight:"margin",marginBottom:"margin",marginTop:"margin",paddingLeft:"padding",paddingRight:"padding",paddingBottom:"padding",paddingTop:"padding"},enabled:true,useTransitionEnd:false};var e=document.createElement("div");var n={};function i(t){if(t in e.style)return t;var n=["Moz","Webkit","O","ms"];var i=t.charAt(0).toUpperCase()+t.substr(1);for(var r=0;r<n.length;++r){var s=n[r]+i;if(s in e.style){return s}}}function r(){e.style[n.transform]="";e.style[n.transform]="rotateY(90deg)";return e.style[n.transform]!==""}var s=navigator.userAgent.toLowerCase().indexOf("chrome")>-1;n.transition=i("transition");n.transitionDelay=i("transitionDelay");n.transform=i("transform");n.transformOrigin=i("transformOrigin");n.filter=i("Filter");n.transform3d=r();var a={transition:"transitionend",MozTransition:"transitionend",OTransition:"oTransitionEnd",WebkitTransition:"webkitTransitionEnd",msTransition:"MSTransitionEnd"};var o=n.transitionEnd=a[n.transition]||null;for(var u in n){if(n.hasOwnProperty(u)&&typeof t.support[u]==="undefined"){t.support[u]=n[u]}}e=null;t.cssEase={_default:"ease","in":"ease-in",out:"ease-out","in-out":"ease-in-out",snap:"cubic-bezier(0,1,.5,1)",easeInCubic:"cubic-bezier(.550,.055,.675,.190)",easeOutCubic:"cubic-bezier(.215,.61,.355,1)",easeInOutCubic:"cubic-bezier(.645,.045,.355,1)",easeInCirc:"cubic-bezier(.6,.04,.98,.335)",easeOutCirc:"cubic-bezier(.075,.82,.165,1)",easeInOutCirc:"cubic-bezier(.785,.135,.15,.86)",easeInExpo:"cubic-bezier(.95,.05,.795,.035)",easeOutExpo:"cubic-bezier(.19,1,.22,1)",easeInOutExpo:"cubic-bezier(1,0,0,1)",easeInQuad:"cubic-bezier(.55,.085,.68,.53)",easeOutQuad:"cubic-bezier(.25,.46,.45,.94)",easeInOutQuad:"cubic-bezier(.455,.03,.515,.955)",easeInQuart:"cubic-bezier(.895,.03,.685,.22)",easeOutQuart:"cubic-bezier(.165,.84,.44,1)",easeInOutQuart:"cubic-bezier(.77,0,.175,1)",easeInQuint:"cubic-bezier(.755,.05,.855,.06)",easeOutQuint:"cubic-bezier(.23,1,.32,1)",easeInOutQuint:"cubic-bezier(.86,0,.07,1)",easeInSine:"cubic-bezier(.47,0,.745,.715)",easeOutSine:"cubic-bezier(.39,.575,.565,1)",easeInOutSine:"cubic-bezier(.445,.05,.55,.95)",easeInBack:"cubic-bezier(.6,-.28,.735,.045)",easeOutBack:"cubic-bezier(.175, .885,.32,1.275)",easeInOutBack:"cubic-bezier(.68,-.55,.265,1.55)"};t.cssHooks["transit:transform"]={get:function(e){return t(e).data("transform")||new f},set:function(e,i){var r=i;if(!(r instanceof f)){r=new f(r)}if(n.transform==="WebkitTransform"&&!s){e.style[n.transform]=r.toString(true)}else{e.style[n.transform]=r.toString()}t(e).data("transform",r)}};t.cssHooks.transform={set:t.cssHooks["transit:transform"].set};t.cssHooks.filter={get:function(t){return t.style[n.filter]},set:function(t,e){t.style[n.filter]=e}};if(t.fn.jquery<"1.8"){t.cssHooks.transformOrigin={get:function(t){return t.style[n.transformOrigin]},set:function(t,e){t.style[n.transformOrigin]=e}};t.cssHooks.transition={get:function(t){return t.style[n.transition]},set:function(t,e){t.style[n.transition]=e}}}p("scale");p("scaleX");p("scaleY");p("translate");p("rotate");p("rotateX");p("rotateY");p("rotate3d");p("perspective");p("skewX");p("skewY");p("x",true);p("y",true);function f(t){if(typeof t==="string"){this.parse(t)}return this}f.prototype={setFromString:function(t,e){var n=typeof e==="string"?e.split(","):e.constructor===Array?e:[e];n.unshift(t);f.prototype.set.apply(this,n)},set:function(t){var e=Array.prototype.slice.apply(arguments,[1]);if(this.setter[t]){this.setter[t].apply(this,e)}else{this[t]=e.join(",")}},get:function(t){if(this.getter[t]){return this.getter[t].apply(this)}else{return this[t]||0}},setter:{rotate:function(t){this.rotate=b(t,"deg")},rotateX:function(t){this.rotateX=b(t,"deg")},rotateY:function(t){this.rotateY=b(t,"deg")},scale:function(t,e){if(e===undefined){e=t}this.scale=t+","+e},skewX:function(t){this.skewX=b(t,"deg")},skewY:function(t){this.skewY=b(t,"deg")},perspective:function(t){this.perspective=b(t,"px")},x:function(t){this.set("translate",t,null)},y:function(t){this.set("translate",null,t)},translate:function(t,e){if(this._translateX===undefined){this._translateX=0}if(this._translateY===undefined){this._translateY=0}if(t!==null&&t!==undefined){this._translateX=b(t,"px")}if(e!==null&&e!==undefined){this._translateY=b(e,"px")}this.translate=this._translateX+","+this._translateY}},getter:{x:function(){return this._translateX||0},y:function(){return this._translateY||0},scale:function(){var t=(this.scale||"1,1").split(",");if(t[0]){t[0]=parseFloat(t[0])}if(t[1]){t[1]=parseFloat(t[1])}return t[0]===t[1]?t[0]:t},rotate3d:function(){var t=(this.rotate3d||"0,0,0,0deg").split(",");for(var e=0;e<=3;++e){if(t[e]){t[e]=parseFloat(t[e])}}if(t[3]){t[3]=b(t[3],"deg")}return t}},parse:function(t){var e=this;t.replace(/([a-zA-Z0-9]+)\((.*?)\)/g,function(t,n,i){e.setFromString(n,i)})},toString:function(t){var e=[];for(var i in this){if(this.hasOwnProperty(i)){if(!n.transform3d&&(i==="rotateX"||i==="rotateY"||i==="perspective"||i==="transformOrigin")){continue}if(i[0]!=="_"){if(t&&i==="scale"){e.push(i+"3d("+this[i]+",1)")}else if(t&&i==="translate"){e.push(i+"3d("+this[i]+",0)")}else{e.push(i+"("+this[i]+")")}}}}return e.join(" ")}};function c(t,e,n){if(e===true){t.queue(n)}else if(e){t.queue(e,n)}else{t.each(function(){n.call(this)})}}function l(e){var i=[];t.each(e,function(e){e=t.camelCase(e);e=t.transit.propertyMap[e]||t.cssProps[e]||e;e=h(e);if(n[e])e=h(n[e]);if(t.inArray(e,i)===-1){i.push(e)}});return i}function d(e,n,i,r){var s=l(e);if(t.cssEase[i]){i=t.cssEase[i]}var a=""+y(n)+" "+i;if(parseInt(r,10)>0){a+=" "+y(r)}var o=[];t.each(s,function(t,e){o.push(e+" "+a)});return o.join(", ")}t.fn.transition=t.fn.transit=function(e,i,r,s){var a=this;var u=0;var f=true;var l=t.extend(true,{},e);if(typeof i==="function"){s=i;i=undefined}if(typeof i==="object"){r=i.easing;u=i.delay||0;f=typeof i.queue==="undefined"?true:i.queue;s=i.complete;i=i.duration}if(typeof r==="function"){s=r;r=undefined}if(typeof l.easing!=="undefined"){r=l.easing;delete l.easing}if(typeof l.duration!=="undefined"){i=l.duration;delete l.duration}if(typeof l.complete!=="undefined"){s=l.complete;delete l.complete}if(typeof l.queue!=="undefined"){f=l.queue;delete l.queue}if(typeof l.delay!=="undefined"){u=l.delay;delete l.delay}if(typeof i==="undefined"){i=t.fx.speeds._default}if(typeof r==="undefined"){r=t.cssEase._default}i=y(i);var p=d(l,i,r,u);var h=t.transit.enabled&&n.transition;var b=h?parseInt(i,10)+parseInt(u,10):0;if(b===0){var g=function(t){a.css(l);if(s){s.apply(a)}if(t){t()}};c(a,f,g);return a}var m={};var v=function(e){var i=false;var r=function(){if(i){a.unbind(o,r)}if(b>0){a.each(function(){this.style[n.transition]=m[this]||null})}if(typeof s==="function"){s.apply(a)}if(typeof e==="function"){e()}};if(b>0&&o&&t.transit.useTransitionEnd){i=true;a.bind(o,r)}else{window.setTimeout(r,b)}a.each(function(){if(b>0){this.style[n.transition]=p}t(this).css(l)})};var z=function(t){this.offsetWidth;v(t)};c(a,f,z);return this};function p(e,i){if(!i){t.cssNumber[e]=true}t.transit.propertyMap[e]=n.transform;t.cssHooks[e]={get:function(n){var i=t(n).css("transit:transform");return i.get(e)},set:function(n,i){var r=t(n).css("transit:transform");r.setFromString(e,i);t(n).css({"transit:transform":r})}}}function h(t){return t.replace(/([A-Z])/g,function(t){return"-"+t.toLowerCase()})}function b(t,e){if(typeof t==="string"&&!t.match(/^[\-0-9\.]+$/)){return t}else{return""+t+e}}function y(e){var n=e;if(typeof n==="string"&&!n.match(/^[\-0-9\.]+/)){n=t.fx.speeds[n]||t.fx.speeds._default}return b(n,"ms")}t.transit.getTransitionValue=d;return t});
 //functions
 function moveBackground(e, halfWidth, halfHeight, maxRotationX, maxRotationY) {
   var rotateY = ((-e.pageX+halfWidth)/halfWidth) * maxRotationY;
@@ -490,19 +397,25 @@ function initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspec
     'max-width' : '100%'
   });
 }
+
 // js goes here
-$(function () {
+$(function() {
 	// get css 'content' value + remove extra quotes
   var mediaQuery = window.getComputedStyle(document.querySelector('.parallaxWrapper'), ':before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, "");
   
   // define initial variables
-  var halfHeight = $(window).height() / 2;
-  var halfWidth = $(window).width() / 2;
+  var halfHeight = $(window).height() / 2,
+      halfWidth = $(window).width() / 2;
 
   // define X-Y-axes max rotation
-  var maxRotationX = 3;
-  var maxRotationY = 5;
-  var aspectRatio;
+  var maxRotationX = 3,
+      maxRotationY = 5,
+      aspectRatio;
+
+  var interval = 2000;
+  var fadeSpeed = 500;
+  var textIndex = 1;
+  var textArray = $('.text');
 
   // set aspect ratio & first load background
   $('.parallaxBG').find('img').eq(0).load(function() {
@@ -513,49 +426,13 @@ $(function () {
   	}
   });
 
-  if ($(window).width() >= 980) {
-	  // animate title
-	  $('#desktop_content .title').textillate({
-	  	minDisplayTime: 2000,
-	  	in: {
-	  		selector: '.title',
-	  		effect: 'fadeIn',
-	  		shuffle: false,
-	  		sync: true,
-	  		autoStart: false
-	  	},
-	  	out: {
-	  		selector: '.title',
-	  		delay: 6,
-	  		effect: 'fadeIn',
-	  		shuffle: false,
-	  		sync: true,
-	  		autoStart: false
-	  	},
-	  	loop: true
-	  });
-
-    // animate text
-	  $('#desktop_content .text').textillate({
-	  	minDisplayTime: 2000,
-	  	in: {
-	  		selector: '.text',
-	  		effect: 'fadeIn',
-	  		shuffle: false,
-	  		sync: true,
-	  		autoStart: false
-	  	},
-	  	out: {
-	  		selector: '.text',
-	  		delay: 6,
-	  		effect: 'fadeIn',
-	  		shuffle: false,
-	  		sync: true,
-	  		autoStart: false
-	  	},
-	  	loop: true
-	  });
-  }
+  // animate text
+  $('.text').not(':first').hide();
+  setInterval(function() {
+    $('#text' + textIndex).fadeOut(fadeSpeed);
+    (textIndex == $('.text').length) ? textIndex = 1 : ++textIndex;
+    $('#text' + textIndex).delay(fadeSpeed).fadeIn(fadeSpeed);
+  }, interval);
 
   // detect mouse movement
   $(window).on('mousemove', function(e) {
@@ -570,8 +447,6 @@ $(function () {
   $(window).on('resize', function() {
   	// adjust image sizes
   	mediaQuery = window.getComputedStyle(document.querySelector('.parallaxWrapper'), ':before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, "");
-  	console.log('window.width() = ' + $(window).width());
-  	console.log('window.height() = ' + $(window).height());
   	if (mediaQuery == 'web') {
   		window.requestAnimationFrame(function() {
   			halfWidth = $(window).width() * 0.5;

@@ -16,25 +16,20 @@
 
 		<div class="content">
 			<div class="content__text-wrapper">
-				<h1 class="mobile_title">Hello There Mobile!</h1>
-				<p class="mobile_text">Hey, this is MOBILE where I introduce myself and talk about what I do...</p>
-
-				<div id="desktop_content">
-					<ul class="title">
-						<li>Hello There!</li>
-						<li>Check out cool stuff</li>
-						<li>yaya test</li>
-					</ul>
-
-					<ul class="text">
-						<li>Hey, this is where I introduce myself and talk about what I do...</li>
-						<li>Move the mouse to the browser edges to see more!</li>
-						<li>um...testing?!</li>
-					</ul>
-				</div>
+			 	<div id="text1" class="text">
+			 		<h1>Hello There!</h1>
+			 		<p>Hey, this is where I introduce myself and talk about what I do...</p>
+			 	</div>
+			 	<div id="text2" class="text">
+			 		<h1>Check out cool stuff</h1>
+			 		<p>Move the mouse to the browser edges to see more!</p>
+			 	</div>
+			 	<div id="text3" class="text">
+			 		<h1>yaya test</h1>
+			 		<p>um...testing?!</p>
+			 	</div>
 
 				<div class="contact"></div>
-
 			</div>
 		</div>
 	</main>

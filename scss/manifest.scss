@@ -19,7 +19,7 @@ TITLE: SCSS Manifest
   @import "utilities/default-color-classes";
   @import "utilities/fonts-gt-walsheim";
   @import "utilities/colors";
-  // @import "utilities/visually-hidden";
+  @import "utilities/hidden";
 
 // LIBRARIES
   @import "lib/animate";

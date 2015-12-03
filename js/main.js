@@ -1,16 +1,21 @@
 // js goes here
-$(function () {
+$(function() {
 	// get css 'content' value + remove extra quotes
   var mediaQuery = window.getComputedStyle(document.querySelector('.parallaxWrapper'), ':before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, "");
   
   // define initial variables
-  var halfHeight = $(window).height() / 2;
-  var halfWidth = $(window).width() / 2;
+  var halfHeight = $(window).height() / 2,
+      halfWidth = $(window).width() / 2;
 
   // define X-Y-axes max rotation
-  var maxRotationX = 3;
-  var maxRotationY = 5;
-  var aspectRatio;
+  var maxRotationX = 3,
+      maxRotationY = 5,
+      aspectRatio;
+
+  var interval = 2000;
+  var fadeSpeed = 500;
+  var textIndex = 1;
+  var textArray = $('.text');
 
   // set aspect ratio & first load background
   $('.parallaxBG').find('img').eq(0).load(function() {
@@ -21,49 +26,13 @@ $(function () {
   	}
   });
 
-  if ($(window).width() >= 980) {
-	  // animate title
-	  $('#desktop_content .title').textillate({
-	  	minDisplayTime: 2000,
-	  	in: {
-	  		selector: '.title',
-	  		effect: 'fadeIn',
-	  		shuffle: false,
-	  		sync: true,
-	  		autoStart: false
-	  	},
-	  	out: {
-	  		selector: '.title',
-	  		delay: 6,
-	  		effect: 'fadeIn',
-	  		shuffle: false,
-	  		sync: true,
-	  		autoStart: false
-	  	},
-	  	loop: true
-	  });
-
-    // animate text
-	  $('#desktop_content .text').textillate({
-	  	minDisplayTime: 2000,
-	  	in: {
-	  		selector: '.text',
-	  		effect: 'fadeIn',
-	  		shuffle: false,
-	  		sync: true,
-	  		autoStart: false
-	  	},
-	  	out: {
-	  		selector: '.text',
-	  		delay: 6,
-	  		effect: 'fadeIn',
-	  		shuffle: false,
-	  		sync: true,
-	  		autoStart: false
-	  	},
-	  	loop: true
-	  });
-  }
+  // animate text
+  $('.text').not(':first').hide();
+  setInterval(function() {
+    $('#text' + textIndex).fadeOut(fadeSpeed);
+    (textIndex == $('.text').length) ? textIndex = 1 : ++textIndex;
+    $('#text' + textIndex).delay(fadeSpeed).fadeIn(fadeSpeed);
+  }, interval);
 
   // detect mouse movement
   $(window).on('mousemove', function(e) {
@@ -78,8 +47,6 @@ $(function () {
   $(window).on('resize', function() {
   	// adjust image sizes
   	mediaQuery = window.getComputedStyle(document.querySelector('.parallaxWrapper'), ':before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, "");
-  	console.log('window.width() = ' + $(window).width());
-  	console.log('window.height() = ' + $(window).height());
   	if (mediaQuery == 'web') {
   		window.requestAnimationFrame(function() {
   			halfWidth = $(window).width() * 0.5;
