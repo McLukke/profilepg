@@ -796,3 +796,35 @@ TITLE: Backgrounds
       right: 0;
       bottom: 0;
       left: 0; } }
+
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Template
+TITLE: Loading Page
+===========================================================================
+*/
+#loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000; }
+
+#loading_images,
+#loading_images img:first-child {
+  width: 8em;
+  margin: 0 auto;
+  text-align: center; }
+
+#loading_images {
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%); }

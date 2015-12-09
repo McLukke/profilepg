@@ -2,6 +2,24 @@
 <html>
 <?php include('partials/head.html'); ?>
 <body>
+	<div id="loading">
+		<div id="loading_images">
+			<img src="images/coding.jpg" alt="loading" />
+			<img src="images/loading.gif" alt="loading" />
+		</div>
+	</div>
+
+	<div id="preloader" class="hidden">
+		<img src="images/voilah-teaser-pLayer-z2@1x.png" />
+		<img src="images/kenny_bg.jpg" />
+		<img src="images/voilah-teaser-mobile@3x.jpg" />
+		<img src="images/coding.jpg" />
+		<img src="images/public_art_hk.png" />
+		<img src="images/aveconcept.png" />
+		<img src="images/willey_printing.png" />
+		<img src="images/loading.gif" />
+	</div>
+
 	<main id="landingPage" class="main">
 		<div class="mobileBG"></div>
 
@@ -57,5 +75,12 @@
 
 		</div>
 	</main>
+
+<script language="javascript" type="text/javascript">
+  // load images
+  $(window).load(function() {
+    $('#loading').hide();
+  });
+</script>
 </body>
 </html>
