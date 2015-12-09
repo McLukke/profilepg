@@ -412,7 +412,7 @@ $(function() {
       maxRotationY = 5,
       aspectRatio;
 
-  var interval = 2000;
+  var interval = 7000;
   var fadeSpeed = 500;
   var textIndex = 1;
   var textArray = $('.text');
@@ -430,7 +430,11 @@ $(function() {
   $('.text').not(':first').hide();
   setInterval(function() {
     $('#text' + textIndex).fadeOut(fadeSpeed);
-    (textIndex == $('.text').length) ? textIndex = 1 : ++textIndex;
+    if (textIndex == $('.text').length) {
+      textIndex = 1;
+    } else {
+      ++textIndex;
+    }
     $('#text' + textIndex).delay(fadeSpeed).fadeIn(fadeSpeed);
   }, interval);
 

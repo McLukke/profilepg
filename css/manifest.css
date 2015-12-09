@@ -446,7 +446,7 @@ body {
   overflow-x: hidden;
   font-size: 1rem;
   line-height: 1.375;
-  color: #283175; }
+  color: #7FDBFF; }
 
 body::-webkit-scrollbar {
   display: none; }
@@ -519,11 +519,11 @@ TITLE: Parallax Container
   /* fixes a FF bug - images not correctly rendering*/
   background-color: rgba(255, 255, 255, 0.01); }
 
-#foreground {
+#background {
   transform: translateZ(50px);
   width: 100%; }
 
-#background {
+#foreground {
   position: absolute;
   transform: translateZ(400px);
   width: 83%;
@@ -625,6 +625,43 @@ TITLE: Mobile Content
 PROJECT: 151102
 CLIENT: N/A
 DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Molecule
+TITLE: Mouse hover effects
+===========================================================================
+*/
+.hover-trigger {
+  position: absolute; }
+
+#topHover,
+#contactHover {
+  height: 10%;
+  width: 100%; }
+
+#leftHover,
+#rightHover {
+  width: 10%;
+  height: 100%; }
+
+#topHover,
+#leftHover {
+  top: 0;
+  left: 0; }
+
+#contactHover {
+  bottom: 0;
+  left: 0; }
+
+#rightHover {
+  top: 0;
+  right: 0; }
+
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
 CLASS: Organism
 TITLE: Logo
 ===========================================================================
@@ -682,7 +719,7 @@ TITLE: Backgrounds
     vertical-align: middle; }
   .content__text-wrapper {
     display: inline-block;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     width: 90%; }
   @media (min-width: 980px) {
     .content {

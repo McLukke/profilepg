@@ -5,14 +5,39 @@
 PROJECT: 151102
 CLIENT: N/A
 DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
-CLASS: Utility
-TITLE: Personal Profile Colours
+CLASS: Molecule
+TITLE: Mouse hover effects
 ===========================================================================
 */
 
-$k-dark: #1A1919;
-$k-purple: #283175;
-$k-blue: #C4E4EF;
-$k-sky: #C4E4EF;
-$k-grey: #787674;
-$k-aqua: #7FDBFF;
+.hover-trigger {
+	position: absolute;
+}
+
+#topHover,
+#contactHover {
+	height: 10%;
+	width: 100%;
+}
+
+#leftHover,
+#rightHover {
+	width: 10%;
+	height: 100%;
+}
+
+#topHover,
+#leftHover {
+	top: 0;
+	left: 0;
+}
+
+#contactHover {
+	bottom: 0;
+	left: 0;
+}
+
+#rightHover {
+	top: 0;
+	right: 0;
+}
