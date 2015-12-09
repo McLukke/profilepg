@@ -386,11 +386,20 @@ function initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspec
 
   //set an height for the .cd-background-wrapper
   $('.parallaxWrapper').css({
-    'height' : $(window).height(),
+    'height' : $(window).height()
   });
   
   //set dimensions and position of the .cd-background-wrapper
   $('.parallaxBG').css({
+    'left' : newLeft,
+    'top' : newTop,
+    'width' : newImageWidth,
+    'max-width' : '100%'
+  });
+
+  // set dimensions for hover-effects div
+  $('.hover-effects').css({
+    'height' : $('.parallaxBG').height(),
     'left' : newLeft,
     'top' : newTop,
     'width' : newImageWidth,
@@ -461,6 +470,59 @@ $(function() {
   	} else {
   		$('.parallaxWrapper').attr('style', '');
   	}
+  });
+
+  // on hover
+  $('#leftHover').mouseenter(function() {
+    $(this).css({'width':'90%'});
+    $('#leftHover img').css({'width':'100%'});
+    $('#rightHover').css({'width':'0%'});
+  }).mouseleave(function() {
+    $(this).css({'width':'10%'});
+    $('#leftHover img').css({'width':'0%'});
+    setTimeout(function() {
+      $('#rightHover').css({'width':'10%'});
+    }, 2000);
+  });
+
+  $('#topHover').mouseenter(function() {
+    $(this).css({'height':'90%'});
+    $('#topHover img').css({'height':'100%'});
+    $('#contactHover').css({'height':'0%'});
+  }).mouseleave(function() {
+    $(this).css({'height':'10%'});
+    $('#topHover img').css({'height':'0%'});
+    setTimeout(function() {
+      $('#contactHover').css({'height':'10%'});
+    }, 2000);
+  });
+
+  $('#rightHover').mouseenter(function() {
+    $(this).css({'width':'90%'});
+    $('#rightHover img').css({'width':'100%'});
+    $('#leftHover').css({'width':'0%'});
+  }).mouseleave(function() {
+    $(this).css({'width':'10%'});
+    $('#rightHover img').css({'width':'0%'});
+    setTimeout(function() {
+      $('#leftHover').css({'width':'10%'});
+    }, 2000);
+  });
+
+  $('#contactHover').mouseenter(function() {
+    $(this).css({
+      'height' : '90%',
+      'background' : 'rgba(0,0,0,0.8)'
+    });
+    $('#contactHover #contactInfo').removeClass('hidden');
+    $('#topHover').css({'height':'0%'});
+  }).mouseleave(function() {
+    $(this).css({'height':'10%'});
+    $('#contactHover #contactInfo').addClass('hidden');
+    setTimeout(function() {$(contactHover).css({'background':'rgba(0,0,0,0)'})}, 500);
+    setTimeout(function() {
+      $('#topHover').css({'height':'10%'});
+    }, 2000);
   });
 });
 

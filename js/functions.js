@@ -33,11 +33,20 @@ function initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspec
 
   //set an height for the .cd-background-wrapper
   $('.parallaxWrapper').css({
-    'height' : $(window).height(),
+    'height' : $(window).height()
   });
   
   //set dimensions and position of the .cd-background-wrapper
   $('.parallaxBG').css({
+    'left' : newLeft,
+    'top' : newTop,
+    'width' : newImageWidth,
+    'max-width' : '100%'
+  });
+
+  // set dimensions for hover-effects div
+  $('.hover-effects').css({
+    'height' : $('.parallaxBG').height(),
     'left' : newLeft,
     'top' : newTop,
     'width' : newImageWidth,

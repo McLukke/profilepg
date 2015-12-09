@@ -12,8 +12,6 @@
 			</div>
 		</div>
 
-		<!-- <div id="logo"></div> -->
-
 		<div class="content">
 			<div class="content__text-wrapper">
 			 	<div id="text1" class="text">
@@ -29,11 +27,34 @@
 			 		<p>To check out cool stuff I've done</p>
 			 	</div>
 			</div>
-			
-			<div id="topHover" class="hover-trigger"></div>
-			<div id="leftHover" class="hover-trigger"></div>
-			<div id="rightHover" class="hover-trigger"></div>
-			<div id="contactHover" class="hover-trigger"></div>
+
+			<div class="hover-effects">
+				<div id="leftHover">
+					<a href="http://new.publicart.org.hk">
+						<img src="images/public_art_hk.png" alt="Public Art Hong Kong" />
+					</a>
+				</div>
+				<div id="topHover">
+					<a href="http://www.aveconcept.com">
+						<img src="images/aveconcept.png" alt="AveConcept" />
+					</a>
+				</div>
+				<div id="rightHover">
+					<a href="http://www.willey.com.hk">
+						<img src="images/willey_printing.png" alt="Willey Printing Press" />
+					</a>
+				</div>
+				<div id="contactHover">
+					<!-- <div id="logo"></div> -->
+					<div id="contactInfo" class="hidden">
+						<h1>Feel free to contact me</h1>
+						<a href="mailto:kenny@whynotkenny.com?subject=Kenny, I'm contacting you directly from your website!">
+							<p>Email: Kenny@whynotkenny.com</p>
+						</a>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</main>
 </body>
