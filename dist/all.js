@@ -519,7 +519,9 @@ $(function() {
   }).mouseleave(function() {
     $(this).css({'height':'10%'});
     $('#contactHover #contactInfo').addClass('hidden');
-    setTimeout(function() {$(contactHover).css({'background':'rgba(0,0,0,0)'})}, 500);
+    setTimeout(function() {
+      $(contactHover).css({'background':'rgba(0,0,0,0)'});
+    }, 500);
     setTimeout(function() {
       $('#topHover').css({'height':'10%'});
     }, 2000);
