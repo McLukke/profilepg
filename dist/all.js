@@ -482,7 +482,7 @@ $(function() {
     $('#leftHover img').css({'width':'0%'});
     setTimeout(function() {
       $('#rightHover').css({'width':'10%'});
-    }, 1750);
+    }, 2000);
   });
 
   $('#topHover').mouseenter(function() {
@@ -494,7 +494,7 @@ $(function() {
     $('#topHover img').css({'height':'0%'});
     setTimeout(function() {
       $('#contactHover').css({'height':'10%'});
-    }, 1750);
+    }, 2000);
   });
 
   $('#rightHover').mouseenter(function() {
@@ -506,7 +506,7 @@ $(function() {
     $('#rightHover img').css({'width':'0%'});
     setTimeout(function() {
       $('#leftHover').css({'width':'10%'});
-    }, 1750);
+    }, 2000);
   });
 
   $('#contactHover').mouseenter(function() {
@@ -519,12 +519,10 @@ $(function() {
   }).mouseleave(function() {
     $(this).css({'height':'10%'});
     $('#contactHover #contactInfo').addClass('hidden');
-    setTimeout(function() {
-      $('#contactHover').css({'background':'rgba(0,0,0,0)'});
-    }, 500);
+    setTimeout(function() {$(contactHover).css({'background':'rgba(0,0,0,0)'})}, 500);
     setTimeout(function() {
       $('#topHover').css({'height':'10%'});
-    }, 1750);
+    }, 2000);
   });
 });
 
