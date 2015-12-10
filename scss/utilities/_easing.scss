@@ -41,8 +41,8 @@ $ease-in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860);
 $ease-in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
 %k-easing {
-  -webkit-transition: width 0.5s, height 0.5s $ease-in-out-quad;
-  -moz-transition: width 0.5s, height 0.5s $ease-in-out-quad;
-  -o-transition: width 0.5s, height 0.5s $ease-in-out-quad;
-  transition: width 0.5s, height 0.5s $ease-in-out-quad;
+  -webkit-transition: all 0.5s $ease-in-out-quad;
+  -moz-transition: all 0.5s $ease-in-out-quad;
+  -o-transition: all 0.5s $ease-in-out-quad;
+  transition: all 0.5s $ease-in-out-quad;
 }

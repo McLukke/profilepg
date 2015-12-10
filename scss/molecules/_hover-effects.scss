@@ -14,6 +14,8 @@ TITLE: Mouse hover effects
 	position: absolute;
 	top: 0;
 	left: 0;
+	overflow: hidden;
+
 	display: none;
 	@include breakpoint($laptop) {
 		display: block;
@@ -31,57 +33,95 @@ TITLE: Mouse hover effects
 #rightHover,
 #contactHover {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 10%;
+	width: 100%;
 	height: 100%;
 	@extend %k-easing;
 }
 
-#topHover,
-#contactHover {
-	width: 100%;
-	height: 10%;
+#leftHover {
+	@include eztransform(-90%, 0);
+	opacity: 0;
+	&.showing {
+		@include eztransform(0, 0);
+		opacity: 1;
+		width: 90%;
+	}
+	&.step-out {
+		@include eztransform(-100%, 0);
+	}
+}
+
+#topHover {
+	@include eztransform(0, -90%);
+	opacity: 0;
+	&.showing {
+		@include eztransform(0, 0);
+		opacity: 1;
+		height: 85%;
+	}
+	&.step-out {
+		@include eztransform(0, -100%);
+	}
 }
 
 #rightHover {
-	left: auto;
-	right: 0;
+	float: right;
+	@include eztransform(90%, 0);
+	opacity: 0;
+	&.showing {
+		@include eztransform(11%, 0);
+		opacity: 1;
+		width: 90%;
+	}
+	&.step-out {
+		@include eztransform(100%, 0);
+	}
 }
 
 #contactHover {
-	top: auto;
-	bottom: 0;
+	background: rgba(0,0,0,0);
+	@include eztransform(0, 90%);
+	&.showing {
+		@include eztransform(0, 15%);
+		height: 87%;
+		background: rgba(0,0,0,0.8);
+	}
+	&.step-out {
+		@include eztransform(0, 100%);
+	}
 }
 
 /* preview images for left/top/right */
 #leftHover img,
-#topHover img,
-#rightHover img,
-#contactInfo {
+#rightHover img {
 	position: relative;
-	width: 0%;
 	height: 100%;
+	width: 90%;
 	float: left;
-	@extend %k-easing;
-}
-
-#topHover img {
-	width: 100%;
-	height: 0%;
+	&.showing {
+		width: 100%;
+	}
 }
 
 #rightHover img {
 	float: right;
 }
 
-#contactInfo {
+#topHover img {
 	width: 100%;
-	height: auto;
-	top: 40%;
-	@extend %k-easing;
-	-webkit-transform: translate(0, -50%);
-	-moz-transform: translate(0, -50%);
-	-o-transform: translate(0, -50%);
-	transform: translate(0, -50%);
+	height: 90%;
+	&.showing {
+		height: 100%;
+	}
+}
+
+#contactInfo {
+	opacity: 0;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: 30%;
+	&.showing {
+		opacity: 1;
+	}
 }

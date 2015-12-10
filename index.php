@@ -46,7 +46,7 @@
 				</div>
 				<div id="contactHover">
 					<!-- <div id="logo"></div> -->
-					<div id="contactInfo" class="hidden">
+					<div id="contactInfo">
 						<h1>Feel free to contact me</h1>
 						<a href="mailto:kenny@whynotkenny.com?subject=Kenny, I'm contacting you directly from your website!">
 							<p>Email: Kenny@whynotkenny.com</p>

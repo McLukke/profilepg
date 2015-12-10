@@ -142,3 +142,10 @@ $baseline-px: 16px;
     }
   } 
 }
+
+@mixin eztransform ($xdir, $ydir) {
+  -webkit-transform: translate($xdir, $ydir);
+  -moz-transform: translate($xdir, $ydir);
+  -o-transform: translate($xdir, $ydir);
+  transform: translate($xdir, $ydir);
+}
