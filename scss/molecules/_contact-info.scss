@@ -1,0 +1,73 @@
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Molecule
+TITLE: Contact Info
+===========================================================================
+*/
+
+#contactInfo {
+	padding-top: 8%;
+	@include eztransform(0, 100%);
+	&.showing {
+		@include eztransform(0, 0);
+		opacity: 1;
+	}
+}
+
+#contactInfo section {
+	width: 80%;
+	margin: 4% 10%;
+}
+
+#contactInfo section span:before,
+#contactInfo section span:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 45%;
+	height: 5px; /* space between lines */
+	margin-top: 0px; /* adjust vertical align */
+	border-top: 1px solid;
+	/*border-bottom: 1px solid;*/
+	right: 55%;
+}
+
+#contactInfo section span:after {
+	left: 55%;
+}
+
+#contactInfo h1 {
+	margin-bottom: 15px;
+}
+
+#google_spacing {
+	display: inline-block;
+	top: -1rem;
+	margin-left: 15px;
+}
+
+#contactInfo a img {
+	max-width: 50px;
+	margin: 5px 15px;
+}
+
+.voting {
+	width: 35%;
+	margin: 0 auto;
+}
+
+.voting a {
+	float: left;
+	&:nth-child(2n) {
+		float: right;
+	};
+}
+
+.voting a span {
+	display: block;
+}

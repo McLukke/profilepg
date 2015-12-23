@@ -715,6 +715,17 @@ TITLE: Mouse hover effects
   height: 100%;
   padding: 15% 10% 10% 10%; }
 
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Molecule
+TITLE: About Me
+===========================================================================
+*/
 #aboutMe {
   color: black;
   text-align: left;
@@ -730,8 +741,19 @@ TITLE: Mouse hover effects
     transform: translate(0, 0);
     opacity: 1; }
 
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Molecule
+TITLE: Contact Info
+===========================================================================
+*/
 #contactInfo {
-  padding-top: 7%;
+  padding-top: 8%;
   -webkit-transform: translate(0, 100%);
   -moz-transform: translate(0, 100%);
   -o-transform: translate(0, 100%);
@@ -745,7 +767,7 @@ TITLE: Mouse hover effects
 
 #contactInfo section {
   width: 80%;
-  margin-left: 10%; }
+  margin: 4% 10%; }
 
 #contactInfo section span:before,
 #contactInfo section span:after {
@@ -755,20 +777,38 @@ TITLE: Mouse hover effects
   width: 45%;
   height: 5px;
   /* space between lines */
-  margin-top: -2px;
+  margin-top: 0px;
   /* adjust vertical align */
   border-top: 1px solid;
-  border-bottom: 1px solid;
+  /*border-bottom: 1px solid;*/
   right: 55%; }
 
 #contactInfo section span:after {
   left: 55%; }
 
-#contactInfo a img {
-  max-width: 50px; }
+#contactInfo h1 {
+  margin-bottom: 15px; }
 
 #google_spacing {
-  display: inline-block; }
+  display: inline-block;
+  top: -1rem;
+  margin-left: 15px; }
+
+#contactInfo a img {
+  max-width: 50px;
+  margin: 5px 15px; }
+
+.voting {
+  width: 35%;
+  margin: 0 auto; }
+
+.voting a {
+  float: left; }
+  .voting a:nth-child(2n) {
+    float: right; }
+
+.voting a span {
+  display: block; }
 
 /*
 ===========================================================================
