@@ -63,55 +63,17 @@ $(function() {
   	}
   });
 
-  // original on hover
-  $('#leftHover').mouseenter(function() {
-    $(this).addClass('showing');
-    $('#leftHover img').addClass('showing');
-    $('#rightHover').addClass('step-out');
-  }).mouseleave(function() {
-    $(this).removeClass('showing');
-    $('#leftHover img').removeClass('showing');
-    setTimeout(function() {
-      $('#rightHover').removeClass('step-out');
-    }, 2000);
+  $('#topHover').click(function() {
+    $('.triggers').toggleClass('hidden');
+    $(this).removeClass('hidden');
+    $('#aboutMe').toggleClass('showing');
   });
 
-  $('#topHover').mouseenter(function() {
-    $(this).addClass('showing');
-    $('#topHover img').addClass('showing');
-    $('#contactHover').addClass('step-out');
-  }).mouseleave(function() {
-    $(this).removeClass('showing');
-    $('#topHover img').removeClass('showing');
-    setTimeout(function() {
-      $('#contactHover').removeClass('step-out');
-    }, 2000);
+  $('#bottomHover').click(function() {
+    $('.triggers').toggleClass('hidden');
+    $(this).removeClass('hidden');
+    $('#contactInfo').toggleClass('showing');
   });
-
-  $('#rightHover').mouseenter(function() {
-    $(this).addClass('showing');
-    $('#rightHover img').addClass('showing');
-    $('#leftHover').addClass('step-out');
-  }).mouseleave(function() {
-    $(this).removeClass('showing');
-    $('#rightHover img').removeClass('showing');
-    setTimeout(function() {
-      $('#leftHover').removeClass('step-out');
-    }, 2000);
-  });
-
-  $('#contactHover').mouseenter(function() {
-    $(this).addClass('showing');
-    $('#contactInfo').addClass('showing');
-    $('#topHover').addClass('step-out');
-  }).mouseleave(function() {
-    $(this).removeClass('showing');
-    $('#contactInfo').removeClass('showing');
-    setTimeout(function() {
-      $('#topHover').removeClass('step-out');
-    }, 2000);
-  });
-
 });
 
 

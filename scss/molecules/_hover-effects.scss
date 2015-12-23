@@ -22,106 +22,106 @@ TITLE: Mouse hover effects
 	}
 }
 
-.hover-effects a {
-	width: 100%;
-	height: 100%;
-}
-
 /* positioning of divs for hovering */
 #leftHover,
 #topHover,
 #rightHover,
-#contactHover {
+#bottomHover {
 	position: absolute;
-	width: 100%;
+	top: 0;
+	left: 0;
+	width: 10%;
 	height: 100%;
+	background: transparent url('../images/left_arrow.png') no-repeat center center;
+	background-size: contain;
 	@extend %k-easing;
-}
-
-#leftHover {
-	@include eztransform(-90%, 0);
 	opacity: 0;
-	&.showing {
-		@include eztransform(0, 0);
+	&:hover {
 		opacity: 1;
-		width: 90%;
-	}
-	&.step-out {
-		@include eztransform(-100%, 0);
+		background-color: rgba(0,0,0,0.3);
 	}
 }
 
-#topHover {
-	@include eztransform(0, -90%);
-	opacity: 0;
-	&.showing {
-		@include eztransform(0, 0);
-		opacity: 1;
-		height: 85%;
-	}
-	&.step-out {
-		@include eztransform(0, -100%);
-	}
+#topHover,
+#bottomHover {
+	width: 100%;
+	height: 13%;
+	background: transparent url('../images/up_arrow.png') no-repeat center center;
+	background-size: contain;
+	top: 10px;
 }
 
 #rightHover {
-	float: right;
-	@include eztransform(90%, 0);
+	left: auto;
+	right: 0;
+	background: transparent url('../images/right_arrow.png') no-repeat center center;
+	background-size: contain;
+}
+
+#bottomHover {
+	top: auto;
+	bottom: 0;
+	background: transparent url('../images/down_arrow.png') no-repeat center center;
+	background-size: contain;
+}
+
+.popups {
 	opacity: 0;
-	&.showing {
-		@include eztransform(11%, 0);
-		opacity: 1;
-		width: 90%;
-	}
-	&.step-out {
-		@include eztransform(100%, 0);
-	}
-}
-
-#contactHover {
-	background: rgba(0,0,0,0);
-	@include eztransform(0, 90%);
-	&.showing {
-		@include eztransform(0, 15%);
-		height: 87%;
-		background: rgba(0,0,0,0.8);
-	}
-	&.step-out {
-		@include eztransform(0, 100%);
-	}
-}
-
-/* preview images for left/top/right */
-#leftHover img,
-#rightHover img {
-	position: relative;
-	height: 100%;
-	width: 90%;
-	float: left;
-	&.showing {
-		width: 100%;
-	}
-}
-
-#rightHover img {
-	float: right;
-}
-
-#topHover img {
+	position: absolute;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.8);
 	width: 100%;
-	height: 90%;
+	height: 100%;
+	padding: 15% 10% 10% 10%;
+	@extend %k-easing;
+}
+
+#aboutMe {
+	color: black;
+	text-align: left;
+	background-color: rgba(255, 255, 255, 0.9);
+	@include eztransform(0, -100%);
 	&.showing {
-		height: 100%;
+		@include eztransform(0, 0);
+		opacity: 1;
 	}
 }
 
 #contactInfo {
-	opacity: 0;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	top: 30%;
+	padding-top: 7%;
+	@include eztransform(0, 100%);
 	&.showing {
+		@include eztransform(0, 0);
 		opacity: 1;
 	}
+}
+
+#contactInfo section {
+	width: 80%;
+	margin-left: 10%;
+}
+
+#contactInfo section span:before,
+#contactInfo section span:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 45%;
+	height: 5px; /* space between lines */
+	margin-top: -2px; /* adjust vertical align */
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	right: 55%;
+}
+
+#contactInfo section span:after {
+	left: 55%;
+}
+
+#contactInfo a img {
+	max-width: 50px;
+}
+
+#google_spacing {
+	display: inline-block;
 }

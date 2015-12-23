@@ -336,7 +336,7 @@ TITLE: CSS cubic-bezier timing/easing functions
 #leftHover,
 #topHover,
 #rightHover,
-#contactHover {
+#bottomHover, .popups {
   -webkit-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   -moz-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   -o-transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -666,124 +666,109 @@ TITLE: Mouse hover effects
     .hover-effects {
       display: block; } }
 
-.hover-effects a {
-  width: 100%;
-  height: 100%; }
-
 /* positioning of divs for hovering */
 #leftHover,
 #topHover,
 #rightHover,
-#contactHover {
+#bottomHover {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  background: transparent url("../images/left_arrow.png") no-repeat center center;
+  background-size: contain;
+  opacity: 0; }
+  #leftHover:hover,
+  #topHover:hover,
+  #rightHover:hover,
+  #bottomHover:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3); }
+
+#topHover,
+#bottomHover {
   width: 100%;
-  height: 100%; }
-
-#leftHover {
-  -webkit-transform: translate(-90%, 0);
-  -moz-transform: translate(-90%, 0);
-  -o-transform: translate(-90%, 0);
-  transform: translate(-90%, 0);
-  opacity: 0; }
-  #leftHover.showing {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-    opacity: 1;
-    width: 90%; }
-  #leftHover.step-out {
-    -webkit-transform: translate(-100%, 0);
-    -moz-transform: translate(-100%, 0);
-    -o-transform: translate(-100%, 0);
-    transform: translate(-100%, 0); }
-
-#topHover {
-  -webkit-transform: translate(0, -90%);
-  -moz-transform: translate(0, -90%);
-  -o-transform: translate(0, -90%);
-  transform: translate(0, -90%);
-  opacity: 0; }
-  #topHover.showing {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-    opacity: 1;
-    height: 85%; }
-  #topHover.step-out {
-    -webkit-transform: translate(0, -100%);
-    -moz-transform: translate(0, -100%);
-    -o-transform: translate(0, -100%);
-    transform: translate(0, -100%); }
+  height: 13%;
+  background: transparent url("../images/up_arrow.png") no-repeat center center;
+  background-size: contain;
+  top: 10px; }
 
 #rightHover {
-  float: right;
-  -webkit-transform: translate(90%, 0);
-  -moz-transform: translate(90%, 0);
-  -o-transform: translate(90%, 0);
-  transform: translate(90%, 0);
-  opacity: 0; }
-  #rightHover.showing {
-    -webkit-transform: translate(11%, 0);
-    -moz-transform: translate(11%, 0);
-    -o-transform: translate(11%, 0);
-    transform: translate(11%, 0);
-    opacity: 1;
-    width: 90%; }
-  #rightHover.step-out {
-    -webkit-transform: translate(100%, 0);
-    -moz-transform: translate(100%, 0);
-    -o-transform: translate(100%, 0);
-    transform: translate(100%, 0); }
+  left: auto;
+  right: 0;
+  background: transparent url("../images/right_arrow.png") no-repeat center center;
+  background-size: contain; }
 
-#contactHover {
-  background: transparent;
-  -webkit-transform: translate(0, 90%);
-  -moz-transform: translate(0, 90%);
-  -o-transform: translate(0, 90%);
-  transform: translate(0, 90%); }
-  #contactHover.showing {
-    -webkit-transform: translate(0, 15%);
-    -moz-transform: translate(0, 15%);
-    -o-transform: translate(0, 15%);
-    transform: translate(0, 15%);
-    height: 87%;
-    background: rgba(0, 0, 0, 0.8); }
-  #contactHover.step-out {
-    -webkit-transform: translate(0, 100%);
-    -moz-transform: translate(0, 100%);
-    -o-transform: translate(0, 100%);
-    transform: translate(0, 100%); }
+#bottomHover {
+  top: auto;
+  bottom: 0;
+  background: transparent url("../images/down_arrow.png") no-repeat center center;
+  background-size: contain; }
 
-/* preview images for left/top/right */
-#leftHover img,
-#rightHover img {
-  position: relative;
-  height: 100%;
-  width: 90%;
-  float: left; }
-  #leftHover img.showing,
-  #rightHover img.showing {
-    width: 100%; }
-
-#rightHover img {
-  float: right; }
-
-#topHover img {
+.popups {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
-  height: 90%; }
-  #topHover img.showing {
-    height: 100%; }
+  height: 100%;
+  padding: 15% 10% 10% 10%; }
+
+#aboutMe {
+  color: black;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
+  transform: translate(0, -100%); }
+  #aboutMe.showing {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1; }
 
 #contactInfo {
-  opacity: 0;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  top: 30%; }
+  padding-top: 7%;
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  transform: translate(0, 100%); }
   #contactInfo.showing {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
     opacity: 1; }
+
+#contactInfo section {
+  width: 80%;
+  margin-left: 10%; }
+
+#contactInfo section span:before,
+#contactInfo section span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 5px;
+  /* space between lines */
+  margin-top: -2px;
+  /* adjust vertical align */
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  right: 55%; }
+
+#contactInfo section span:after {
+  left: 55%; }
+
+#contactInfo a img {
+  max-width: 50px; }
+
+#google_spacing {
+  display: inline-block; }
 
 /*
 ===========================================================================
@@ -821,7 +806,7 @@ TITLE: Backgrounds
 ===========================================================================
 */
 .mobileBG {
-  background: transparent url("../images/voilah-teaser-mobile@3x.jpg") no-repeat center center;
+  background: transparent url("../images/kenny_portrait.jpg") no-repeat center center;
   background-size: cover;
   position: absolute;
   top: 0;
