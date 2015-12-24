@@ -773,7 +773,7 @@ TITLE: Mouse hover effects
   height: 13%;
   background: transparent url("../images/up_arrow.png") no-repeat center center;
   background-size: contain;
-  top: 0%; }
+  top: 2rem; }
 
 #rightHover {
   left: auto;
@@ -970,8 +970,9 @@ TITLE: Backgrounds
     vertical-align: middle; }
   .content__text-wrapper {
     display: inline-block;
-    /*vertical-align: middle;*/
-    width: 90%; }
+    vertical-align: middle;
+    width: 90%;
+    margin-top: 20%; }
   @media (min-width: 980px) {
     .content {
       position: absolute;

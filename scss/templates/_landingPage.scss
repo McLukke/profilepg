@@ -43,8 +43,9 @@ TITLE: Backgrounds
 
   &__text-wrapper {
     display: inline-block;
-    /*vertical-align: middle;*/
+    vertical-align: middle;
     width: 90%;
+    margin-top: 20%;
   }
 
   @include breakpoint($laptop) {

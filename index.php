@@ -24,11 +24,11 @@
 			 	</div>
 			 	<div id="text3" class="text">
 			 		<h1>"Who do you work for?"</h1>
-			 		<p>I want to work with the best, the engaged and the sensible<br />to help make the Internet a better place</p>
+			 		<p>I want to work with the best, the engaged and the sensible to help make the Internet a better place</p>
 			 	</div>
 			 	<div id="text4" class="text">
-			 		<h1>When I'm not coding<br />with the coolest?</h1>
-			 		<p>You'll find me studying rocks, riding my bike or<br />just getting yelled at on the Internet =(</p>
+			 		<h1>When I'm not coding with the coolest?</h1>
+			 		<p>You'll find me studying rocks, riding my bike or getting yelled at on the Internet =(</p>
 			 	</div>
 			</div>
 
