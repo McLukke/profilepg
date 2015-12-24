@@ -1,0 +1,97 @@
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Molecule
+TITLE: Parallax Container
+===========================================================================
+*/
+
+.parallaxBG {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.parallaxWrapper {
+	display: none;
+	visibility: hidden;
+
+	-webkit-perspective: 4000px;
+	-moz-perspective: 4000px;
+	perspective: 4000px;
+
+	&:before {
+		// not visible but is used by jQuery to check device type
+		content: 'mobile';
+	}
+
+	@include breakpoint($laptop) {
+		display: block;
+		visibility: visible;
+
+		position: relative;
+		overflow: hidden;
+		z-index: 200;
+		top: 0;
+		left: 0;
+	  -webkit-transform-style: preserve-3d;
+	  -moz-transform-style: preserve-3d;
+	  -ms-transform-style: preserve-3d;
+	  -o-transform-style: preserve-3d;
+	  transform-style: preserve-3d;
+
+	  -webkit-transform: translateZ(0);
+	  -moz-transform: translateZ(0);
+	  -ms-transform: translateZ(0);
+	  -o-transform: translateZ(0);
+	  transform: translateZ(0);
+
+		&:before {
+			// not visible but is used by jQuery to check device type
+			content: 'web';
+			display: none;
+		}
+	}
+
+	@include breakpoint(1440px) {
+		max-width: 1440px !important;
+		margin: 0 auto;
+	}
+}
+
+.desktop-bg {
+  backface-visibility: hidden;
+  /* fixes a FF bug - images not correctly rendering*/
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+#background {
+  transform: translateZ(50px);
+  width: 100%;
+}
+
+#foreground {
+	position: absolute;
+  transform: translateZ(400px);
+  width: 83%;
+  top: 10%;
+  left: 10%;
+
+  @include breakpoint(1440px) {
+    width: 90%;
+    top: 5%;
+    left: 5%;
+  }
+}
