@@ -19,10 +19,13 @@
 	</div>
 
 	<div class="hover-effects">
-		<?php
-			include('partials/about-me.php');
-			include('partials/contact.php');
-		?>
+		<div id="aboutMe" class="popups text-center">
+			<?php include('partials/about-me.php'); ?>
+		</div>
+
+		<div id="contactInfo" class="popups">
+			<?php include('partials/contact.php'); ?>
+		</div>
 
 		<div id="leftHover" class="triggers"></div>
 		<div id="topHover" class="triggers"></div>

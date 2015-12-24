@@ -19,7 +19,8 @@ TITLE: Contact Info
 	}
 }
 
-#contactInfo section {
+#contactInfo section,
+.mobi-contact section {
 	width: 80%;
 	margin: 2% 10%;
 	@include breakpoint($laptop) {
@@ -43,11 +44,13 @@ TITLE: Contact Info
 	right: 55%;
 }
 
-#contactInfo section span:after {
+#contactInfo section span:after,
+.mobi-contact section span:after {
 	left: 55%;
 }
 
-#contactInfo h1 {
+#contactInfo h1,
+.mobi-contact h1 {
 	margin-bottom: 15px;
 }
 
@@ -57,7 +60,8 @@ TITLE: Contact Info
 	margin-left: 15px;
 }
 
-#contactInfo a img {
+#contactInfo a img,
+.mobi-contact a img {
 	max-width: 50px;
 	margin: 5px 15px;
 }

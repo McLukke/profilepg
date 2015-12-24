@@ -27,14 +27,14 @@ TITLE: SCSS Manifest
 
 // ATOMS
   @import "atoms/scaffolding";
+  @import "atoms/about-me";
+  @import "atoms/contact-info";
 
 // MOLECULES
   @import "molecules/parallax";
   @import "molecules/content-desktop";
   @import "molecules/content-mobile";
   @import "molecules/hover-effects";
-  @import "molecules/about-me";
-  @import "molecules/contact-info";
 
 // ORGANISMS
   @import "organisms/logo";

@@ -6,6 +6,7 @@
 		<?php
 			include('partials/backgrounds.php');
 			include('partials/content.php');
+			include('partials/mobile-content.php');
 		?>
 	</main>
 </body>

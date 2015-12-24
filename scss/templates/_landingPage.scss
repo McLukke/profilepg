@@ -45,7 +45,10 @@ TITLE: Backgrounds
     display: inline-block;
     vertical-align: middle;
     width: 90%;
-    margin-top: 20%;
+    margin-top: 35%;
+    @include breakpoint($laptop) {
+      margin-top: 20%;
+    }
   }
 
   @include breakpoint($laptop) {
