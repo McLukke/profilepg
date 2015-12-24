@@ -31,6 +31,8 @@ function initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspec
   var newLeft = halfWidth - newImageWidth / 2;
   var newTop = (wrapperHeight - newImageHeight) / -2;
 
+  var tempHeight = $(window).height();
+
   //set an height for the .cd-background-wrapper
   $('.parallaxWrapper').css({
     'height' : $(window).height()
@@ -46,10 +48,19 @@ function initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspec
 
   // set dimensions for hover-effects div
   $('.hover-effects').css({
-    'height' : $('.parallaxBG').height(),
     'left' : newLeft,
     'top' : newTop,
     'width' : newImageWidth,
     'max-width' : '100%'
   });
+
+  if ( $('.parallaxWrapper').height() < $('.parallaxBG').height() ) {
+    $('.hover-effects').css({
+      'height' : $('.parallaxWrapper').height()
+    });
+  } else {
+    $('.hover-effects').css({
+      'height' : $('.parallaxBG').height()
+    });
+  }
 }

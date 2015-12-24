@@ -140,7 +140,11 @@ $baseline-px: 16px;
     @media (min-width: $wide) {
       @content;
     }
-  } 
+  } else {
+    @media (min-width: $point) {
+      @content;
+    }
+  }
 }
 
 @mixin eztransform ($xdir, $ydir) {

@@ -540,6 +540,32 @@ TITLE: Parallax Container
       .parallaxWrapper:before {
         content: 'web';
         display: none; } }
+  @media (min-width: 980px) {
+    .parallaxWrapper else {
+      display: block;
+      visibility: visible;
+      position: relative;
+      overflow: hidden;
+      z-index: 200;
+      top: 0;
+      left: 0;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      -o-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform: translateZ(0);
+      -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      -o-transform: translateZ(0);
+      transform: translateZ(0); }
+      .parallaxWrapper else:before {
+        content: 'web';
+        display: none; } }
+  @media (min-width: 1440px) {
+    .parallaxWrapper else {
+      max-width: 1440px !important;
+      margin: 0 auto; } }
 
 .desktop-bg {
   backface-visibility: hidden;
@@ -556,6 +582,11 @@ TITLE: Parallax Container
   width: 83%;
   top: 10%;
   left: 10%; }
+  @media (min-width: 1440px) {
+    #foreground else {
+      width: 90%;
+      top: 5%;
+      left: 5%; } }
 
 /*
 ===========================================================================
@@ -580,6 +611,15 @@ TITLE: Desktop Content
       margin: 0 auto;
       font-size: 1rem;
       line-height: 1.2; } }
+  @media (min-width: 980px) {
+    #desktop_content .text li else {
+      display: block;
+      visibility: visible;
+      max-width: 32rem;
+      min-height: 5rem;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.2; } }
 
 #desktop_content .title li {
   font-weight: bold;
@@ -591,8 +631,17 @@ TITLE: Desktop Content
       visibility: visible;
       font-size: 2rem;
       letter-spacing: 0.125rem; } }
+  @media (min-width: 980px) {
+    #desktop_content .title li else {
+      display: block;
+      visibility: visible;
+      font-size: 2rem;
+      letter-spacing: 0.125rem; } }
   @media (min-width: 1024px) {
     #desktop_content .title li {
+      margin-bottom: 1.5rem; } }
+  @media (min-width: 1024px) {
+    #desktop_content .title li else {
       margin-bottom: 1.5rem; } }
 
 /*
@@ -617,8 +666,17 @@ TITLE: Mobile Content
   .mobile_title {
     font-size: 2.75rem; } }
 
+@media (min-width: 375px) {
+  .mobile_title else {
+    font-size: 2.75rem; } }
+
 @media (min-width: 533px) {
   .mobile_title {
+    font-size: 3.125rem;
+    letter-spacing: 0.0625rem; } }
+
+@media (min-width: 533px) {
+  .mobile_title else {
     font-size: 3.125rem;
     letter-spacing: 0.0625rem; } }
 
@@ -626,8 +684,16 @@ TITLE: Mobile Content
   .mobile_title {
     font-size: 3.25rem; } }
 
+@media (min-width: 768px) {
+  .mobile_title else {
+    font-size: 3.25rem; } }
+
 @media (min-width: 980px) {
   .mobile_title {
+    display: none; } }
+
+@media (min-width: 980px) {
+  .mobile_title else {
     display: none; } }
 
 .mobile_text {
@@ -637,12 +703,23 @@ TITLE: Mobile Content
     .mobile_text {
       font-size: 0.9rem;
       max-width: 20rem; } }
+  @media (min-width: 375px) {
+    .mobile_text else {
+      font-size: 0.9rem;
+      max-width: 20rem; } }
   @media (min-width: 533px) {
     .mobile_text {
       font-size: 1.0625rem;
       max-width: 23rem; } }
+  @media (min-width: 533px) {
+    .mobile_text else {
+      font-size: 1.0625rem;
+      max-width: 23rem; } }
   @media (min-width: 980px) {
     .mobile_text {
+      display: none; } }
+  @media (min-width: 980px) {
+    .mobile_text else {
       display: none; } }
 
 /*
@@ -661,9 +738,13 @@ TITLE: Mouse hover effects
   top: 0;
   left: 0;
   overflow: hidden;
+  height: 100%;
   display: none; }
   @media (min-width: 980px) {
     .hover-effects {
+      display: block; } }
+  @media (min-width: 980px) {
+    .hover-effects else {
       display: block; } }
 
 /* positioning of divs for hovering */
@@ -692,7 +773,7 @@ TITLE: Mouse hover effects
   height: 13%;
   background: transparent url("../images/up_arrow.png") no-repeat center center;
   background-size: contain;
-  top: 10px; }
+  top: 0%; }
 
 #rightHover {
   left: auto;
@@ -702,7 +783,7 @@ TITLE: Mouse hover effects
 
 #bottomHover {
   top: auto;
-  bottom: 0;
+  bottom: 0%;
   background: transparent url("../images/down_arrow.png") no-repeat center center;
   background-size: contain; }
 
@@ -767,7 +848,19 @@ TITLE: Contact Info
 
 #contactInfo section {
   width: 80%;
-  margin: 4% 10%; }
+  margin: 2% 10%; }
+  @media (min-width: 980px) {
+    #contactInfo section {
+      margin: 4% 10%; } }
+  @media (min-width: 980px) {
+    #contactInfo section else {
+      margin: 4% 10%; } }
+  @media (min-width: 1200px) {
+    #contactInfo section {
+      margin: 6% 10%; } }
+  @media (min-width: 1200px) {
+    #contactInfo section else {
+      margin: 6% 10%; } }
 
 #contactInfo section span:before,
 #contactInfo section span:after {
@@ -858,6 +951,9 @@ TITLE: Backgrounds
   @media (min-width: 980px) {
     .mobileBG {
       display: none; } }
+  @media (min-width: 980px) {
+    .mobileBG else {
+      display: none; } }
 
 .content {
   position: relative;
@@ -878,6 +974,14 @@ TITLE: Backgrounds
     width: 90%; }
   @media (min-width: 980px) {
     .content {
+      position: absolute;
+      z-index: 900;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; } }
+  @media (min-width: 980px) {
+    .content else {
       position: absolute;
       z-index: 900;
       top: 0;

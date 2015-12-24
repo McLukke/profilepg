@@ -21,7 +21,13 @@ TITLE: Contact Info
 
 #contactInfo section {
 	width: 80%;
-	margin: 4% 10%;
+	margin: 2% 10%;
+	@include breakpoint($laptop) {
+		margin: 4% 10%;
+	}
+	@include breakpoint($wide) {
+		margin: 6% 10%;
+	}
 }
 
 #contactInfo section span:before,
