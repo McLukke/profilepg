@@ -386,7 +386,7 @@ function initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspec
 
   var tempHeight = $(window).height();
 
-  //set an height for the .cd-background-wrapper
+  //set height for the .cd-background-wrapper
   $('.parallaxWrapper').css({
     'height' : $(window).height()
   });
@@ -401,9 +401,9 @@ function initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspec
 
   // set dimensions for hover-effects div
   $('.hover-effects').css({
-    'left' : newLeft,
+    'left' : newLeft * 0.6,
     'top' : newTop,
-    'width' : newImageWidth,
+    'width' : newImageWidth * 1.015,
     'max-width' : '100%'
   });
 
