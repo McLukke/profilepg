@@ -63,6 +63,7 @@ $(function() {
   	}
   });
 
+  // hover & click effects
   $('#topHover').click(function() {
     $('.triggers').toggleClass('hidden');
     $(this).removeClass('hidden');
