@@ -555,7 +555,9 @@ TITLE: Contact Info
       margin: 6% 10%; } }
 
 #contactInfo section span:before,
-#contactInfo section span:after {
+#contactInfo section span:after,
+.mobi-contact section span:before,
+.mobi-contact section span:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -585,6 +587,24 @@ TITLE: Contact Info
 .mobi-contact a img {
   max-width: 50px;
   margin: 5px 15px; }
+
+.github-icon1 {
+  display: none; }
+  @media (min-width: 980px) {
+    .github-icon1 {
+      display: inline-block; } }
+  @media (min-width: 980px) {
+    .github-icon1 else {
+      display: inline-block; } }
+
+.github-icon2 {
+  display: inline-block; }
+  @media (min-width: 980px) {
+    .github-icon2 {
+      display: none; } }
+  @media (min-width: 980px) {
+    .github-icon2 else {
+      display: none; } }
 
 .voting {
   width: 35%;

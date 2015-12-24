@@ -8,7 +8,7 @@
 <h1>Connect with me:</h1>
 <span>
 	<a href="http://ca.linkedin.com/in/kenshengjialu"><img src="images/linkedin.png" alt="LinkedIn" /></a>
-	<a href="http://github.com/McLukke"><img src="images/github.png" alt="Github" /></a>
+	<a href="http://github.com/McLukke"><img class="github-icon1" src="images/github.png" alt="Github" /><img class="github-icon2" src="images/github2.png" alt="Github" /></a>
 	<div id="google_spacing"><div class="g-follow" data-href="https://plus.google.com/106759043569228951176" data-rel="author" data-height="24"></div></div>
 </span>
 

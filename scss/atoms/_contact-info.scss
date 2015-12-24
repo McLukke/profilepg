@@ -32,7 +32,9 @@ TITLE: Contact Info
 }
 
 #contactInfo section span:before,
-#contactInfo section span:after {
+#contactInfo section span:after,
+.mobi-contact section span:before,
+.mobi-contact section span:after {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -64,6 +66,20 @@ TITLE: Contact Info
 .mobi-contact a img {
 	max-width: 50px;
 	margin: 5px 15px;
+}
+
+.github-icon1 {
+	display: none;
+	@include breakpoint($laptop) {
+		display: inline-block;
+	}
+}
+
+.github-icon2 {
+	display: inline-block;
+	@include breakpoint($laptop) {
+		display: none;
+	}
 }
 
 .voting {
