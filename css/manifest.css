@@ -854,10 +854,7 @@ TITLE: Contact Info
   @media (min-width: 980px) {
     #contactInfo section else {
       margin: 4% 10%; } }
-  @media (min-width: 1200px) {
-    #contactInfo section {
-      margin: 6% 10%; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1440px) {
     #contactInfo section else {
       margin: 6% 10%; } }
 
