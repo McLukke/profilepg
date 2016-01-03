@@ -85,6 +85,18 @@ $(function() {
   	}
   });
 
+  // animate text
+  $('.text').not(':first').hide();
+  setInterval(function() {
+    $('#text' + textIndex).fadeOut(fadeSpeed);
+    if (textIndex == $('.text').length) {
+      textIndex = 1;
+    } else {
+      ++textIndex;
+    }
+    $('#text' + textIndex).delay(fadeSpeed).fadeIn(fadeSpeed);
+  }, interval);
+
   // detect mouse movement
   $(window).on('mousemove', function(e) {
   	if (mediaQuery == 'web') {
@@ -110,6 +122,18 @@ $(function() {
   	}
   });
 
+  // hover & click effects
+  $('#topHover').click(function() {
+    $('.triggers').toggleClass('hidden');
+    $(this).removeClass('hidden');
+    $('#aboutMe').toggleClass('showing');
+  });
+
+  $('#bottomHover').click(function() {
+    $('.triggers').toggleClass('hidden');
+    $(this).removeClass('hidden');
+    $('#contactInfo').toggleClass('showing');
+  });
 });
 
 
@@ -147,14 +171,14 @@ $(function() {
 });
 
 // slider
-// var ProfileWebsite = angular.module('ProfileWebsite', ['ngTouch']);
+var ProfileWebsite = angular.module('ProfileWebsite', ['ngTouch']);
 
-// ProfileWebsite.controller('SliderCtrl', ['$scope', function($scope) {
-//   $scope.slides = [
-//     {image : 'images/kenny_portrait.jpg', description : 'Image 00'},
-//     {image : 'images/kenny_bg.jpg', description : 'Image 01'},
-//     {image : 'images/aveconcept.png', description : 'Image 02'},
-//     {image : 'images/public_art_hk.png', description : 'Image 03'},
-//     {image : 'images/willey_printing.png', description : 'Image 04'}
-//   ];
-// }]);
+ProfileWebsite.controller('SliderCtrl', ['$scope', function($scope) {
+  $scope.slides = [
+    {image : 'images/kenny_portrait.jpg', description : 'Image 00'},
+    {image : 'images/kenny_bg.jpg', description : 'Image 01'},
+    {image : 'images/aveconcept.png', description : 'Image 02'},
+    {image : 'images/public_art_hk.png', description : 'Image 03'},
+    {image : 'images/willey_printing.png', description : 'Image 04'}
+  ];
+}]);
