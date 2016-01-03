@@ -10,7 +10,7 @@ $(function() {
   // define X-Y-axes max rotation
   var maxRotationX = 3,
       maxRotationY = 5,
-      aspectRatio;
+      aspectRatio = halfWidth / halfHeight;
 
   // set aspect ratio & first load background
   $('.parallaxBG').find('img').eq(0).load(function() {
