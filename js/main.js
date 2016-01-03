@@ -10,12 +10,7 @@ $(function() {
   // define X-Y-axes max rotation
   var maxRotationX = 3,
       maxRotationY = 5,
-      aspectRatio;
-
-  var interval = 7000;
-  var fadeSpeed = 500;
-  var textIndex = 1;
-  var textArray = $('.text');
+      aspectRatio = halfWidth / halfHeight;
 
   // set aspect ratio & first load background
   $('.parallaxBG').find('img').eq(0).load(function() {
@@ -25,18 +20,6 @@ $(function() {
   		initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspectRatio);
   	}
   });
-
-  // animate text
-  $('.text').not(':first').hide();
-  setInterval(function() {
-    $('#text' + textIndex).fadeOut(fadeSpeed);
-    if (textIndex == $('.text').length) {
-      textIndex = 1;
-    } else {
-      ++textIndex;
-    }
-    $('#text' + textIndex).delay(fadeSpeed).fadeIn(fadeSpeed);
-  }, interval);
 
   // detect mouse movement
   $(window).on('mousemove', function(e) {
@@ -63,18 +46,6 @@ $(function() {
   	}
   });
 
-  // hover & click effects
-  $('#topHover').click(function() {
-    $('.triggers').toggleClass('hidden');
-    $(this).removeClass('hidden');
-    $('#aboutMe').toggleClass('showing');
-  });
-
-  $('#bottomHover').click(function() {
-    $('.triggers').toggleClass('hidden');
-    $(this).removeClass('hidden');
-    $('#contactInfo').toggleClass('showing');
-  });
 });
 
 
