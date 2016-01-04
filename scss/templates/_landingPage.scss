@@ -10,6 +10,13 @@ TITLE: Backgrounds
 ===========================================================================
 */
 
+.landingPage {
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
 .mobileBG {
 	background: transparent url('../images/kenny_portrait.jpg') no-repeat center center;
 	background-size: cover;

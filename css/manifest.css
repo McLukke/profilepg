@@ -494,24 +494,17 @@ a:visited {
 PROJECT: 151102
 CLIENT: N/A
 DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
-CLASS: Molecule
-TITLE: About Me
+CLASS: Atom
+TITLE: Project 1
 ===========================================================================
 */
-#aboutMe {
-  color: black;
-  text-align: left;
-  background-color: rgba(255, 255, 255, 0.9);
-  -webkit-transform: translate(0, -100%);
-  -moz-transform: translate(0, -100%);
-  -o-transform: translate(0, -100%);
-  transform: translate(0, -100%); }
-  #aboutMe.showing {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-    opacity: 1; }
+.project1 {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  background: transparent url("../images/aveconcept.png") no-repeat center center;
+  background-size: cover; }
 
 /*
 ===========================================================================
@@ -520,103 +513,36 @@ TITLE: About Me
 PROJECT: 151102
 CLIENT: N/A
 DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
-CLASS: Molecule
-TITLE: Contact Info
+CLASS: Atom
+TITLE: Project 2
 ===========================================================================
 */
-#contactInfo {
-  padding-top: 8%;
-  -webkit-transform: translate(0, 100%);
-  -moz-transform: translate(0, 100%);
-  -o-transform: translate(0, 100%);
-  transform: translate(0, 100%); }
-  #contactInfo.showing {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-    opacity: 1; }
-
-#contactInfo section,
-.mobi-contact section {
-  width: 80%;
-  margin: 2% 10%; }
-  @media (min-width: 980px) {
-    #contactInfo section,
-    .mobi-contact section {
-      margin: 4% 10%; } }
-  @media (min-width: 980px) {
-    #contactInfo section else,
-    .mobi-contact section else {
-      margin: 4% 10%; } }
-  @media (min-width: 1440px) {
-    #contactInfo section else,
-    .mobi-contact section else {
-      margin: 6% 10%; } }
-
-#contactInfo section span:before,
-#contactInfo section span:after,
-.mobi-contact section span:before,
-.mobi-contact section span:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 45%;
-  height: 5px;
-  /* space between lines */
-  margin-top: 0px;
-  /* adjust vertical align */
-  border-top: 1px solid;
-  /*border-bottom: 1px solid;*/
-  right: 55%; }
-
-#contactInfo section span:after,
-.mobi-contact section span:after {
-  left: 55%; }
-
-#contactInfo h1,
-.mobi-contact h1 {
-  margin-bottom: 15px; }
-
-#google_spacing {
+.project2 {
+  width: 100%;
+  height: 100%;
   display: inline-block;
-  top: -1rem;
-  margin-left: 15px; }
+  float: left;
+  background: transparent url("../images/public_art_hk.png") no-repeat center center;
+  background-size: cover; }
 
-#contactInfo a img,
-.mobi-contact a img {
-  max-width: 50px;
-  margin: 5px 15px; }
-
-.github-icon1 {
-  display: none; }
-  @media (min-width: 980px) {
-    .github-icon1 {
-      display: inline-block; } }
-  @media (min-width: 980px) {
-    .github-icon1 else {
-      display: inline-block; } }
-
-.github-icon2 {
-  display: inline-block; }
-  @media (min-width: 980px) {
-    .github-icon2 {
-      display: none; } }
-  @media (min-width: 980px) {
-    .github-icon2 else {
-      display: none; } }
-
-.voting {
-  width: 35%;
-  margin: 0 auto; }
-
-.voting a {
-  float: left; }
-  .voting a:nth-child(2n) {
-    float: right; }
-
-.voting a span {
-  display: block; }
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Atom
+TITLE: Project 3
+===========================================================================
+*/
+.project3 {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  background: transparent url("../images/willey_printing.png") no-repeat left center;
+  background-size: cover; }
 
 /*
 ===========================================================================
@@ -905,6 +831,17 @@ TITLE: Mouse hover effects
 PROJECT: 151102
 CLIENT: N/A
 DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Molecule
+TITLE: Slider
+===========================================================================
+*/
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
 CLASS: Organism
 TITLE: Logo
 ===========================================================================
@@ -933,6 +870,12 @@ CLASS: Template
 TITLE: Backgrounds
 ===========================================================================
 */
+.landingPage {
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  display: block; }
+
 .mobileBG {
   background: transparent url("../images/kenny_portrait.jpg") no-repeat center center;
   background-size: cover;
@@ -1022,3 +965,134 @@ TITLE: Loading Page
   -moz-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
   transform: translate(0, -50%); }
+
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Molecule
+TITLE: About Me
+===========================================================================
+*/
+#aboutMe {
+  color: black;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
+  transform: translate(0, -100%); }
+  #aboutMe.showing {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1; }
+
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Molecule
+TITLE: Contact Info
+===========================================================================
+*/
+#contactInfo {
+  padding-top: 8%;
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  transform: translate(0, 100%); }
+  #contactInfo.showing {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1; }
+
+#contactInfo section,
+.mobi-contact section {
+  width: 80%;
+  margin: 2% 10%; }
+  @media (min-width: 980px) {
+    #contactInfo section,
+    .mobi-contact section {
+      margin: 4% 10%; } }
+  @media (min-width: 980px) {
+    #contactInfo section else,
+    .mobi-contact section else {
+      margin: 4% 10%; } }
+  @media (min-width: 1440px) {
+    #contactInfo section else,
+    .mobi-contact section else {
+      margin: 6% 10%; } }
+
+#contactInfo section span:before,
+#contactInfo section span:after,
+.mobi-contact section span:before,
+.mobi-contact section span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 5px;
+  /* space between lines */
+  margin-top: 0px;
+  /* adjust vertical align */
+  border-top: 1px solid;
+  /*border-bottom: 1px solid;*/
+  right: 55%; }
+
+#contactInfo section span:after,
+.mobi-contact section span:after {
+  left: 55%; }
+
+#contactInfo h1,
+.mobi-contact h1 {
+  margin-bottom: 15px; }
+
+#google_spacing {
+  display: inline-block;
+  top: -1rem;
+  margin-left: 15px; }
+
+#contactInfo a img,
+.mobi-contact a img {
+  max-width: 50px;
+  margin: 5px 15px; }
+
+.github-icon1 {
+  display: none; }
+  @media (min-width: 980px) {
+    .github-icon1 {
+      display: inline-block; } }
+  @media (min-width: 980px) {
+    .github-icon1 else {
+      display: inline-block; } }
+
+.github-icon2 {
+  display: inline-block; }
+  @media (min-width: 980px) {
+    .github-icon2 {
+      display: none; } }
+  @media (min-width: 980px) {
+    .github-icon2 else {
+      display: none; } }
+
+.voting {
+  width: 35%;
+  margin: 0 auto; }
+
+.voting a {
+  float: left; }
+  .voting a:nth-child(2n) {
+    float: right; }
+
+.voting a span {
+  display: block; }

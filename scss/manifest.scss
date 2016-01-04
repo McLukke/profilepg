@@ -27,14 +27,16 @@ TITLE: SCSS Manifest
 
 // ATOMS
   @import "atoms/scaffolding";
-  @import "atoms/about-me";
-  @import "atoms/contact-info";
+  @import "atoms/slider-project1";
+  @import "atoms/slider-project2";
+  @import "atoms/slider-project3";
 
 // MOLECULES
   @import "molecules/parallax";
   @import "molecules/content-desktop";
   @import "molecules/content-mobile";
   @import "molecules/hover-effects";
+  @import "molecules/slider-projects";
 
 // ORGANISMS
   @import "organisms/logo";
@@ -42,6 +44,8 @@ TITLE: SCSS Manifest
 // TEMPLATES
   @import "templates/landingPage";
   @import "templates/loading";
+  @import "templates/about-me";
+  @import "templates/contact-info";
 
 // DEBUG
   // @import "debug";
