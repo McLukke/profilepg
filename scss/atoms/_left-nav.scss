@@ -6,15 +6,19 @@ PROJECT: 151102
 CLIENT: N/A
 DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
 CLASS: Atom
-TITLE: Project 2
+TITLE: Navigation Left Arrow
 ===========================================================================
 */
 
-.project2 {
-	width: 100%;
+.fp-controlArrow.fp-prev {
+	border: none;
+	position: absolute;
+	top: 6%;
+	left: 1%;
+	width: 10%;
 	height: 100%;
-	display: inline-block;
-	float: left;
-	background: transparent url('../images/public_art_hk.png') no-repeat top left;
-	background-size: cover;
+	background: transparent url('../images/left_arrow.png') no-repeat center center;
+	background-size: contain;
+	@extend %k-easing;
+	opacity: 1;
 }

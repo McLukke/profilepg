@@ -333,7 +333,7 @@ CLASS: Utility
 TITLE: CSS cubic-bezier timing/easing functions
 ===========================================================================
 */
-#leftHover,
+.fp-controlArrow.fp-prev, .fp-controlArrow.fp-next, #leftHover,
 #topHover,
 #rightHover,
 #bottomHover, .popups {
@@ -522,7 +522,7 @@ TITLE: Project 2
   height: 100%;
   display: inline-block;
   float: left;
-  background: transparent url("../images/public_art_hk.png") no-repeat center center;
+  background: transparent url("../images/public_art_hk.png") no-repeat top left;
   background-size: cover; }
 
 /*
@@ -543,6 +543,50 @@ TITLE: Project 3
   float: left;
   background: transparent url("../images/willey_printing.png") no-repeat left center;
   background-size: cover; }
+
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Atom
+TITLE: Navigation Left Arrow
+===========================================================================
+*/
+.fp-controlArrow.fp-prev {
+  border: none;
+  position: absolute;
+  top: 6%;
+  left: 1%;
+  width: 10%;
+  height: 100%;
+  background: transparent url("../images/left_arrow.png") no-repeat center center;
+  background-size: contain;
+  opacity: 1; }
+
+/*
+===========================================================================
+                                  KENNY LU
+---------------------------------------------------------------------------
+PROJECT: 151102
+CLIENT: N/A
+DELIVERABLE: PHP - JS codebase for Personal Profile 1.0
+CLASS: Atom
+TITLE: Navigation Right Arrow
+===========================================================================
+*/
+.fp-controlArrow.fp-next {
+  border: none;
+  position: absolute;
+  right: 1%;
+  top: 6%;
+  width: 10%;
+  height: 100%;
+  background: transparent url("../images/right_arrow.png") no-repeat center center;
+  background-size: contain;
+  opacity: 1; }
 
 /*
 ===========================================================================
@@ -781,20 +825,16 @@ TITLE: Mouse hover effects
 #topHover,
 #rightHover,
 #bottomHover {
+  border: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 10%;
   height: 100%;
+  cursor: pointer;
   background: transparent url("../images/left_arrow.png") no-repeat center center;
   background-size: contain;
-  opacity: 0; }
-  #leftHover:hover,
-  #topHover:hover,
-  #rightHover:hover,
-  #bottomHover:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.3); }
+  opacity: 1; }
 
 #topHover,
 #bottomHover {
@@ -835,6 +875,14 @@ CLASS: Molecule
 TITLE: Slider
 ===========================================================================
 */
+.projects {
+  position: absolute;
+  text-align: left;
+  bottom: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.4); }
+
 /*
 ===========================================================================
                                   KENNY LU

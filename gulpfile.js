@@ -25,8 +25,8 @@ gulp.task('sass', function() {
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
     return gulp.src([
-            'js/lib/jquery.js',
-            'js/lib/*.js',
+            // 'js/lib/jquery.js',
+            // 'js/lib/*.js',
             'js/functions.js',
             'js/main.js',
             'js/*.js'

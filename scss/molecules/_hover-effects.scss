@@ -27,19 +27,17 @@ TITLE: Mouse hover effects
 #topHover,
 #rightHover,
 #bottomHover {
+	border: none;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 10%;
 	height: 100%;
+	cursor: pointer;
 	background: transparent url('../images/left_arrow.png') no-repeat center center;
 	background-size: contain;
 	@extend %k-easing;
-	opacity: 0;
-	&:hover {
-		opacity: 1;
-		background-color: rgba(0,0,0,0.3);
-	}
+	opacity: 1;
 }
 
 #topHover,
@@ -74,3 +72,4 @@ TITLE: Mouse hover effects
 	padding: 15% 10% 10% 10%;
 	@extend %k-easing;
 }
+

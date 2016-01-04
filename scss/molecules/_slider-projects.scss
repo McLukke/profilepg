@@ -11,4 +11,10 @@ TITLE: Slider
 */
 
 .projects {
+	position: absolute;
+	text-align: left;
+	bottom: 0;
+	right: 0;
+	padding: 1rem 2rem;
+	background-color: rgba(0,0,0,0.4);
 }

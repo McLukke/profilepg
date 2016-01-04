@@ -27,9 +27,9 @@
 			<?php include('partials/contact.php'); ?>
 		</div>
 
-		<div id="leftHover" class="triggers"></div>
+		<!-- <div id="leftHover" class="triggers"></div> -->
 		<div id="topHover" class="triggers"></div>
-		<div id="rightHover" class="triggers"></div>
+		<!-- <div id="rightHover" class="triggers"></div> -->
 		<div id="bottomHover" class="triggers"></div>
 	</div>
 </div>

@@ -1,5 +1,7 @@
 // js goes here
 $(function() {
+  $('#fullpage').fullpage();
+
 	// get css 'content' value + remove extra quotes
   var mediaQuery = window.getComputedStyle(document.querySelector('.parallaxWrapper'), ':before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, "");
   
