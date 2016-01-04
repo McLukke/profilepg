@@ -23,5 +23,8 @@ TITLE: Navigation Left Arrow
 	display: none;
 	@include breakpoint($laptop) {
 		display: block;
+		&.hidden {
+			display: none;
+		}
 	}
 }

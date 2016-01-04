@@ -567,10 +567,14 @@ TITLE: Navigation Left Arrow
   display: none; }
   @media (min-width: 980px) {
     .fp-controlArrow.fp-prev {
-      display: block; } }
+      display: block; }
+      .fp-controlArrow.fp-prev.hidden {
+        display: none; } }
   @media (min-width: 980px) {
     .fp-controlArrow.fp-prev else {
-      display: block; } }
+      display: block; }
+      .fp-controlArrow.fp-prev else.hidden {
+        display: none; } }
 
 /*
 ===========================================================================
@@ -595,10 +599,14 @@ TITLE: Navigation Right Arrow
   display: none; }
   @media (min-width: 980px) {
     .fp-controlArrow.fp-next {
-      display: block; } }
+      display: block; }
+      .fp-controlArrow.fp-next.hidden {
+        display: none; } }
   @media (min-width: 980px) {
     .fp-controlArrow.fp-next else {
-      display: block; } }
+      display: block; }
+      .fp-controlArrow.fp-next else.hidden {
+        display: none; } }
 
 /*
 ===========================================================================
