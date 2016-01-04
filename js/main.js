@@ -18,25 +18,13 @@ $(function() {
   var textArray = $('.text');
 
   // set aspect ratio & first load background
-  $('.parallaxBG').find('img').eq(0).load(function() {
+  $('.parallaxBG').find('img').eq(0).load('index.php .parallaxBG', function() {
   	aspectRatio = $(this).width() / $(this).height();
 
   	if (mediaQuery == 'web') {
   		initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspectRatio);
   	}
   });
-
-  // animate text
-  $('.text').not(':first').hide();
-  setInterval(function() {
-    $('#text' + textIndex).fadeOut(fadeSpeed);
-    if (textIndex == $('.text').length) {
-      textIndex = 1;
-    } else {
-      ++textIndex;
-    }
-    $('#text' + textIndex).delay(fadeSpeed).fadeIn(fadeSpeed);
-  }, interval);
 
   // detect mouse movement
   $(window).on('mousemove', function(e) {
@@ -61,19 +49,6 @@ $(function() {
   	} else {
   		$('.parallaxWrapper').attr('style', '');
   	}
-  });
-
-  // hover & click effects
-  $('#topHover').click(function() {
-    $('.triggers').toggleClass('hidden');
-    $(this).removeClass('hidden');
-    $('#aboutMe').toggleClass('showing');
-  });
-
-  $('#bottomHover').click(function() {
-    $('.triggers').toggleClass('hidden');
-    $(this).removeClass('hidden');
-    $('#contactInfo').toggleClass('showing');
   });
 });
 
