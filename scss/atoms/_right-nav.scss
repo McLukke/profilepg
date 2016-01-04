@@ -20,5 +20,8 @@ TITLE: Navigation Right Arrow
 	background: transparent url('../images/right_arrow.png') no-repeat center center;
 	background-size: contain;
 	@extend %k-easing;
-	opacity: 1;
+	display: none;
+	@include breakpoint($laptop) {
+		display: block;
+	}
 }

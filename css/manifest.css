@@ -564,7 +564,13 @@ TITLE: Navigation Left Arrow
   height: 100%;
   background: transparent url("../images/left_arrow.png") no-repeat center center;
   background-size: contain;
-  opacity: 1; }
+  display: none; }
+  @media (min-width: 980px) {
+    .fp-controlArrow.fp-prev {
+      display: block; } }
+  @media (min-width: 980px) {
+    .fp-controlArrow.fp-prev else {
+      display: block; } }
 
 /*
 ===========================================================================
@@ -586,7 +592,13 @@ TITLE: Navigation Right Arrow
   height: 100%;
   background: transparent url("../images/right_arrow.png") no-repeat center center;
   background-size: contain;
-  opacity: 1; }
+  display: none; }
+  @media (min-width: 980px) {
+    .fp-controlArrow.fp-next {
+      display: block; } }
+  @media (min-width: 980px) {
+    .fp-controlArrow.fp-next else {
+      display: block; } }
 
 /*
 ===========================================================================
