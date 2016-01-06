@@ -64,6 +64,27 @@ function initBackground(halfWidth, halfHeight, maxRotationX, maxRotationY, aspec
 
 // js goes here
 $(function() {
+  var isMobile = {
+    Android: function() {
+      return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+      return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+      return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+      return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+  };
+
 	// get css 'content' value + remove extra quotes
   var mediaQuery = window.getComputedStyle(document.querySelector('.parallaxWrapper'), ':before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, "");
 
@@ -91,13 +112,18 @@ $(function() {
   });
 
   // detect mouse movement
-  $(window).on('mousemove', function(e) {
-  	if (mediaQuery == 'web') {
-  		window.requestAnimationFrame(function() {
-  			moveBackground(e, halfWidth, halfHeight, maxRotationX, maxRotationY);
-  		});
-  	}
-  });
+  if ( isMobile.any() ) {
+    $('#foreground').addClass('hidden');
+  } else {
+    window.addEventListener('mousemove', function(e) {
+      if (mediaQuery == 'web') {
+        $('#foreground').removeClass('hidden');
+        window.requestAnimationFrame(function() {
+          moveBackground(e, halfWidth, halfHeight, maxRotationX, maxRotationY);
+        });
+      }
+    }, false);
+  }
 
   // on resize
   $(window).on('resize', function() {
