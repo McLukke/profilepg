@@ -1222,6 +1222,9 @@ TITLE: Backgrounds
       bottom: 0;
       left: 0; } }
 
+.text {
+  text-shadow: 0.1em 0.1em 0.2em black; }
+
 /*
 ===========================================================================
                                   KENNY LU
