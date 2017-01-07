@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const parseArgs = require('minimist');
 
@@ -30,7 +31,14 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
-  plugins: (
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Kenny Lu',
+      template: path.join(__dirname, 'template', 'index.html'),
+      favicon: path.join(__dirname, 'template', 'coding.png'),
+      inject: false,
+    }),
+  ].concat(
     ARGV.DEV ?
     [
       new webpack.optimize.OccurenceOrderPlugin(),
@@ -110,6 +118,9 @@ module.exports = {
       ],
     },
   },
+  url: {
+    dataUrlLimit: 8192,
+  },
   module: {
     loaders: [
       {
@@ -126,7 +137,19 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        loaders: ['style', 'css', 'less'],
+        loader: 'style-loader!css-loader!less-loader',
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+      },
+      {
+        test: /\.(gif|jpe?g|png|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url!img',
+      },
+      {
+        test: /\.(woff2?|ttf|eot|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url',
       },
     ]
   },
