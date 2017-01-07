@@ -1,0 +1,40 @@
+{
+  "name": "kenny-lu-homepage",
+  "version": "1.0.0",
+  "description": "My very own personal page for the web",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/McLukke/profilepg"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src"
+  },
+  "author": "Kenny Lu",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "babel-preset-stage-0": "^6.0.15",
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.6.2",
+    "express": "^4.13.4",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
+  },
+  "dependencies": {
+    "babel-preset-stage-1": "^6.1.18",
+    "lodash": "^3.10.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.0.1",
+    "redux": "^3.0.4"
+  }
+}
