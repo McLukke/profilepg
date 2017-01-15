@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router';
 
-import LandingPage from './landing-page/container';
+import Home from './home/container';
 
 export default (
-  <Route path="/" component={LandingPage}>
+  <Route path="/" component={Home}>
   </Route>
 );
