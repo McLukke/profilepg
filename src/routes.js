@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router';
 
-import App from './App.js';
+import LandingPage from './landing-page/container';
 
 export default (
-  <Route path="/" component={App}>
+  <Route path="/" component={LandingPage}>
   </Route>
 );
