@@ -18,7 +18,7 @@ class HomePageContainer extends Component {
   componentWillMount() {
     setTimeout(
       () => { this.setState({ loading: false }); },
-      4000,
+      0,
     );
   }
 

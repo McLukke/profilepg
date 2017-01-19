@@ -1,0 +1,39 @@
+$myTeal: #64C7CC;
+$white: #fff;
+$baseHexWidth: 30px;
+$calculatedHexSides: calc(30px * 1.7320508076);
+$centerHexWidth: calc(30px * 1.7320508076 * 2);
+
+.base {
+  cursor: pointer;
+  color: $white;
+
+  &:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  .top {
+    width: 0;
+    border-bottom: $baseHexWidth solid $myTeal;
+    border-left: $calculatedHexSides solid transparent;
+    border-right: $calculatedHexSides solid transparent;
+  }
+
+  .center {
+    width: $centerHexWidth;
+    height: 60px;
+    background-color: $myTeal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottom {
+    width: 0;
+    border-top: $baseHexWidth solid $myTeal;
+    border-left: $calculatedHexSides solid transparent;
+    border-right: $calculatedHexSides solid transparent;
+  }
+}
