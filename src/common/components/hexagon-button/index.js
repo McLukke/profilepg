@@ -9,11 +9,10 @@ const Hexagon = ({
   ...restProps
 }) =>
   <a {...restProps} className={cx(styles.base, classname)}>
-    <div className={styles.top} />
-    <div className={styles.center}>
+    <div className={styles.hexagon} />
+    <div className={styles.content}>
       {children}
     </div>
-    <div className={styles.bottom} />
   </a>;
 
 Hexagon.propTypes = {

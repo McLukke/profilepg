@@ -2,38 +2,72 @@ $myTeal: #64C7CC;
 $white: #fff;
 $baseHexWidth: 30px;
 $calculatedHexSides: calc(30px * 1.7320508076);
-$centerHexWidth: calc(30px * 1.7320508076 * 2);
+$wrapperWidth: calc(30px * 1.7320508076 * 2);
+
+@keyframes pulse{
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
 
 .base {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
   color: $white;
 
-  &:hover {
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
-  }
-
-  .top {
-    width: 0;
-    border-bottom: $baseHexWidth solid $myTeal;
-    border-left: $calculatedHexSides solid transparent;
-    border-right: $calculatedHexSides solid transparent;
-  }
-
-  .center {
-    width: $centerHexWidth;
-    height: 60px;
-    background-color: $myTeal;
+  .content {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
+    position: absolute;
+    top: -50%;
+    height: 200%;
+    width: 100%;
+    z-index: 20;
+
+    &:hover {
+      animation: pulse 1.8s ease-in-out alternate infinite;
+    }
   }
 
-  .bottom {
-    width: 0;
-    border-top: $baseHexWidth solid $myTeal;
-    border-left: $calculatedHexSides solid transparent;
-    border-right: $calculatedHexSides solid transparent;
+  .hexagon {
+    width: $wrapperWidth;
+    height: 60px;
+    background-color: $myTeal;
+
+    &:before {
+      width: 0;
+      border-bottom: $baseHexWidth solid $myTeal;
+      border-left: $calculatedHexSides solid transparent;
+      border-right: $calculatedHexSides solid transparent;
+      height: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      top: -$baseHexWidth;
+    }
+
+    &:after {
+      border-top: $baseHexWidth solid $myTeal;
+      border-left: $calculatedHexSides solid transparent;
+      border-right: $calculatedHexSides solid transparent;
+      bottom: -$baseHexWidth;
+      height: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      width: 0;
+    }
   }
 }
