@@ -132,26 +132,33 @@ module.exports = {
         test: /(src[\\\/]common[\\\/]global-styles[\\\/].*\.css|node_modules[\\\/].*\.css)$/,
         loader:
           ARGV.DEV
-          ? 'style!css!postcss!resolve-url'
+          ? 'style-loader!css-loader!postcss!resolve-url'
           : ExtractTextPlugin.extract('style', 'css!postcss!resolve-url'),
       },
       {
         test: /\.scss$/,
-        exclude: /(src[\\\/]common[\\\/]global-styles[\\\/].*\.css|node_modules[\\\/].*\.css)$/,
+        exclude: /(src[\\\/]common[\\\/]global-styles[\\\/].*\.scss|node_modules[\\\/].*\.scss)$/,
         loader:
           ARGV.DEV
-          ? 'style!css?modules&localIdentName=[path]---[local]!postcss!resolve-url!sass?sourceMap'
+          ? 'style-loader!css-loader?modules&localIdentName=[path]---[local]!postcss!resolve-url!sass?sourceMap'
           : ExtractTextPlugin.extract('style', 'css?modules!postcss!resolve-url!sass?sourceMap'),
+      },
+      {
+        test: /(src[\\\/]common[\\\/]global-styles[\\\/].*\.scss|node_modules[\\\/].*\.scss)$/,
+        loader:
+          ARGV.DEV
+          ? 'style-loader!css-loader!postcss!resolve-url!sass?sourceMap'
+          : ExtractTextPlugin.extract('style', 'css!postcss!resolve-url!sass?sourceMap'),
       },
       {
         test: /\.less$/,
         loader: 'style-loader!css-loader!less-loader',
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader?modules',
-        include: /flexboxgrid/,
-      },
+      // {
+      //   test: /\.css$/,
+      //   loader: 'style-loader!css-loader?modules',
+      //   include: /flexboxgrid/,
+      // },
       {
         test: /\.(gif|jpe?g|png|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url!img',
