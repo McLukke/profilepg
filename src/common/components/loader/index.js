@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Loading from 'react-loading';
 
-const Loader = () => <Loading type="bubbles" color="blue" />;
+const Loader = ({
+  colour,
+}) =>
+  <Loading type="bubbles" color={colour || 'blue'} />;
+
+Loader.propTypes = {
+  colour: PropTypes.string,
+};
 
 export default Loader;

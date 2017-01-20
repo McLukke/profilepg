@@ -1,10 +1,11 @@
 import React from 'react';
-import Hexagon from '../../../common/components/hexagon-button';
+
+import Header from '../../../common/components/header';
 
 const HomePageContent = () =>
-  <div>
+  <div style={{ border: '1px solid blue' }}>
+    <Header />
     <h1>Home Page</h1>
-    <Hexagon>&#9759;</Hexagon>
   </div>;
 
 export default HomePageContent;
