@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Preload from 'react-preload/lib/Preload';
+import Scroll from 'react-scroll';
 
 import Loader from '../../common/components/loader';
 import HomePageContent from '../components/content';
@@ -20,6 +21,21 @@ class HomePageContainer extends Component {
       () => { this.setState({ loading: false }); },
       0,
     );
+
+    Scroll.Events.scrollEvent.register('begin', function() {
+      console.log("begin", arguments);
+    });
+
+    Scroll.Events.scrollEvent.register('end', function() {
+      console.log("end", arguments);
+    });
+
+    Scroll.scrollSpy.update();
+  }
+
+  componentWillUnmount() {
+    Scroll.Events.scrollEvent.remove('begin');
+    Scroll.Events.scrollEvent.remove('end');
   }
 
   render() {

@@ -1,11 +1,12 @@
 import React from 'react';
 
 import Header from '../../../common/components/header';
+import LandingImage from '../landing-image';
 
 const HomePageContent = () =>
   <div style={{ border: '1px solid blue' }}>
     <Header />
-    <h1>Home Page</h1>
+    <LandingImage />
   </div>;
 
 export default HomePageContent;

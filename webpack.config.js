@@ -169,6 +169,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
     alias: {
       common: 'src/common',
+      constants: 'src/constants',
       utils: 'src/utils',
       variables: 'src/common/global-styles/variables.scss',
     },
