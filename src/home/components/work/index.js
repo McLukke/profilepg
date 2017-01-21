@@ -4,9 +4,9 @@ import { sections } from 'constants';
 
 import styles from '../content/styles.scss';
 
-const LandingImage = () =>
-  <Scroll.Element name={sections[0].name} className={styles.base}>
-    {sections[0].title} Goes Here
+const Work = () =>
+  <Scroll.Element name={sections[1].name} className={styles.base}>
+    {sections[1].title} Goes Here
   </Scroll.Element>;
 
-export default LandingImage;
+export default Work;

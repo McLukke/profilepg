@@ -168,9 +168,9 @@ module.exports = {
     root: path.resolve(__dirname),
     extensions: ['', '.js', '.jsx'],
     alias: {
-      common: 'src/common',
-      constants: 'src/constants',
-      utils: 'src/utils',
+      components: 'src/common/components',
+      constants: 'src/common/constants',
+      utils: 'src/common/utils',
       variables: 'src/common/global-styles/variables.scss',
     },
   },

@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import Preload from 'react-preload/lib/Preload';
 import Scroll from 'react-scroll';
+import Loader from 'components/loader';
+import formatError from 'utils/format-error';
 
-import Loader from '../../common/components/loader';
 import HomePageContent from '../components/content';
-import formatError from '../../common/utils/format-error';
 
 const allImages = [];
 
