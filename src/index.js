@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 
-import './global/styles';
+import './common/global-styles';
 import reducers from './reducers';
 import routes from './routes';
 
