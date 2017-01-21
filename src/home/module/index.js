@@ -1,6 +1,6 @@
 import { combineReducers } from 'react-redux';
 
-const HomePageReducer = (
+const homePageReducer = (
   state = {},
   action,
 ) => {
@@ -10,6 +10,4 @@ const HomePageReducer = (
   }
 };
 
-export default combineReducers({
-  data: HomePageReducer,
-});
+export default homePageReducer;
