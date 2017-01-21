@@ -165,6 +165,12 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    root: path.resolve(__dirname),
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      common: 'src/common',
+      utils: 'src/utils',
+      variables: 'src/common/global-styles/variables.scss',
+    },
   },
 };
