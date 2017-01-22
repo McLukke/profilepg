@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Scroll from 'react-scroll';
 import { sections } from 'constants';
 
@@ -17,7 +17,7 @@ const Header = () =>
         duration={500}
       >
         {section.title}
-      </Scroll.Link>
+      </Scroll.Link>,
     )}
   </nav>;
 

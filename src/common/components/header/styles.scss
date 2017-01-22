@@ -1,3 +1,6 @@
+@import '~variables';
+
 .base {
-  background: red;
+  background: $white;
+  padding: .5em;
 }
