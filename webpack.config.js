@@ -122,6 +122,13 @@ module.exports = {
     dataUrlLimit: 8192,
   },
   module: {
+    preloaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'eslint',
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.jsx?$/,
@@ -163,6 +170,10 @@ module.exports = {
         loader: 'url',
       },
     ]
+  },
+  eslint: {
+    failOnWarning: false,
+    failOnError: true,
   },
   resolve: {
     root: path.resolve(__dirname),

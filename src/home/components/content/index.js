@@ -9,7 +9,7 @@ import Portfolio from '../portfolio';
 import Contact from '../contact';
 
 const HomePageContent = () =>
-  <div style={{ border: '1px solid blue' }}>
+  <section>
     <Header />
     <LandingImage />
     <Work />
@@ -17,6 +17,6 @@ const HomePageContent = () =>
     <Portfolio />
     <Contact />
     <Footer />
-  </div>;
+  </section>;
 
 export default HomePageContent;

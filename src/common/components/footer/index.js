@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import styles from './styles.scss';
 
 const Footer = () =>
-  <div className={styles.base}>
+  <section className={styles.base}>
     This is the Footer
-  </div>;
+  </section>;
 
 export default Footer;
