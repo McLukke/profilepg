@@ -22,7 +22,7 @@ const Header = () =>
             >
               {section.title}
             </Scroll.Link>
-          </Col>
+          </Col>,
         )}
       </Row>
     </Grid>
