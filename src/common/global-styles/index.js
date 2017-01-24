@@ -1,2 +1,3 @@
 /* custom resets */
-import baseStyles from './base.css';
+import 'flexboxgrid/css/flexboxgrid.css';
+import './base.css';
