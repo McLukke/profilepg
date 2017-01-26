@@ -1,16 +1,23 @@
 import React from 'react';
 import Scroll from 'react-scroll';
 import { sections } from 'constants';
-import { Container as Grid, Row, Col } from 'react-grid-system';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 
 import styles from './styles.scss';
 
 const Header = () =>
   <nav className={styles.base}>
-    <Grid>
-      <Row end="xs" center="lg">
-        {sections.map((section, index) =>
-          <Col xs={12} md={2}>
+    <Row>
+      <Col
+        xs={12}
+        md={8}
+        mdOffset={2}
+        lg={6}
+        lgOffset={3}
+      >
+        <div className={styles['link-wrapper']}>
+          {sections.map((section, index) =>
             <Scroll.Link
               key={index}
               activeClass="active"
@@ -21,11 +28,11 @@ const Header = () =>
               duration={500}
             >
               {section.title}
-            </Scroll.Link>
-          </Col>,
-        )}
-      </Row>
-    </Grid>
+            </Scroll.Link>,
+          )}
+        </div>
+      </Col>
+    </Row>
   </nav>;
 
 export default Header;

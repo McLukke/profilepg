@@ -24,7 +24,8 @@
     "import/no-unresolved": 0,
     "no-trailing-spaces": 1,
     "import/no-extraneous-dependencies": 0,
-    "import/extensions": 0
+    "import/extensions": 0,
+    "react/no-array-index-key": 0
   },
   "extends": "airbnb",
   "plugins": [

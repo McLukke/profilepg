@@ -2,5 +2,23 @@
 
 .base {
   background: $white;
-  padding: .5em;
+  padding: 1.5rem 1rem;
+}
+
+.link {
+  border: 1px solid purple;
+  cursor: pointer;
+  padding: 1rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    border-color: red;
+  }
+}
+
+.link-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
 }
