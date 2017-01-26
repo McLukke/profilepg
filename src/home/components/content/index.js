@@ -8,8 +8,10 @@ import Skills from '../skills';
 import Portfolio from '../portfolio';
 import Contact from '../contact';
 
+import styles from './styles.scss';
+
 const HomePageContent = () =>
-  <section>
+  <section className={styles.main}>
     <Header />
     <LandingImage />
     <Work />
