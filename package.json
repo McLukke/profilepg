@@ -63,6 +63,7 @@
     "classnames": "^2.2.5",
     "lodash": "^4.16.6",
     "normalize.css": "^5.0.0",
+    "rc-progress": "^2.0.6",
     "react": "^15.4.2",
     "react-amphtml": "^1.0.2",
     "react-bootstrap": "^0.30.7",
