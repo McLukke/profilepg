@@ -163,7 +163,7 @@ module.exports = {
       },
       {
         test: /\.(gif|jpe?g|png|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url!img',
+        loader: 'url!img!image-webpack?bypassOnDebug',
       },
       {
         test: /\.(woff2?|ttf|eot|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
