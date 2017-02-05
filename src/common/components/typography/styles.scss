@@ -1,0 +1,25 @@
+@import '~variables';
+
+@mixin text-base {
+  color: $charcoal;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.base {
+  @include text-base;
+}
+
+.section-header {
+  @include text-base;
+
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.text-block-subheader {
+  @include text-base;
+
+  font-style: italic;
+  font-weight: bold;
+}
