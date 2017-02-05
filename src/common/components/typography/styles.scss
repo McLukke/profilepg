@@ -13,13 +13,24 @@
 .section-header {
   @include text-base;
 
-  text-transform: uppercase;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .text-block-subheader {
   @include text-base;
 
-  font-style: italic;
   font-weight: bold;
+  font-style: italic;
+}
+
+.text-block-header {
+  @include text-base;
+
+  font-weight: bold;
+
+  &.red-text {
+    color: $text-red;
+  }
+  color: $charcoal;
 }
