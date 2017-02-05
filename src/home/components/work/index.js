@@ -47,15 +47,20 @@ const Work = () =>
           </Col>
 
           <Col xs={10}>
-            <Row className={styles['section-entry']}>
-              <Col xs={9}>
-                Junior Developer / Data Analyst
-              </Col>
+            {myWorkExp.map(workExp =>
+              <Row key={workExp.id} className={styles['section-entry']}>
+                <Col xs={9}>
+                  <TextBlockHeader red>{workExp.header}</TextBlockHeader>
+                  <TextBlockSubheader bottomMargin>{workExp.subheader}</TextBlockSubheader>
+                  <p>{workExp.description}</p>
+                </Col>
 
-              <Col xs={3}>
-                Test
-              </Col>
-            </Row>
+                <Col xs={3}>
+                  <TextBlockHeader>{workExp.yearFrom} - {workExp.yearTo}</TextBlockHeader>
+                  <p>{workExp.location}</p>
+                </Col>
+              </Row>,
+            )}
           </Col>
         </Row>
       </Col>
