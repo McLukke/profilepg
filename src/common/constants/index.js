@@ -1,19 +1,19 @@
 export const mySkills = [
   {
     name: 'HTML5',
-    percentage: 81,
+    percentage: 74,
   },
   {
     name: 'CSS3',
-    percentage: 87,
+    percentage: 81,
   },
   {
     name: 'Javascript',
-    percentage: 94,
+    percentage: 91,
   },
   {
     name: 'PHP',
-    percentage: 67,
+    percentage: 66,
   },
 ];
 
