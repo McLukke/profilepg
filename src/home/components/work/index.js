@@ -1,6 +1,6 @@
 import React from 'react';
 import Scroll from 'react-scroll';
-import { sections } from 'constants';
+import { sections, myEducation, myWorkExp } from 'constants';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import SectionHeader from 'components/typography/section-header';
@@ -10,7 +10,7 @@ import TextBlockHeader from 'components/typography/text-block-header';
 import styles from './styles.scss';
 
 const Work = () =>
-  <Scroll.Element name={sections[1].name}>
+  <Scroll.Element name={sections[1].name} className={styles.base}>
     <Row>
       <Col
         xs={12}
@@ -25,41 +25,19 @@ const Work = () =>
           </Col>
 
           <Col xs={10}>
-            <Row className={styles['section-entry']}>
-              <Col xs={9}>
-                <TextBlockHeader red>Advanced Javascript, ReactJS, Redux</TextBlockHeader>
-                <TextBlockSubheader>Functional Programming, Udemy</TextBlockSubheader>
-              </Col>
+            {myEducation.map(eduEntry =>
+              <Row key={eduEntry.id} className={styles['section-entry']}>
+                <Col xs={9}>
+                  <TextBlockHeader red>{eduEntry.header}</TextBlockHeader>
+                  <TextBlockSubheader>{eduEntry.subheader}</TextBlockSubheader>
+                </Col>
 
-              <Col xs={3}>
-                <TextBlockHeader>2016 - 2016</TextBlockHeader>
-                <p>Online Courses</p>
-              </Col>
-            </Row>
-
-            <Row className={styles['section-entry']}>
-              <Col xs={9}>
-                <TextBlockHeader red>HTML5, CSS, JS, PHP</TextBlockHeader>
-                <TextBlockSubheader>Computer Programming, Codecademy</TextBlockSubheader>
-              </Col>
-
-              <Col xs={3}>
-                <TextBlockHeader>2015 - 2015</TextBlockHeader>
-                <p>Online Courses</p>
-              </Col>
-            </Row>
-
-            <Row className={styles['section-entry']}>
-              <Col xs={9}>
-                <TextBlockHeader red>Bachelor of Science</TextBlockHeader>
-                <TextBlockSubheader>University of Toronto</TextBlockSubheader>
-              </Col>
-
-              <Col xs={3}>
-                <TextBlockHeader>2007 - 2012</TextBlockHeader>
-                <p>Toronto, Canada</p>
-              </Col>
-            </Row>
+                <Col xs={3}>
+                  <TextBlockHeader>{eduEntry.yearFrom} - {eduEntry.yearTo}</TextBlockHeader>
+                  <p>{eduEntry.location}</p>
+                </Col>
+              </Row>,
+            )}
           </Col>
         </Row>
 
