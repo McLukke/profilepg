@@ -7,7 +7,7 @@ import { Circle } from 'rc-progress';
 import styles from './styles.scss';
 
 const Skills = () =>
-  <Scroll.Element name={sections[1].name} className={styles.base}>
+  <Scroll.Element name={sections[2].name} className={styles.base}>
     {mySkills.map((skill, index) =>
       <div key={index} className={styles['progress-bar-wrapper']}>
         <Circle
