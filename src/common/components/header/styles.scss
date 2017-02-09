@@ -1,15 +1,8 @@
 @import '~variables';
 
 .base {
-  height: 6.6rem;
-
-  .fixed-base {
-    background: $white;
-    padding: 1.5rem;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-  }
+  background: $white;
+  padding: 1.5rem 1rem;
 
   .link {
     border: 1px solid purple;
