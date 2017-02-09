@@ -52,7 +52,19 @@ const Work = () =>
                 <Col xs={9}>
                   <TextBlockHeader red>{workExp.header}</TextBlockHeader>
                   <TextBlockSubheader bottomMargin>{workExp.subheader}</TextBlockSubheader>
-                  <p>{workExp.description}</p>
+                  <div>
+                    {workExp.description.constructor === Array ?
+                      workExp.description.map((descript, index) =>
+                        <div key={`${descript.title}-${index}`}>
+                          <div>{descript.title}</div>
+                          {descript.content.map((workContent, i) =>
+                            <div key={`${workExp.subheader}-${i}`}>-{workContent}</div>,
+                          )}
+                          <br />
+                        </div>,
+                      )
+                    : workExp.description}
+                  </div>
                 </Col>
 
                 <Col xs={3}>

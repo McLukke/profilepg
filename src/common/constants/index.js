@@ -13,8 +13,26 @@ export const myWorkExp = [
     id: 3,
     header: 'Contract Web Developer',
     subheader: '19 Degrees Ltd',
-    // eslint-disable-next-line
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    description: [
+      {
+        title: 'Frontend Architecture',
+        content: [
+          'Produce AngularJS and Bootstrap based solutions',
+          'Develop using standardized RESTful architecture and AJAX',
+          'Technology used: PHP, AngularJS, HTML5, LESS and GitHub workflow',
+        ],
+      },
+      {
+        title: 'Responsive websites',
+        content: [
+          'Create Wordpress templates from scratch, with mobile-first industry best practices',
+          // eslint-disable-next-line
+          'Building to improve productivity, cross browsers functionality and responsive web application',
+          // eslint-disable-next-line
+          'Allowed company to form strategic partnerships in HK, Copenhagen and was featured in "Hong Kong`s finest"',
+        ],
+      },
+    ],
     yearFrom: 'Jan 2015',
     yearTo: 'Sept 2015',
     location: 'Brisbane, Australia',
@@ -23,8 +41,25 @@ export const myWorkExp = [
     id: 2,
     header: 'Ecommerce Marketing Manager',
     subheader: 'Delon Laboratories',
-    // eslint-disable-next-line
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    description: [
+      {
+        title: 'Development',
+        content: [
+          'Develop on and improve existing legacy website and AngularJS integration',
+          'Build a mobile first, responsive eCommerce website with a shopping cart',
+          'Integrate secure payment gateway REST APIs',
+        ],
+      },
+      {
+        title: 'Marketing',
+        content: [
+          'Prepare inventory for photoshop and create product catalogs',
+          // eslint-disable-next-line
+          'Pilot series of successful Google Adwords campaigns which led to sales during initial launch',
+          'Perform successful SEO which raise traffic by 120%',
+        ],
+      },
+    ],
     yearFrom: 'Jan 2014',
     yearTo: 'Nov 2014',
     location: 'Gangnam-gu, Seoul, Korea',
@@ -34,7 +69,25 @@ export const myWorkExp = [
     header: 'IT / Geoscience Engineer',
     subheader: 'Noble Earth Technologies',
     // eslint-disable-next-line
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    description: [
+      {
+        title: 'Development',
+        content: [
+          'Create website functionality with Great Firewall of China in mind',
+          'Develop a custom website by building custom WP themes and plugins',
+          'Provide documentation and training material for CMS',
+        ],
+      },
+      {
+        title: 'Geotechnical',
+        content: [
+          // eslint-disable-next-line
+          'Carry out field plans to specifications and conduct environment stress/failure analysis investigations',
+          'Collect and document concrete, soils, asphalt, aggregates and water samples',
+          'Proof of concept allowed company to obtain funding to further its potential',
+        ],
+      },
+    ],
     yearFrom: 'May 2013',
     yearTo: 'Dec 2013',
     location: 'Shenzhen, Guangdong, China',
@@ -44,7 +97,28 @@ export const myWorkExp = [
     header: 'Junior Developer / Data Analyst',
     subheader: '360 Data Solutions Ltd',
     // eslint-disable-next-line
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    description: [
+      {
+        title: 'Development',
+        content: [
+          'Presented with 3.5 million anonymous users of internet data',
+          // eslint-disable-next-line
+          'Help develop 3 separate software solutions, using Hadoop, Hive, Talon, MySQL, PHP, jQuery and Bootstrap',
+          'Prepared materials to support business decisions and liaised with managers',
+        ],
+      },
+      {
+        title: 'Data Analysis',
+        content: [
+          // eslint-disable-next-line
+          'Provide clients with creative solutions from research trends on cutting edge methodologies',
+          // eslint-disable-next-line
+          'Process raw scripts, SQL queries and private API feeds into structured data for analysis',
+          // eslint-disable-next-line
+          'Project success allowed company to expand into Hong Kong, China, Malaysia, Philippines and Canada',
+        ],
+      },
+    ],
     yearFrom: 'Sept 2012',
     yearTo: 'Nov 2013',
     location: 'Hong Kong, Hong Kong',
