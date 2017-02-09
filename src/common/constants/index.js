@@ -1,3 +1,61 @@
+import voilah from 'images/voilah.png';
+import unitedAsia from 'images/united_asia.png';
+import willeyPrinting from 'images/willey_printing.png';
+import aveConcept from 'images/ave_concept.png';
+import wrangler from 'images/wrangler.png';
+import pahk from 'images/public_art_hk.png';
+import yesMaster from 'images/yes_master.png';
+import solidifi from 'images/solidifi.svg';
+import revalue from 'images/revalue.png';
+
+export const portfolioImages = [
+  {
+    source: voilah,
+    alt: 'Voilah!',
+    url: '#',
+  },
+  {
+    source: unitedAsia,
+    alt: 'United Asia',
+    url: '#',
+  },
+  {
+    source: willeyPrinting,
+    alt: 'Willey Printing',
+    url: '#',
+  },
+  {
+    source: aveConcept,
+    alt: 'Ave Concept',
+    url: '#',
+  },
+  {
+    source: wrangler,
+    alt: 'Wrangler True Wanderer',
+    url: '#',
+  },
+  {
+    source: pahk,
+    alt: 'Public Art Hong Kong',
+    url: '#',
+  },
+  {
+    source: yesMaster,
+    alt: 'YesMaster!',
+    url: '#',
+  },
+  {
+    source: solidifi,
+    alt: 'Solidifi',
+    url: '#',
+  },
+  {
+    source: revalue,
+    alt: 'Revalue',
+    url: '#',
+  },
+];
+
 export const myWorkExp = [
   {
     id: 4,
