@@ -35,7 +35,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Kenny Lu',
       template: path.join(__dirname, 'template', 'index.html'),
-      favicon: path.join(__dirname, 'src', 'common', 'images', 'coding.jpg'),
+      favicon: path.join(__dirname, 'src', 'images', 'coding.jpg'),
       inject: false,
     }),
   ].concat(
@@ -182,7 +182,7 @@ module.exports = {
       components: 'src/common/components',
       constants: 'src/common/constants',
       utils: 'src/common/utils',
-      images: 'src/common/images',
+      images: 'src/images',
       variables: 'src/common/global-styles/variables.scss',
     },
   },
