@@ -3,10 +3,11 @@ import Preload from 'react-preload/lib/Preload';
 import Scroll from 'react-scroll';
 import Loader from 'components/loader';
 import formatError from 'utils/format-error';
+import { portfolioImages } from 'constants';
 
 import HomePageContent from '../components/content';
 
-const allImages = [];
+const allImages = portfolioImages.map(image => image.source);
 
 class HomePageContainer extends Component {
   constructor(props) {
@@ -50,8 +51,8 @@ class HomePageContainer extends Component {
     //     loadingIndicator={<Loader />}
     //     images={allImages}
     //     onError={err => formatError(err)}
-    //     resolveOnError={true}
-    //     mountChildren={true}
+    //     resolveOnError
+    //     mountChildren
     //   >
     //     <HomePageContent />
     //   </Preload>

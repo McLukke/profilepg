@@ -1,0 +1,20 @@
+.base {
+  height: 100%;
+  padding: 5rem;
+}
+
+.portfolio-link {
+  display: flex;
+  justify-content: center;
+  // min-width: 5rem;
+  // min-height: 5rem;
+  // max-width: 20rem;
+  // max-height: 20rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-images {
+  border: 1px solid red;
+  width: 100%;
+  border-radius: 50%;
+}

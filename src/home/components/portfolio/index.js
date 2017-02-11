@@ -15,12 +15,11 @@ const Portfolio = () =>
         mdOffset={1}
         lg={8}
         lgOffset={2}
-        style={{ border: '1px solid red' }}
       >
         <Row>
           {portfolioImages.map((portfolio, index) =>
             <Col key={index} xs={4}>
-              <a href={portfolio.url}>
+              <a className={styles['portfolio-link']} href={portfolio.url}>
                 <img
                   className={styles['portfolio-images']}
                   src={portfolio.source}
