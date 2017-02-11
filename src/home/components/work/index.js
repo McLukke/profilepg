@@ -20,11 +20,11 @@ const Work = () =>
         lgOffset={2}
       >
         <Row className={styles['section-wrapper']}>
-          <Col xs={2}>
-            <SectionHeader>Education</SectionHeader>
+          <Col xs={12} lg={2}>
+            <SectionHeader bottomMargin>Education</SectionHeader>
           </Col>
 
-          <Col xs={10}>
+          <Col xs={12} lg={10}>
             {myEducation.map(eduEntry =>
               <Row key={eduEntry.id} className={styles['section-entry']}>
                 <Col xs={9}>
@@ -42,11 +42,11 @@ const Work = () =>
         </Row>
 
         <Row className={styles['section-wrapper']}>
-          <Col xs={2}>
-            <SectionHeader>Work Experience</SectionHeader>
+          <Col xs={12} lg={2}>
+            <SectionHeader bottomMargin>Work Experience</SectionHeader>
           </Col>
 
-          <Col xs={10}>
+          <Col xs={12} lg={10}>
             {myWorkExp.map(workExp =>
               <Row key={workExp.id} className={styles['section-entry']}>
                 <Col xs={9}>

@@ -21,19 +21,20 @@
   @include text-base;
 
   font-style: italic;
-
-  &.bottom-margin {
-    margin-bottom: 1.5rem;
-  }
 }
 
 .text-block-header {
   @include text-base;
 
-  font-weight: bold;
-
-  &.red-text {
-    color: $text-red;
-  }
   color: $charcoal;
+  font-weight: bold;
+}
+
+// possible text options
+.bottom-margin {
+  margin-bottom: 1.5rem;
+}
+
+.red-text {
+  color: $text-red;
 }
