@@ -1,12 +1,12 @@
-import voilah from 'images/voilah.png';
-import unitedAsia from 'images/united_asia.png';
-import willeyPrinting from 'images/willey_printing.png';
-import aveConcept from 'images/ave_concept.png';
-import wrangler from 'images/wrangler.png';
-import pahk from 'images/public_art_hk.png';
-import yesMaster from 'images/yes_master.png';
-import solidifi from 'images/solidifi.svg';
-import revalue from 'images/revalue.png';
+import voilah from 'images/logos/voilah.svg';
+import unitedAsia from 'images/logos/united_asia.svg';
+import willeyPrinting from 'images/logos/willey_printing.svg';
+import aveConcept from 'images/logos/ave_concept.svg';
+import wrangler from 'images/logos/wrangler.jpg';
+import pahk from 'images/logos/public_art_hk.svg';
+import yesMaster from 'images/logos/yes_master.png';
+import realMatters from 'images/logos/real_matters.svg';
+import revalue from 'images/logos/revalue.svg';
 
 export const portfolioImages = [
   {
@@ -59,9 +59,9 @@ export const portfolioImages = [
     url: '#',
   },
   {
-    title: 'Solidifi',
+    title: 'Real Matters',
     description: 'Corporate real estate website in ReactJS',
-    source: solidifi,
+    source: realMatters,
     alt: 'Solidifi',
     url: '#',
   },

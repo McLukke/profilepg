@@ -8,20 +8,33 @@
 }
 
 .portfolio-link {
+  border: 1px solid red;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 15vw;
+  max-width: 15vw;
+  overflow: hidden;
+  width: 100%;
 }
 
-.portfolio-images {
-  border: 1px solid red;
+.portfolio-logos {
+  height: 100%;
   width: 100%;
-  max-width: 20vw;
-  max-height: 20vw;
-  border-radius: 50%;
 }
 
 .text-wrapper {
+  height: 10rem;
   text-align: center;
-  height: 6rem;
+
+  @media screen and (min-width: 480px) {
+    height: 8rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 6rem;
+  }
 }

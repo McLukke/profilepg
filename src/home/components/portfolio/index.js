@@ -27,7 +27,7 @@ const Portfolio = () =>
             <Col key={index} xs={6} lg={4}>
               <a className={styles['portfolio-link']} href={portfolio.url}>
                 <img
-                  className={styles['portfolio-images']}
+                  className={styles['portfolio-logos']}
                   src={portfolio.source}
                   role={portfolio.alt}
                 />
