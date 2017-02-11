@@ -1,20 +1,27 @@
 .base {
-  height: 100%;
+  min-height: 100%;
   padding: 5rem;
+}
+
+.content-wrapper {
+  padding-top: 3rem;
 }
 
 .portfolio-link {
   display: flex;
   justify-content: center;
-  // min-width: 5rem;
-  // min-height: 5rem;
-  // max-width: 20rem;
-  // max-height: 20rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .portfolio-images {
   border: 1px solid red;
   width: 100%;
+  max-width: 20vw;
+  max-height: 20vw;
   border-radius: 50%;
+}
+
+.text-wrapper {
+  text-align: center;
+  height: 6rem;
 }
