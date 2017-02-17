@@ -1,3 +1,19 @@
+@import '~variables';
+
 .base {
-  background: green;
+  background-color: $charcoal;
+  color: $white;
+  padding: 6rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.social-media {
+  max-height: 50px;
+  max-width: 50px;
+  width: 50px;
+
+  img {
+    width: 100%;
+  }
 }

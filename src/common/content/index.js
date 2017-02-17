@@ -1,3 +1,16 @@
+// social media
+import fbLogo from 'images/social-media/facebook-letter-logo.svg';
+import ytLogo from 'images/social-media/youtube-logo.svg';
+import gplusLogo from 'images/social-media/google-plus.svg';
+import linkedinLogo from 'images/social-media/linkedin-logo.svg';
+import twitterLogo from 'images/social-media/twitter-logo.svg';
+import meetupLogo from 'images/social-media/meetup-logo.svg';
+import pintrestLogo from 'images/social-media/pinterest-inverted.svg';
+import soundcloudLogo from 'images/social-media/soundcloud-logo.svg';
+import evernoteLogo from 'images/social-media/evernote-logo.svg';
+import githubLogo from 'images/social-media/github-logo.svg';
+
+// logos
 import voilah from 'images/logos/voilah.svg';
 import unitedAsia from 'images/logos/united_asia.svg';
 import willeyPrinting from 'images/logos/willey_printing.svg';
@@ -7,6 +20,69 @@ import pahk from 'images/logos/public_art_hk.svg';
 import yesMaster from 'images/logos/yes_master.png';
 import realMatters from 'images/logos/real_matters.svg';
 import revalue from 'images/logos/revalue.svg';
+
+export const footerContent = {
+  title: 'Kenny Lu',
+  finalThought: 'Front-end Focused Web Developemnt based in Toronto ON',
+  socialMedia: [
+    {
+      id: 701,
+      title: 'Facebook',
+      src: fbLogo,
+    },
+    {
+      id: 702,
+      title: 'Google+',
+      src: gplusLogo,
+    },
+    {
+      id: 703,
+      title: 'Youtube',
+      src: ytLogo,
+    },
+    {
+      id: 704,
+      title: 'LinkedIn',
+      src: linkedinLogo,
+    },
+    {
+      id: 705,
+      title: 'Twitter',
+      src: twitterLogo,
+    },
+    {
+      id: 706,
+      title: 'Meetup',
+      src: meetupLogo,
+    },
+    {
+      id: 707,
+      title: 'Pintrest',
+      src: pintrestLogo,
+    },
+    {
+      id: 708,
+      title: 'Soundcloud',
+      src: soundcloudLogo,
+    },
+    {
+      id: 709,
+      title: 'Evernote',
+      src: evernoteLogo,
+    },
+    {
+      id: 710,
+      title: 'Github',
+      src: githubLogo,
+    },
+  ],
+  copyright: {
+    reserved: 'All Rights Reserved!',
+    text: 'Copyright © 2017',
+    url: 'http://whynotkenny.com',
+    urlText: 'WhyNotKenny',
+  },
+};
 
 export const portfolioImages = [
   {

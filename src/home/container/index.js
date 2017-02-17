@@ -3,7 +3,7 @@ import Preload from 'react-preload/lib/Preload';
 import Scroll from 'react-scroll';
 import Loader from 'components/loader';
 import formatError from 'utils/format-error';
-import { portfolioImages } from 'constants';
+import { portfolioImages } from 'content';
 
 import HomePageContent from '../components/content';
 

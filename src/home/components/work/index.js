@@ -1,6 +1,6 @@
 import React from 'react';
 import Scroll from 'react-scroll';
-import { sections, myEducation, myWorkExp } from 'constants';
+import { sections, myEducation, myWorkExp } from 'content';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import SectionHeader from 'components/typography/section-header';

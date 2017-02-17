@@ -1,6 +1,6 @@
 import React from 'react';
 import Scroll from 'react-scroll';
-import { sections } from 'constants';
+import { sections } from 'content';
 import kennyBg from 'images/backgrounds/kenny_bg.jpg';
 
 import styles from './styles.scss';

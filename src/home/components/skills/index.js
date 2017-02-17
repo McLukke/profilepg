@@ -1,6 +1,6 @@
 import React from 'react';
 import Scroll from 'react-scroll';
-import { mySkills, sections } from 'constants';
+import { mySkills, sections } from 'content';
 import variables from 'variables';
 import { Circle } from 'rc-progress';
 
