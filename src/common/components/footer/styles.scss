@@ -8,10 +8,25 @@
   width: 100%;
 }
 
+.social-media-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
 .social-media {
-  max-height: 50px;
-  max-width: 50px;
-  width: 50px;
+  background-color: #5e5e5e;
+  max-height: 40px;
+  max-width: 40px;
+  width: 40px;
+  padding: 4px;
+  cursor: pointer;
+
+  &.is-hovering {
+    background-color: $aqua;
+  }
 
   img {
     width: 100%;
