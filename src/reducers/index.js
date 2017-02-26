@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import homePageReducer from '../home/module';
+import homePageReducer from '../home/modules';
 
 export default combineReducers({
-  homePageReducer,
+  homePage: homePageReducer,
 });
