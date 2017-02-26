@@ -1,8 +1,16 @@
 @import '~variables';
 
 .base {
-  background: $white;
+  background-color: transparent;
+  opacity: .6;
   padding: 1.5rem 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+
+  &.show-bg {
+    background-color: $charcoal;
+  }
 
   .link {
     border: 1px solid purple;
