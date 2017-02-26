@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import cx from 'classnames';
 import Scroll from 'react-scroll';
 import { sections } from 'content';
 import Row from 'react-bootstrap/lib/Row';
@@ -6,8 +8,8 @@ import Col from 'react-bootstrap/lib/Col';
 
 import styles from './styles.scss';
 
-const Header = () =>
-  <nav className={styles.base}>
+const Header = ({ showBg }) =>
+  <nav className={cx(styles.base, { [styles['show-bg']]: showBg })}>
     <div className={styles['fixed-base']}>
       <Row>
         <Col
@@ -37,4 +39,12 @@ const Header = () =>
     </div>
   </nav>;
 
-export default Header;
+Header.propTypes = {
+  showBg: PropTypes.bool,
+};
+
+export default connect(
+  ({ homePage }) => ({
+    showBg: homePage.showBg,
+  })
+)(Header);
