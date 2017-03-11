@@ -20,7 +20,7 @@ import revalue from 'images/logos/revalue.svg';
 
 export const footerContent = {
   title: 'Kenny Lu',
-  finalThought: 'Front-end Focused Web Developemnt based in Toronto ON',
+  finalThought: 'Front-end Focused Web Developer based in Toronto ON',
   socialMedia: [
     {
       id: 701,
