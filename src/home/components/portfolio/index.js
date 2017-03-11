@@ -31,30 +31,32 @@ class PortfolioImage extends Component {
     const { hovering } = this.state;
 
     return (
-      <Col xs={6} lg={4} className={styles['margin-bottom']}>
-        <a
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseExit}
-          className={styles['portfolio-link']}
-          href={portfolio.url}
-        >
-          <img
-            className={styles['portfolio-logos']}
-            src={portfolio.source}
-            role={portfolio.alt}
-          />
-          <div
-            className={cx(
-              styles['text-wrapper'],
-              { [styles['hide-text-wrapper']]: hovering },
-            )}
+      <Col xs={6} lg={4} className={styles['portfolio-image-base']}>
+        <div className={styles['portfolio-image-wrapper']}>
+          <a
+            onMouseEnter={this.handleMouseEnter}
+            onMouseLeave={this.handleMouseExit}
+            className={styles['portfolio-link']}
+            href={portfolio.url}
           >
-            <TextBlockHeader>{portfolio.title}</TextBlockHeader>
-            <TextBlockSubheader>
-              {portfolio.description}
-            </TextBlockSubheader>
-          </div>
-        </a>
+            <img
+              className={styles['portfolio-logos']}
+              src={portfolio.source}
+              role={portfolio.alt}
+            />
+            <div
+              className={cx(
+                styles['text-wrapper'],
+                { [styles['hide-text-wrapper']]: hovering },
+              )}
+            >
+              <TextBlockHeader>{portfolio.title}</TextBlockHeader>
+              <TextBlockSubheader>
+                {portfolio.description}
+              </TextBlockSubheader>
+            </div>
+          </a>
+        </div>
       </Col>
     );
   }
