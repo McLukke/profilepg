@@ -1,17 +1,46 @@
 @import '~variables';
 
 .base {
-  background-color: $main-purple;
-  color: $white;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.image-container {
+  height: 100%;
+  opacity: .5;
+  overflow: hidden;
+  width: 100%;
+}
+
+.car-bg {
+  filter: grayscale(100%); // Current draft standard
+  -webkit-filter: grayscale(100%); // New WebKit
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: gray; // IE6+
+  width: 100%;
+}
+
+.content-wrapper {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  padding: 6rem 3rem;
   display: flex;
   justify-content: space-around;
-  padding: 6rem 3rem;
-  height: 100%;
 }
 
 .progress-bar-wrapper {
   align-content: center;
   align-items: center;
+  color: $charcoal;
   display: flex;
   flex-direction: column;
   justify-content: center;
