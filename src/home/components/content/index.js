@@ -3,6 +3,7 @@ import Header from 'components/header';
 import Footer from 'components/footer';
 
 import LandingImage from '../landing-image';
+import Education from '../education';
 import Work from '../work';
 import Skills from '../skills';
 import Portfolio from '../portfolio';
@@ -14,6 +15,7 @@ const HomePageContent = () =>
   <section className={styles.main}>
     <Header />
     <LandingImage />
+    <Education />
     <Work />
     <Skills />
     <Portfolio />

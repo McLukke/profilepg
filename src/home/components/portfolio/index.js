@@ -63,7 +63,7 @@ class PortfolioImage extends Component {
 }
 
 const Portfolio = () =>
-  <Scroll.Element name={sections[3].name} className={styles.base}>
+  <Scroll.Element name={sections[4].name} className={styles.base}>
     <Row>
       <Col
         xs={12}

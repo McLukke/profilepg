@@ -319,6 +319,10 @@ export const sections = [
     title: 'Landing Image',
   },
   {
+    name: 'education',
+    title: 'Education',
+  },
+  {
     name: 'work',
     title: 'Work',
   },

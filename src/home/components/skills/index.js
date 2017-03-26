@@ -9,7 +9,7 @@ import carBg from 'images/backgrounds/car_bg.jpg';
 import styles from './styles.scss';
 
 const Skills = () =>
-  <Scroll.Element name={sections[2].name} className={styles.base}>
+  <Scroll.Element name={sections[3].name} className={styles.base}>
     <div className={styles['image-container']}>
       <img src={carBg} alt="" className={styles['car-bg']} />
     </div>
@@ -22,7 +22,7 @@ const Skills = () =>
           mdOffset={2}
         >
           <Row>
-            {mySkills.map((skill, index) =>
+            {/*mySkills.map((skill, index) =>
               <Col
                 key={index}
                 className={styles['progress-bar-wrapper']}
@@ -41,7 +41,7 @@ const Skills = () =>
                   {skill.name}
                 </span>
               </Col>,
-            )}
+            )*/}
           </Row>
         </Col>
       </Row>
