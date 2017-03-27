@@ -22,7 +22,7 @@ const Skills = () =>
           mdOffset={2}
         >
           <Row>
-            {/*mySkills.map((skill, index) =>
+            {mySkills.map((skill, index) =>
               <Col
                 key={index}
                 className={styles['progress-bar-wrapper']}
@@ -41,7 +41,7 @@ const Skills = () =>
                   {skill.name}
                 </span>
               </Col>,
-            )*/}
+            )}
           </Row>
         </Col>
       </Row>
