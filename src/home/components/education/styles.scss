@@ -1,13 +1,47 @@
 .base {
-  padding: 5rem;
-  // border: 1px solid blue;
+  margin-bottom: 3rem;
+  position: relative;
 }
 
-.section-wrapper {
-  padding: 1rem;
-  // border: 1px solid red;
+.no-gutters {
+  padding: 0;
 }
 
-.section-entry {
-  padding-bottom: 2rem;
+.edu-block {
+  height: 200px;
+  position: relative;
+  width: 100%;
+
+  img {
+    height: 200px;
+    width: 100%;
+  }
+}
+
+.no-margins {
+  margin: 0;
+}
+
+.text-overlay {
+  color: yellow;
+  font-weight: 900;
+  font-size: 22px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  opacity: 0;
+}
+
+.is-hovering {
+  background: rgba(0, 0, 0, .6);
+  opacity: 1;
 }

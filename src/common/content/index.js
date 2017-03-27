@@ -18,6 +18,16 @@ import yesMaster from 'images/logos/yes_master.png';
 import realMatters from 'images/logos/real_matters.svg';
 import revalue from 'images/logos/revalue.svg';
 
+// Education
+import myAws from 'images/education/aws_2.png';
+import myDocker from 'images/education/docker.jpg';
+import myGithub from 'images/education/git.jpg';
+import myMysql from 'images/education/mysql.jpg';
+import myNodejs from 'images/education/nodejs.png';
+import myReact from 'images/education/react.jpg';
+import myPhp from 'images/education/php.png';
+import myWordpress from 'images/education/wordpress.jpg';
+
 export const footerContent = {
   title: 'Kenny Lu',
   finalThought: 'Front-end Focused Web Developer based in Toronto ON',
@@ -261,36 +271,44 @@ export const myWorkExp = [
 
 export const myEducation = [
   {
+    id: 8,
+    source: myWordpress,
+    name: 'Wordpress',
+  },
+  {
+    id: 7,
+    source: myPhp,
+    name: 'PHP',
+  },
+  {
+    id: 6,
+    source: myReact,
+    name: 'React',
+  },
+  {
+    id: 5,
+    source: myAws,
+    name: 'AWS',
+  },
+  {
     id: 4,
-    header: 'Advanced Javascript, ReactJS, Redux',
-    subheader: 'Functional Programming, Udemy',
-    yearFrom: 'Apr 2016',
-    yearTo: 'Jun 2016',
-    location: 'Online Courses',
+    source: myDocker,
+    name: 'Docker',
   },
   {
     id: 3,
-    header: 'Wordpress, PHP, Laravel, MySQL',
-    subheader: 'Web Development, Codecademy',
-    yearFrom: 'Oct 2014',
-    yearTo: 'Jan 2015',
-    location: 'Online Courses',
+    source: myNodejs,
+    name: 'NodeJS',
   },
   {
     id: 2,
-    header: 'HTML5, CSS, JS',
-    subheader: 'Coding Fundamentals, Codecademy',
-    yearFrom: 'Feb 2014',
-    yearTo: 'Jun 2014',
-    location: 'Online Courses',
+    source: myMysql,
+    name: 'MySQL',
   },
   {
     id: 1,
-    header: 'Bachelor of Science',
-    subheader: 'University of Toronto',
-    yearFrom: 2007,
-    yearTo: 2012,
-    location: 'Toronto, Canada',
+    source: myGithub,
+    name: 'GitHub',
   },
 ];
 
