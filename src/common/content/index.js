@@ -1,3 +1,4 @@
+/* eslint-disable */
 // social media
 import githubLogo from 'images/social-media/github-logo.svg';
 import linkedinLogo from 'images/social-media/linkedin-logo.svg';
@@ -19,14 +20,14 @@ import realMatters from 'images/logos/real_matters.svg';
 import revalue from 'images/logos/revalue.svg';
 
 // Education
-import myAws from 'images/education/aws_2.png';
-import myDocker from 'images/education/docker.jpg';
 import myGithub from 'images/education/git.jpg';
-import myMysql from 'images/education/mysql.jpg';
 import myNodejs from 'images/education/nodejs.png';
 import myReact from 'images/education/react.jpg';
 import myPhp from 'images/education/php.png';
-import myWordpress from 'images/education/wordpress.jpg';
+import myBabel from 'images/education/babel-logo.png';
+import myGraphQL from 'images/education/graphql-logo.png';
+import mySass from 'images/education/sass-logo.png';
+import myRedux from 'images/education/redux-logo.png';
 
 export const footerContent = {
   title: 'Kenny Lu',
@@ -144,169 +145,60 @@ export const portfolioImages = [
 
 export const myWorkExp = [
   {
-    id: 4,
-    header: 'Intermediate Front-end Developer',
-    subheader: 'RealMatters Inc.',
-    // eslint-disable-next-line
-    description: 'Developing a robust, efficient and secure application, supporting over 5,000 transactions daily. Introduce modern build processes for front-end development using NodeJS, NPM, Webpack, Babel and ES7. Build and deploy administrative interfaces and fully integrated single page applications (SPAs) using ReactJS, Redux and SASS, into Java (Spring MVC) REST API back-end architecture.',
-    yearFrom: 'Feb 2016',
-    yearTo: 'Present',
-    location: 'Markham, ON, Canada',
+    id: 301,
+    title: 'Team Lead',
+    description: 'I believe the world of software development is naturally chaotic and it is our duty to transform chaos into clarity and confidence. There are many things that I know I cannot fix but I do understand the value of trade-offs. Each mission I embark on has a fine balance between its business value, quality and future options that I always plan effectively and strive for continual progress.',
   },
   {
-    id: 3,
-    header: 'Contract Web Developer',
-    subheader: '19 Degrees Ltd',
-    description: [
-      {
-        title: 'Frontend Architecture',
-        content: [
-          'Produce AngularJS and Bootstrap based solutions',
-          'Develop using standardized RESTful architecture and AJAX',
-          'Technology used: PHP, AngularJS, HTML5, LESS and GitHub workflow',
-        ],
-      },
-      {
-        title: 'Responsive websites',
-        content: [
-          'Create Wordpress templates from scratch, with mobile-first industry best practices',
-          // eslint-disable-next-line
-          'Building to improve productivity, cross browsers functionality and responsive web application',
-          // eslint-disable-next-line
-          'Allowed company to form strategic partnerships in HK, Copenhagen and was featured in "Hong Kong`s finest"',
-        ],
-      },
-    ],
-    yearFrom: 'Jan 2015',
-    yearTo: 'Sept 2015',
-    location: 'Brisbane, Australia',
+    id: 302,
+    title: 'Fearless',
+    description: 'I fearlessly jump into code. I own my code and I’m passionate about producing working systems. Im also a strong believer of helping and sharing my work and knowledge with others. Im never shy of asking for help and understanding complex systems. By being openly passionate I create positivity and optimism with team members and gain trust and respect.',
   },
   {
-    id: 2,
-    header: 'Ecommerce Marketing Manager',
-    subheader: 'Delon Laboratories',
-    description: [
-      {
-        title: 'Development',
-        content: [
-          'Develop on and improve existing legacy website and AngularJS integration',
-          'Build a mobile first, responsive eCommerce website with a shopping cart',
-          'Integrate secure payment gateway REST APIs',
-        ],
-      },
-      {
-        title: 'Marketing',
-        content: [
-          'Prepare inventory for photoshop and create product catalogs',
-          // eslint-disable-next-line
-          'Pilot series of successful Google Adwords campaigns which led to sales during initial launch',
-          'Perform successful SEO which raise traffic by 120%',
-        ],
-      },
-    ],
-    yearFrom: 'Jan 2014',
-    yearTo: 'Nov 2014',
-    location: 'Gangnam-gu, Seoul, Korea',
-  },
-  {
-    id: 1,
-    header: 'IT / Geoscience Engineer',
-    subheader: 'Noble Earth Technologies',
-    // eslint-disable-next-line
-    description: [
-      {
-        title: 'Development',
-        content: [
-          'Create website functionality with Great Firewall of China in mind',
-          'Develop a custom website by building custom WP themes and plugins',
-          'Provide documentation and training material for CMS',
-        ],
-      },
-      {
-        title: 'Geotechnical',
-        content: [
-          // eslint-disable-next-line
-          'Carry out field plans to specifications and conduct environment stress/failure analysis investigations',
-          'Collect and document concrete, soils, asphalt, aggregates and water samples',
-          'Proof of concept allowed company to obtain funding to further its potential',
-        ],
-      },
-    ],
-    yearFrom: 'May 2013',
-    yearTo: 'Dec 2013',
-    location: 'Shenzhen, Guangdong, China',
-  },
-  {
-    id: 0,
-    header: 'Junior Developer / Data Analyst',
-    subheader: '360 Data Solutions Ltd',
-    // eslint-disable-next-line
-    description: [
-      {
-        title: 'Development',
-        content: [
-          'Presented with 3.5 million anonymous users of internet data',
-          // eslint-disable-next-line
-          'Help develop 3 separate software solutions, using Hadoop, Hive, Talon, MySQL, PHP, jQuery and Bootstrap',
-          'Prepared materials to support business decisions and liaised with managers',
-        ],
-      },
-      {
-        title: 'Data Analysis',
-        content: [
-          // eslint-disable-next-line
-          'Provide clients with creative solutions from research trends on cutting edge methodologies',
-          // eslint-disable-next-line
-          'Process raw scripts, SQL queries and private API feeds into structured data for analysis',
-          // eslint-disable-next-line
-          'Project success allowed company to expand into Hong Kong, China, Malaysia, Philippines and Canada',
-        ],
-      },
-    ],
-    yearFrom: 'Sept 2012',
-    yearTo: 'Nov 2013',
-    location: 'Hong Kong, Hong Kong',
+    id: 303,
+    title: 'Agile',
+    description: 'I strive to deliver strong working code. My personal philosophy is to be fast and responsive towards making decisions, be knowledgeable for credibility and unblocking stucks, try new technologies early on, focus on driving business value and visibility of progress for everyone.',
   },
 ];
 
 export const myEducation = [
   {
-    id: 8,
-    source: myWordpress,
-    name: 'Wordpress',
-  },
-  {
-    id: 7,
-    source: myPhp,
-    name: 'PHP',
-  },
-  {
-    id: 6,
-    source: myReact,
-    name: 'React',
-  },
-  {
-    id: 5,
-    source: myAws,
-    name: 'AWS',
-  },
-  {
-    id: 4,
-    source: myDocker,
-    name: 'Docker',
-  },
-  {
-    id: 3,
+    id: 203,
     source: myNodejs,
     name: 'NodeJS',
   },
   {
-    id: 2,
-    source: myMysql,
-    name: 'MySQL',
+    id: 206,
+    source: myReact,
+    name: 'React',
   },
   {
-    id: 1,
+    id: 207,
+    source: myPhp,
+    name: 'PHP',
+  },
+  {
+    id: 202,
+    source: myGraphQL,
+    name: 'GraphQL',
+  },
+  {
+    id: 208,
+    source: myBabel,
+    name: 'Babel',
+  },
+  {
+    id: 204,
+    source: mySass,
+    name: 'SASS',
+  },
+  {
+    id: 205,
+    source: myRedux,
+    name: 'Redux',
+  },
+  {
+    id: 201,
     source: myGithub,
     name: 'GitHub',
   },
@@ -333,8 +225,8 @@ export const mySkills = [
 
 export const sections = [
   {
-    name: 'landingImage',
-    title: 'Landing Image',
+    name: 'home',
+    title: 'Home',
   },
   {
     name: 'education',
