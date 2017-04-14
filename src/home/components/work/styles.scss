@@ -2,19 +2,10 @@
 
 .base {
   background-color: $primary-gray;
+  min-height: 100%;
   padding: 5rem;
-  // border: 1px solid blue;
 }
 
 .section-wrapper {
   padding: 1rem;
-  // border: 1px solid red;
-}
-
-.section-entry {
-  padding-bottom: 2rem;
-}
-
-.panel {
-  border: 1px solid blue;
 }
