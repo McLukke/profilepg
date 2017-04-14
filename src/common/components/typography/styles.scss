@@ -2,8 +2,8 @@
 
 @mixin text-base {
   color: $charcoal;
-  font-weight: normal;
   font-size: 1rem;
+  font-weight: normal;
 }
 
 .base {
@@ -36,5 +36,5 @@
 }
 
 .red-text {
-  color: $text-red;
+  color: $salmon;
 }

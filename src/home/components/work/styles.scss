@@ -1,4 +1,7 @@
+@import '~variables';
+
 .base {
+  background-color: $primary-gray;
   padding: 5rem;
   // border: 1px solid blue;
 }
@@ -10,4 +13,8 @@
 
 .section-entry {
   padding-bottom: 2rem;
+}
+
+.panel {
+  border: 1px solid blue;
 }
