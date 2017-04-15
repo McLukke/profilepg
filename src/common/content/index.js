@@ -9,15 +9,15 @@ import wordpressLogo from 'images/social-media/wordpress-logo.svg';
 import evernoteLogo from 'images/social-media/evernote-logo.svg';
 
 // logos
-import voilah from 'images/logos/voilah.svg';
-import unitedAsia from 'images/logos/united_asia.svg';
-import willeyPrinting from 'images/logos/willey_printing.svg';
-import aveConcept from 'images/logos/ave_concept.svg';
-import wrangler from 'images/logos/wrangler.jpg';
-import pahk from 'images/logos/public_art_hk.svg';
-import yesMaster from 'images/logos/yes_master.png';
-import realMatters from 'images/logos/real_matters.svg';
-import revalue from 'images/logos/revalue.svg';
+import voilah from 'images/portfolio/voilah.svg';
+import unitedAsia from 'images/portfolio/united_asia.svg';
+import willeyPrinting from 'images/portfolio/willey_printing.svg';
+import aveConcept from 'images/portfolio/ave_concept.svg';
+import wrangler from 'images/portfolio/wrangler.jpg';
+import pahk from 'images/portfolio/public_art_hk.svg';
+import yesMaster from 'images/portfolio/yes_master.png';
+import realMatters from 'images/portfolio/real_matters.svg';
+import revalue from 'images/portfolio/revalue.svg';
 
 // Education
 import myGithub from 'images/education/git.jpg';
@@ -28,6 +28,11 @@ import myBabel from 'images/education/babel-logo.png';
 import myGraphQL from 'images/education/graphql-logo.png';
 import mySass from 'images/education/sass-logo.png';
 import myRedux from 'images/education/redux-logo.png';
+
+// Work
+import lightbulb from 'images/work/lightbulb.svg';
+import clipboard from 'images/work/clipboard.svg';
+import stand from 'images/work/stand.svg';
 
 export const footerContent = {
   title: 'Kenny Lu',
@@ -148,16 +153,19 @@ export const myWorkExp = [
     id: 301,
     title: 'Team Lead',
     description: 'I believe the world of software development is naturally chaotic and it is our duty to transform chaos into clarity and confidence. There are many things that I know I cannot fix but I do understand the value of trade-offs. Each mission I embark on has a fine balance between its business value, quality and future options that I always plan effectively and strive for continual progress.',
+    svg: lightbulb,
   },
   {
     id: 302,
     title: 'Fearless',
     description: 'I fearlessly jump into code. I own my code and I’m passionate about producing working systems. Im also a strong believer of helping and sharing my work and knowledge with others. Im never shy of asking for help and understanding complex systems. By being openly passionate I create positivity and optimism with team members and gain trust and respect.',
+    svg: stand,
   },
   {
     id: 303,
     title: 'Agile',
     description: 'I strive to deliver strong working code. My personal philosophy is to be fast and responsive towards making decisions, be knowledgeable for credibility and unblocking stucks, try new technologies early on, focus on driving business value and visibility of progress for everyone.',
+    svg: clipboard,
   },
 ];
 
