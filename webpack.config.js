@@ -3,103 +3,50 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const parseArgs = require('minimist');
 
-const ARGV = parseArgs(process.argv.slice(2), {
-  alias: {
-    DEV: 'dev',
-    VERBOSE: 'verbose',
-  },
-  default: {
-    DEV: false,
-    VERBOSE: false,
-  },
-});
+module.exports = function createWebpackConfig(env = { verbose: false, dev: false }) {
+  // env variables
+  const verbose = env.verbose || false;
+  const dev = env.dev || false;
 
-module.exports = {
-  devtool: ARGV.DEV ? 'cheap-module-eval-source-map' : false,
-  entry: (
-    ARGV.DEV ?
-    [
-      'webpack-hot-middleware/client',
-      'babel-regenerator-runtime',
-      'react-hot-loader/patch',
-    ] : []
-  ).concat('./src/index'),
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/'
-  },
-  plugins: [
+  // plugin options
+  const devPlugins = [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+  ];
+  const releasePlugins = [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
+    new ExtractTextPlugin({
+      filename: 'main-[contenthash].css',
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: verbose,
+      },
+    }),
+    new webpack.optimize.AggressiveMergingPlugin(),
+  ];
+  const plugins = [
     new HtmlWebpackPlugin({
       title: 'Kenny Lu',
       template: path.join(__dirname, 'template', 'index.html'),
       favicon: path.join(__dirname, 'src', 'images', 'love_coding.jpeg'),
       inject: false,
     }),
-  ].concat(
-    ARGV.DEV ?
-    [
-      new webpack.optimize.OccurenceOrderPlugin(),
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin(),
-    ]
-    : [
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production'),
-      }),
-      new ExtractTextPlugin('main-[contenthash].css'),
-      new webpack.optimize.OccurenceOrderPlugin(),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: ARGV.VERBOSE,
-        },
-      }),
-      new webpack.optimize.AggressiveMergingPlugin(),
-    ]
-  ),
-  cache: ARGV.DEV,
-  debug: ARGV.DEV,
-  stats: {
-    colors: true,
-    reasons: true,
-    hash: ARGV.VERBOSE,
-    version: ARGV.VERBOSE,
-    timings: true,
-    chunks: ARGV.VERBOSE,
-    chunkModules: ARGV.VERBOSE,
-    cached: ARGV.VERBOSE,
-    cachedAssets: ARGV.VERBOSE,
-  },
-  babel: {
-    cacheDirectory: ARGV.DEV,
-  },
-  sassLoader: {
-    precision: 8,
-  },
-  postcss: [
-    autoprefixer({
-      browsers: [
-        'Android >= 4',
-        'Chrome >= 20',
-        'Firefox >= 24',
-        'Explorer >= 10',
-        'Edge >= 1',
-        'iOS >= 6',
-        'Opera >= 12',
-        'Safari >= 6',
-      ],
-    }),
-  ],
-  imagemin: {
-    minimize: !ARGV.DEV,
+  ].concat(dev ? devPlugins : releasePlugins);
+
+  // loader options
+  const imgLoaderOptions = {
+    minimize: !dev,
     gifsicle: {
       interlaced: true,
     },
-    jpegtran: {
+    mozjpeg: {
       progressive: true,
+      arithmetic: true,
     },
     optipng: {
       optimizationLevel: 7,
@@ -117,73 +64,287 @@ module.exports = {
         },
       ],
     },
-  },
-  url: {
-    dataUrlLimit: 8192,
-  },
-  module: {
-    preloaders: [
-      {
-        test: /\.jsx?$/,
-        loader: 'eslint',
-        exclude: /node_modules/
-      }
+  };
+
+  const urlLoaderOptions = {
+    dataUrlLimit: 10000,
+  };
+
+  const cssLoaderOptions = {
+    minimize: !dev,
+  };
+
+  const sassLoaderOptions = {
+    precision: 8,
+    sourceMap: true,
+  };
+
+  const postcssLoaderOptions = {
+    plugins: [
+      autoprefixer({
+        browsers: [
+          'Android >= 4',
+          'Chrome >= 20',
+          'Firefox >= 24',
+          'Explorer >= 10',
+          'Edge >= 1',
+          'iOS >= 6',
+          'Opera >= 12',
+          'Safari >= 6',
+        ],
+      }),
     ],
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loaders: ['react-hot-loader/webpack', 'babel'],
-      },
-      {
-        test: /(src[\\\/]common[\\\/]global-styles[\\\/].*\.css|node_modules[\\\/].*\.css)$/,
-        loader:
-          ARGV.DEV
-          ? 'style-loader!css-loader!postcss!resolve-url'
-          : ExtractTextPlugin.extract('style', 'css!postcss!resolve-url'),
-      },
-      {
-        test: /(src[\\\/]common[\\\/]global-styles[\\\/].*\.scss|node_modules[\\\/].*\.scss)$/,
-        loader:
-          ARGV.DEV
-          ? 'style-loader!css-loader!postcss!resolve-url!sass?sourceMap'
-          : ExtractTextPlugin.extract('style', 'css!postcss!resolve-url!sass?sourceMap'),
-      },
-      {
-        test: /\.scss$/,
-        exclude: /(src[\\\/]common[\\\/]global-styles[\\\/].*\.scss|node_modules[\\\/].*\.scss)$/,
-        loader:
-          ARGV.DEV
-          ? 'style-loader!css-loader?modules&localIdentName=[path]---[local]!postcss!resolve-url!sass?sourceMap'
-          : ExtractTextPlugin.extract('style', 'css?modules!postcss!resolve-url!sass?sourceMap'),
-      },
-      {
-        test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader',
-      },
-      {
-        test: /\.(gif|jpe?g|png|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url!img!image-webpack?bypassOnDebug',
-      },
-      {
-        test: /\.(woff2?|ttf|eot|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url',
-      },
-    ]
-  },
-  eslint: {
-    failOnWarning: false,
-    failOnError: true,
-  },
-  resolve: {
-    root: path.resolve(__dirname),
-    extensions: ['', '.js', '.jsx'],
-    alias: {
-      components: 'src/common/components',
-      content: 'src/common/content',
-      utils: 'src/common/utils',
-      images: 'src/images',
-      variables: 'src/common/global-styles/variables.scss',
+  };
+
+  const babelLoaderOptions = {
+    cacheDirectory: dev,
+  };
+
+  return {
+    entry: (dev ?
+      [
+        'webpack-hot-middleware/client?http://localhost:3000',
+        'babel-regenerator-runtime',
+        'react-hot-loader/patch',
+      ]
+    : []
+    ).concat('./src/index'),
+
+    output: {
+      path: path.join(__dirname, 'dist'),
+      filename: 'bundle.js',
+      publicPath: '/'
     },
-  },
+
+    plugins,
+
+    cache: dev,
+
+    devtool: dev ? 'cheap-module-eval-source-map' : false,
+
+    stats: {
+      colors: true,
+      reasons: true,
+      hash: verbose,
+      version: verbose,
+      timings: true,
+      chunks: verbose,
+      chunkModules: verbose,
+      cached: verbose,
+      cachedAssets: verbose,
+    },
+
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: "babel-loader",
+              options: babelLoaderOptions,
+            },
+            {
+              loader: "react-hot-loader/webpack",
+            }
+          ]
+        },
+        {
+          test: /(src[\\/]common[\\/]global-styles[\\/].*\.css|node_modules[\\/].*\.css)$/,
+          use: dev ?
+            [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+                options: cssLoaderOptions,
+              },
+              {
+                loader: 'postcss-loader',
+                options: postcssLoaderOptions,
+              },
+              {
+                loader: 'resolve-url-loader',
+              },
+            ]
+          :
+            ExtractTextPlugin.extract({
+              fallback: {
+                loader: 'style-loader',
+              },
+              use: [
+                {
+                  loader: 'css-loader',
+                  options: cssLoaderOptions,
+                },
+                {
+                  loader: 'postcss-loader',
+                  options: postcssLoaderOptions,
+                },
+                {
+                  loader: 'resolve-url-loader',
+                },
+              ],
+            }),
+        },
+        {
+          test: /(src[\\/]common[\\/]global-styles[\\/].*\.scss|node_modules[\\/].*\.scss)$/,
+          use: dev ?
+            [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+                options: cssLoaderOptions,
+              },
+              {
+                loader: 'postcss-loader',
+                options: postcssLoaderOptions,
+              },
+              {
+                loader: 'resolve-url-loader',
+              },
+              {
+                loader: 'sass-loader',
+                options: sassLoaderOptions,
+              },
+            ]
+          :
+            ExtractTextPlugin.extract({
+              fallback: {
+                loader: 'style-loader',
+              },
+              use: [
+                {
+                  loader: 'css-loader',
+                  options: cssLoaderOptions,
+                },
+                {
+                  loader: 'postcss-loader',
+                  options: postcssLoaderOptions,
+                },
+                {
+                  loader: 'resolve-url-loader',
+                },
+                {
+                  loader: 'sass-loader',
+                  options: sassLoaderOptions,
+                },
+              ],
+            }),
+        },
+        {
+          test: /\.scss$/,
+          exclude: /(src[\\/]common[\\/]global-styles[\\/].*\.scss|node_modules[\\/].*\.scss)$/,
+          use: dev ?
+            [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+                options: Object.assign({ modules: true, localIdentName: '[path]---[local]' }, cssLoaderOptions),
+              },
+              {
+                loader: 'postcss-loader',
+                options: postcssLoaderOptions,
+              },
+              {
+                loader: 'resolve-url-loader',
+              },
+              {
+                loader: 'sass-loader',
+                options: sassLoaderOptions,
+              },
+            ]
+          :
+            ExtractTextPlugin.extract({
+              fallback: {
+                loader: 'style-loader',
+              },
+              use: [
+                {
+                  loader: 'css-loader',
+                  options: Object.assign({ modules: true }, cssLoaderOptions),
+                },
+                {
+                  loader: 'postcss-loader',
+                  options: postcssLoaderOptions,
+                },
+                {
+                  loader: 'resolve-url-loader',
+                },
+                {
+                  loader: 'sass-loader',
+                  options: sassLoaderOptions,
+                },
+              ],
+            }),
+        },
+        {
+          test: /\.less$/,
+          use: dev ?
+            [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+                options: cssLoaderOptions,
+              },
+              {
+                loader: 'postcss-loader',
+                options: postcssLoaderOptions,
+              },
+              {
+                loader: 'less-loader',
+              },
+            ]
+          :
+            ExtractTextPlugin.extract({
+              fallback: {
+                loader: 'style-loader',
+              },
+              use: [
+                {
+                  loader: 'css-loader',
+                  options: cssLoaderOptions,
+                },
+                {
+                  loader: 'postcss-loader',
+                  options: postcssLoaderOptions,
+                },
+                {
+                  loader: 'less-loader',
+                },
+              ],
+            }),
+        },
+        {
+          test: /\.(gif|jpe?g|png|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: urlLoaderOptions,
+            },
+            {
+              loader: 'img-loader',
+              options: imgLoaderOptions,
+            },
+          ],
+        },
+        {
+          test: /\.(woff2?|ttf|eot|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: urlLoaderOptions,
+            },
+          ],
+        },
+      ],
+    },
+  };
 };
