@@ -44,9 +44,7 @@ class IndividualEduBlock extends Component {
               styles['text-overlay'],
               { [styles['is-hovering']]: hovering },
             )}
-          >
-            {edu.name}
-          </span>
+          />
         </div>
       </Col>
     );

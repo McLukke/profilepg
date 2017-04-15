@@ -1,3 +1,5 @@
+@import '~variables';
+
 .base {
   min-height: 100%;
   padding: 5rem;
@@ -49,7 +51,7 @@
   z-index: 30;
 
   div {
-    color: white;
+    color: $white;
   }
 }
 
