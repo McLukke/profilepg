@@ -27,8 +27,16 @@
   @include text-base;
 
   color: $charcoal;
+  font-size: 3rem;
   font-weight: bold;
 }
+
+.text-block {
+  @include text-base;
+
+  font-size: 2rem;
+}
+
 
 // possible text options
 .bottom-margin {
