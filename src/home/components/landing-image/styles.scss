@@ -1,4 +1,7 @@
+@import '~variables';
+
 .base {
+  background-color: $primary-gray;
   height: 100%;
   justify-content: center;
 }
