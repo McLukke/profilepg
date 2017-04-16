@@ -3,7 +3,9 @@
 .base {
   background-color: $primary-gray;
   min-height: 100%;
-  padding: 5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .section-wrapper {
@@ -11,10 +13,21 @@
 
   img {
     text-align: center;
-    width: 10rem;
+    width: 7rem;
+    align-self: center;
+    padding-bottom: 4rem;
   }
 }
 
-.content {
-  height: 100%;
+.column-wrapper {
+  padding: 0 1rem;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  @media (min-width: 992px) {
+    flex-direction: column;
+  }
 }
