@@ -37,7 +37,8 @@ import clipboard from 'images/work/clipboard.svg';
 import stand from 'images/work/stand.svg';
 
 export const homeContent = {
-  title: 'Kenny Lu',
+  firstName: 'Kenny',
+  lastName: 'Lu',
   aboutMe: 'Front-end Focused Web Developer based in Toronto ON',
 };
 

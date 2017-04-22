@@ -3,7 +3,7 @@ import Scroll from 'react-scroll';
 import { sections, homeContent } from 'content';
 import kennyBg from 'images/backgrounds/kenny_bg.jpg';
 import SectionHeader from 'components/typography/section-header';
-import TextBlock from 'components/typography/text-block';
+import HighlightText from 'components/typography/highlight-text';
 
 import styles from './styles.scss';
 
@@ -16,8 +16,17 @@ const LandingImage = () =>
         className={styles['background-image']}
       />
       <div className={styles['text-wrapper']}>
-        <SectionHeader red>{homeContent.title}</SectionHeader>
-        <TextBlock red>{homeContent.aboutMe}</TextBlock>
+        <SectionHeader upsize red>{homeContent.firstName.charAt(0)}</SectionHeader>
+        <SectionHeader rightMargin red>
+          {homeContent.firstName.substring(1, homeContent.firstName.length)}
+        </SectionHeader>
+
+        <SectionHeader upsize red>{homeContent.lastName.charAt(0)}</SectionHeader>
+        <SectionHeader red>
+          {homeContent.lastName.substring(1, homeContent.firstName.length)}
+        </SectionHeader>
+
+        <HighlightText>{homeContent.aboutMe}</HighlightText>
       </div>
     </div>
   </Scroll.Element>;

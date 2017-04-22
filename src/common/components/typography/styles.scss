@@ -13,9 +13,13 @@
 .section-header {
   @include text-base;
 
-  font-family: 'SFTextSemibold';
+  font-family: 'CPGothicBold';
   font-size: 3rem;
   text-transform: uppercase;
+
+  &.upsize {
+    font-size: 5rem;
+  }
 }
 
 .text-block-subheader {
@@ -42,10 +46,23 @@
   font-size: 2rem;
 }
 
+.highlight-text {
+  @include text-base;
+
+  color: $primary-gray;
+  font-family: 'SFTextRegular';
+  font-size: 2rem;
+  font-style: italic;
+}
+
 
 // possible text options
 .bottom-margin {
   margin-bottom: 1.5rem;
+}
+
+.right-margin {
+  margin-right: 1.5rem;
 }
 
 .red-text {
@@ -54,4 +71,8 @@
 
 .justify {
   text-align: justify;
+}
+
+.italic-text {
+  font-style: italic;
 }

@@ -10,6 +10,16 @@
   src: url('~fonts/SFText-Semibold.otf');
 }
 
+@font-face {
+  font-family: 'CPGothicRegular';
+  src: url('~fonts/Copperplate Gothic Bold Regular.ttf');
+}
+
+@font-face {
+  font-family: 'CPGothicBold';
+  src: url('~fonts/Copperplate Gothic Bold.otf');
+}
+
 html,
 body,
 #root {
