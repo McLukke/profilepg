@@ -47,5 +47,5 @@ Header.propTypes = {
 export default connect(
   ({ homePage }) => ({
     showBg: homePage.showBg,
-  })
+  }),
 )(Header);
