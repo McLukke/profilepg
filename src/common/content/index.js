@@ -42,17 +42,22 @@ export const footerContent = {
       id: 701,
       title: 'Github',
       src: githubLogo,
+      goTo: 'https://github.com/mclukke',
     },
     {
       id: 702,
       title: 'LinkedIn',
       src: linkedinLogo,
+      goTo: 'https://www.linkedin.com/in/kenshengjialu/',
     },
     {
       id: 703,
       title: 'Meetup',
       src: meetupLogo,
+      goTo: 'test',
     },
+  ],
+  development: [
     {
       id: 704,
       title: 'Android',
@@ -251,9 +256,5 @@ export const sections = [
   {
     name: 'portfolio',
     title: 'Portfolio',
-  },
-  {
-    name: 'contact',
-    title: 'Contact',
   },
 ];

@@ -9,6 +9,7 @@ import styles from './styles.scss';
 class SocialMediaIcon extends Component {
   static propTypes = {
     media: PropTypes.shape({}),
+    bigger: PropTypes.bool,
   };
 
   constructor(props) {
@@ -24,7 +25,7 @@ class SocialMediaIcon extends Component {
   turnHoverOff = () => this.setState({ hovering: false });
 
   render() {
-    const { media } = this.props;
+    const { media, bigger } = this.props;
 
     return (
       <div
@@ -32,6 +33,7 @@ class SocialMediaIcon extends Component {
         className={cx(
           styles['social-media'],
           { [styles['is-hovering']]: this.state.hovering },
+          { [styles.bigger]: bigger },
         )}
         onMouseEnter={this.turnHoverOn}
         onMouseLeave={this.turnHoverOff}
@@ -62,11 +64,18 @@ const Footer = () =>
             smOffset={1}
             lg={8}
             lgOffset={2}
-            className={styles['social-media-wrapper']}
           >
-            {footerContent.socialMedia.map(media =>
-              <SocialMediaIcon key={media.id} media={media} />,
-            )}
+            <div className={styles['social-media-wrapper']}>
+              {footerContent.socialMedia.map(media =>
+                <SocialMediaIcon bigger key={media.id} media={media} />,
+              )}
+            </div>
+
+            <div className={styles.development}>
+              {footerContent.development.map(dev =>
+                <SocialMediaIcon key={dev.id} media={dev} />,
+              )}
+            </div>
           </Col>
         </Row>
 

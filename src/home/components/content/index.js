@@ -7,7 +7,6 @@ import Education from '../education';
 import Work from '../work';
 import Skills from '../skills';
 import Portfolio from '../portfolio';
-import Contact from '../contact';
 
 import styles from './styles.scss';
 
@@ -19,7 +18,6 @@ const HomePageContent = () =>
     <Work />
     <Skills />
     <Portfolio />
-    <Contact />
     <Footer />
   </section>;
 
