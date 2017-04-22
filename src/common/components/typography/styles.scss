@@ -13,13 +13,14 @@
 .section-header {
   @include text-base;
 
-  font-weight: bold;
+  font-family: 'SFTextSemibold';
   text-transform: uppercase;
 }
 
 .text-block-subheader {
   @include text-base;
 
+  font-family: 'SFTextSemibold';
   font-style: italic;
 }
 
@@ -27,8 +28,10 @@
   @include text-base;
 
   color: $charcoal;
+  font-family: 'SFTextSemibold';
   font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .text-block {
