@@ -18,7 +18,7 @@ const LandingImage = () =>
       <div className={styles['text-wrapper']}>
         <SectionHeader upsize red>{homeContent.title}</SectionHeader>
 
-        <HighlightText>{homeContent.aboutMe}</HighlightText>
+        <HighlightText italic>{homeContent.aboutMe}</HighlightText>
       </div>
     </div>
   </Scroll.Element>;

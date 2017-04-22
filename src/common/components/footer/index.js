@@ -2,7 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import { footerContent } from 'content';
-import FooterTitle from 'components/typography/footer-title';
+import HighlightText from 'components/typography/highlight-text';
 
 import styles from './styles.scss';
 
@@ -18,9 +18,9 @@ const Footer = () =>
         md={6}
         mdOffset={3}
       >
-        <FooterTitle>
+        <HighlightText>
           {footerContent.contact}
-        </FooterTitle>
+        </HighlightText>
 
         <Row>
           <Col
@@ -46,12 +46,10 @@ const Footer = () =>
 
         <hr />
 
-        <div>{footerContent.copyright.reserved}</div>
-        <div>
-          {footerContent.copyright.text} <a href={footerContent.copyright.url}>
-            {footerContent.copyright.urlText}
-          </a>
-        </div>
+        <HighlightText>{footerContent.copyright.reserved}</HighlightText>
+        <HighlightText>
+          {footerContent.copyright.text}
+        </HighlightText>
       </Col>
     </Row>
   </section>;

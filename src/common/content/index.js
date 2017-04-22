@@ -40,7 +40,7 @@ export const homeContent = {
 };
 
 export const footerContent = {
-  contact: 'Reach out to me',
+  contact: 'Reach out',
   socialMedia: [
     {
       id: 701,
