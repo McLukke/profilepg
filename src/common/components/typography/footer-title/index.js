@@ -7,7 +7,7 @@ const FooterTitle = ({
 }) =>
   <div
     {...restProps}
-    classNames={styles['footer-title']}
+    className={styles['footer-title']}
   />;
 
 export default FooterTitle;

@@ -37,7 +37,7 @@ const Footer = () =>
                   className={styles['social-media']}
                   src={media.src}
                   alt={media.title}
-                  onClick={media.goTo}
+                  onClick={() => window.open(media.goTo)}
                 />,
               )}
             </div>
