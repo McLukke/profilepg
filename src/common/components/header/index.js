@@ -5,6 +5,7 @@ import Scroll from 'react-scroll';
 import { sections } from 'content';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+import HighlightText from 'components/typography/highlight-text';
 
 import styles from './styles.scss';
 
@@ -30,7 +31,7 @@ const Header = ({ showBg }) =>
                 smooth
                 duration={500}
               >
-                {section.title}
+                <HighlightText>{section.title}</HighlightText>
               </Scroll.Link>,
             )}
           </div>
