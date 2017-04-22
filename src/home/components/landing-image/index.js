@@ -16,15 +16,7 @@ const LandingImage = () =>
         className={styles['background-image']}
       />
       <div className={styles['text-wrapper']}>
-        <SectionHeader upsize red>{homeContent.firstName.charAt(0)}</SectionHeader>
-        <SectionHeader rightMargin red>
-          {homeContent.firstName.substring(1, homeContent.firstName.length)}
-        </SectionHeader>
-
-        <SectionHeader upsize red>{homeContent.lastName.charAt(0)}</SectionHeader>
-        <SectionHeader red>
-          {homeContent.lastName.substring(1, homeContent.firstName.length)}
-        </SectionHeader>
+        <SectionHeader upsize red>{homeContent.title}</SectionHeader>
 
         <HighlightText>{homeContent.aboutMe}</HighlightText>
       </div>

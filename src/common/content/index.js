@@ -1,12 +1,8 @@
 /* eslint-disable */
 // social media
-import githubLogo from 'images/social-media/github-logo.svg';
-import linkedinLogo from 'images/social-media/linkedin-logo.svg';
-import meetupLogo from 'images/social-media/meetup-logo.svg';
-import androidLogo from 'images/social-media/android.svg';
-import appleLogo from 'images/social-media/apple-logotype.svg';
-import wordpressLogo from 'images/social-media/wordpress-logo.svg';
-import evernoteLogo from 'images/social-media/evernote-logo.svg';
+import githubLogo from 'images/social-media/github.png';
+import linkedinLogo from 'images/social-media/linkedin.png';
+import meetupLogo from 'images/social-media/meetup.png';
 
 // logos
 import voilah from 'images/portfolio/voilah.svg';
@@ -30,6 +26,8 @@ import mySass from 'images/education/sass.jpg';
 import myRedux from 'images/education/redux.jpg';
 import myWP from 'images/education/wp.jpg';
 import myDocker from 'images/education/docker.jpg';
+import myApple from 'images/education/apple.jpg';
+import myAndroid from 'images/education/android.jpg';
 
 // Work
 import lightbulb from 'images/work/lightbulb.svg';
@@ -37,12 +35,12 @@ import clipboard from 'images/work/clipboard.svg';
 import stand from 'images/work/stand.svg';
 
 export const homeContent = {
-  firstName: 'Kenny',
-  lastName: 'Lu',
+  title: 'Kenny Lu',
   aboutMe: 'Front-end Focused Web Developer based in Toronto ON',
 };
 
 export const footerContent = {
+  contact: 'Reach out to me',
   socialMedia: [
     {
       id: 701,
@@ -60,29 +58,7 @@ export const footerContent = {
       id: 703,
       title: 'Meetup',
       src: meetupLogo,
-      goTo: 'test',
-    },
-  ],
-  development: [
-    {
-      id: 704,
-      title: 'Android',
-      src: androidLogo,
-    },
-    {
-      id: 705,
-      title: 'Apple',
-      src: appleLogo,
-    },
-    {
-      id: 706,
-      title: 'Wordpress',
-      src: wordpressLogo,
-    },
-    {
-      id: 707,
-      title: 'Evernote',
-      src: evernoteLogo,
+      goTo: 'https://www.meetup.com/members/131868792/',
     },
   ],
   copyright: {
@@ -230,6 +206,16 @@ export const myEducation = [
     id: 210,
     source: myDocker,
     name: 'Docker',
+  },
+  {
+    id: 211,
+    source: myAndroid,
+    name: 'Android',
+  },
+  {
+    id: 212,
+    source: myApple,
+    name: 'Apple',
   },
 ];
 

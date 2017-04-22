@@ -8,15 +8,6 @@
   width: 100%;
 }
 
-.development {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-bottom: 1.5rem;
-  padding-top: 2.5rem;
-}
-
 .social-media-wrapper {
   align-items: center;
   display: flex;
@@ -27,25 +18,8 @@
 }
 
 .social-media {
-  background-color: $primary-gray;
   cursor: pointer;
-  max-height: 40px;
-  max-width: 40px;
-  padding: 4px;
-  width: 40px;
-
-  &.is-hovering {
-    background-color: $salmon;
-  }
-
-  &.bigger {
-    max-height: 60px;
-    max-width: 60px;
-    padding: 6px;
-    width: 60px;
-  }
-
-  img {
-    width: 100%;
-  }
+  max-height: 60px;
+  max-width: 60px;
+  width: 60px;
 }

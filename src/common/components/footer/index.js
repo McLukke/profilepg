@@ -1,48 +1,11 @@
-import React, { Component, PropTypes } from 'react';
-import cx from 'classnames';
+import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import { footerContent } from 'content';
+import FooterTitle from 'components/typography/footer-title';
 
 import styles from './styles.scss';
 
-class SocialMediaIcon extends Component {
-  static propTypes = {
-    media: PropTypes.shape({}),
-    bigger: PropTypes.bool,
-  };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      hovering: false,
-    };
-  }
-
-  turnHoverOn = () => this.setState({ hovering: true });
-
-  turnHoverOff = () => this.setState({ hovering: false });
-
-  render() {
-    const { media, bigger } = this.props;
-
-    return (
-      <div
-        key={media.id}
-        className={cx(
-          styles['social-media'],
-          { [styles['is-hovering']]: this.state.hovering },
-          { [styles.bigger]: bigger },
-        )}
-        onMouseEnter={this.turnHoverOn}
-        onMouseLeave={this.turnHoverOff}
-      >
-        <img src={media.src} alt={media.title} />
-      </div>
-    );
-  }
-}
 
 const Footer = () =>
   <section className={styles.base}>
@@ -55,6 +18,10 @@ const Footer = () =>
         md={6}
         mdOffset={3}
       >
+        <FooterTitle>
+          {footerContent.contact}
+        </FooterTitle>
+
         <Row>
           <Col
             xs={12}
@@ -65,13 +32,13 @@ const Footer = () =>
           >
             <div className={styles['social-media-wrapper']}>
               {footerContent.socialMedia.map(media =>
-                <SocialMediaIcon bigger key={media.id} media={media} />,
-              )}
-            </div>
-
-            <div className={styles.development}>
-              {footerContent.development.map(dev =>
-                <SocialMediaIcon key={dev.id} media={dev} />,
+                <img // eslint-disable-line
+                  key={media.id}
+                  className={styles['social-media']}
+                  src={media.src}
+                  alt={media.title}
+                  onClick={media.goTo}
+                />,
               )}
             </div>
           </Col>

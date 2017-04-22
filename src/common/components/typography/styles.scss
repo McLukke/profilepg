@@ -55,6 +55,14 @@
   font-style: italic;
 }
 
+.footer-title {
+  @include text-base;
+
+  color: $primary-gray;
+  font-family: 'CPGothicBold';
+  font-size: 7rem;
+}
+
 
 // possible text options
 .bottom-margin {
@@ -66,7 +74,7 @@
 }
 
 .red-text {
-  color: $salmon;
+  color: $text-red;
 }
 
 .justify {
