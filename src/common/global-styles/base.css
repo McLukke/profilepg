@@ -1,9 +1,20 @@
 @import '~normalize.css/normalize.css';
 
+@font-face {
+  font-family: 'SFTextRegular';
+  src: url('~fonts/SFText-Regular.otf');
+}
+
+@font-face {
+  font-family: 'SFTextSemibold';
+  src: url('~fonts/SFText-Semibold.otf');
+}
+
 html,
 body,
 #root {
   height: 100%;
   width: 100%;
   font-size: 14px;
+  font-family: 'SFTextRegular';
 }

@@ -183,6 +183,7 @@ module.exports = {
       content: 'src/common/content',
       utils: 'src/common/utils',
       images: 'src/images',
+      fonts: 'src/fonts',
       variables: 'src/common/global-styles/variables.scss',
     },
   },
