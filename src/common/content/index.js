@@ -20,23 +20,28 @@ import realMatters from 'images/portfolio/real_matters.svg';
 import revalue from 'images/portfolio/revalue.svg';
 
 // Education
-import myGithub from 'images/education/git.jpg';
-import myNodejs from 'images/education/nodejs.png';
-import myReact from 'images/education/react.jpg';
-import myPhp from 'images/education/php.png';
-import myBabel from 'images/education/babel-logo.png';
-import myGraphQL from 'images/education/graphql-logo.png';
-import mySass from 'images/education/sass-logo.png';
-import myRedux from 'images/education/redux-logo.png';
+import myGithub from 'images/education/github.jpg';
+import myNodejs from 'images/education/node.jpg';
+import myReact from 'images/education/reactjs.jpg';
+import myPhp from 'images/education/php.jpg';
+import myBabel from 'images/education/babel.jpg';
+import myGraphQL from 'images/education/graphql.jpg';
+import mySass from 'images/education/sass.jpg';
+import myRedux from 'images/education/redux.jpg';
+import myWP from 'images/education/wp.jpg';
+import myDocker from 'images/education/docker.jpg';
 
 // Work
 import lightbulb from 'images/work/lightbulb.svg';
 import clipboard from 'images/work/clipboard.svg';
 import stand from 'images/work/stand.svg';
 
-export const footerContent = {
+export const homeContent = {
   title: 'Kenny Lu',
-  finalThought: 'Front-end Focused Web Developer based in Toronto ON',
+  aboutMe: 'Front-end Focused Web Developer based in Toronto ON',
+};
+
+export const footerContent = {
   socialMedia: [
     {
       id: 701,
@@ -181,14 +186,14 @@ export const myEducation = [
     name: 'NodeJS',
   },
   {
+    id: 201,
+    source: myGithub,
+    name: 'GitHub',
+  },
+  {
     id: 206,
     source: myReact,
     name: 'React',
-  },
-  {
-    id: 207,
-    source: myPhp,
-    name: 'PHP',
   },
   {
     id: 202,
@@ -196,14 +201,14 @@ export const myEducation = [
     name: 'GraphQL',
   },
   {
-    id: 208,
-    source: myBabel,
-    name: 'Babel',
-  },
-  {
     id: 204,
     source: mySass,
     name: 'SASS',
+  },
+  {
+    id: 208,
+    source: myBabel,
+    name: 'Babel',
   },
   {
     id: 205,
@@ -211,9 +216,19 @@ export const myEducation = [
     name: 'Redux',
   },
   {
-    id: 201,
-    source: myGithub,
-    name: 'GitHub',
+    id: 207,
+    source: myPhp,
+    name: 'PHP',
+  },
+  {
+    id: 209,
+    source: myWP,
+    name: 'Wordpress',
+  },
+  {
+    id: 210,
+    source: myDocker,
+    name: 'Docker',
   },
 ];
 

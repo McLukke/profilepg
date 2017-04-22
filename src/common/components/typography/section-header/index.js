@@ -6,6 +6,7 @@ import styles from '../styles.scss';
 const SectionHeader = ({
   className,
   bottomMargin,
+  red,
   ...restProps
 }) =>
   <div
@@ -15,12 +16,14 @@ const SectionHeader = ({
       styles.base,
       styles['section-header'],
       { [styles['bottom-margin']]: bottomMargin },
+      { [styles['red-text']]: red },
     )}
   />;
 
 SectionHeader.propTypes = {
   className: PropTypes.string,
   bottomMargin: PropTypes.bool,
+  red: PropTypes.bool,
 };
 
 export default SectionHeader;

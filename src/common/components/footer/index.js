@@ -55,8 +55,6 @@ const Footer = () =>
         md={6}
         mdOffset={3}
       >
-        <div>{footerContent.title}</div>
-        <div>{footerContent.finalThought}</div>
         <Row>
           <Col
             xs={12}

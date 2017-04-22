@@ -15,3 +15,14 @@
 .background-image {
   width: 100%;
 }
+
+.text-wrapper {
+  left: 10%;
+  position: absolute;
+  top: 25%;
+  width: 80%;
+
+  @media (min-width: 768px) {
+    width: 40%;
+  }
+}
