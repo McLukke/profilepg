@@ -5,6 +5,7 @@ import { Circle } from 'rc-progress';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import carBg from 'images/backgrounds/car_bg.jpg';
+import TextBlockHeader from 'components/typography/text-block-header';
 
 import styles from './styles.scss';
 
@@ -37,9 +38,9 @@ const Skills = () =>
                   trailColor="#373737"
                   strokeColor="#ff4646"
                 />
-                <span className={styles['skill-title']}>
+                <TextBlockHeader className={styles['skill-title']}>
                   {skill.name}
-                </span>
+                </TextBlockHeader>
               </Col>,
             )}
           </Row>
