@@ -178,24 +178,24 @@ export const myEducation = [
     name: 'GraphQL',
   },
   {
-    id: 204,
-    source: mySass,
-    name: 'SASS',
-  },
-  {
     id: 208,
     source: myBabel,
     name: 'Babel',
   },
   {
-    id: 205,
-    source: myRedux,
-    name: 'Redux',
+    id: 204,
+    source: mySass,
+    name: 'SASS',
   },
   {
     id: 207,
     source: myPhp,
     name: 'PHP',
+  },
+  {
+    id: 205,
+    source: myRedux,
+    name: 'Redux',
   },
   {
     id: 209,
