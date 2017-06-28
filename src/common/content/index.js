@@ -5,15 +5,15 @@ import linkedinLogo from 'images/social-media/linkedin.png';
 import meetupLogo from 'images/social-media/meetup.png';
 
 // logos
-import voilah from 'images/portfolio/voilah.svg';
-import unitedAsia from 'images/portfolio/united_asia.svg';
-import willeyPrinting from 'images/portfolio/willey_printing.svg';
-import aveConcept from 'images/portfolio/ave_concept.svg';
+import voilah from 'images/portfolio/voilah.jpg';
+import unitedAsia from 'images/portfolio/unite_asia.jpg';
+import willeyPrinting from 'images/portfolio/willey_printing.jpg';
+import aveConcept from 'images/portfolio/ave_concept.jpg';
 import wrangler from 'images/portfolio/wrangler.jpg';
-import pahk from 'images/portfolio/public_art_hk.svg';
-import yesMaster from 'images/portfolio/yes_master.png';
-import realMatters from 'images/portfolio/real_matters.svg';
-import revalue from 'images/portfolio/revalue.svg';
+import pahk from 'images/portfolio/public_art_hk.jpg';
+import yesMaster from 'images/portfolio/yes_master.jpg';
+import realMatters from 'images/portfolio/real_matters.jpg';
+import revalue from 'images/portfolio/revalue.jpg';
 
 // Education
 import myGithub from 'images/education/github.jpg';
