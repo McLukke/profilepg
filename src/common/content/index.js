@@ -6,7 +6,7 @@ import meetupLogo from 'images/social-media/meetup.png';
 
 // logos
 import voilah from 'images/portfolio/voilah.jpg';
-import unitedAsia from 'images/portfolio/unite_asia.jpg';
+import uniteAsia from 'images/portfolio/unite_asia.jpg';
 import willeyPrinting from 'images/portfolio/willey_printing.jpg';
 import aveConcept from 'images/portfolio/ave_concept.jpg';
 import wrangler from 'images/portfolio/wrangler.jpg';
@@ -14,6 +14,17 @@ import pahk from 'images/portfolio/public_art_hk.jpg';
 import yesMaster from 'images/portfolio/yes_master.jpg';
 import realMatters from 'images/portfolio/real_matters.jpg';
 import revalue from 'images/portfolio/revalue.jpg';
+
+// backdrops
+import voilahBg from 'images/portfolio/voilah.png';
+import uniteAsiaBg from 'images/portfolio/unite_asia.png';
+import willeyPrintingBg from 'images/portfolio/willey_printing.png';
+import aveConceptBg from 'images/portfolio/ave_concept.png';
+import wranglerBg from 'images/portfolio/wrangler.png';
+import pahkBg from 'images/portfolio/public_art_hk.png';
+import yesMasterBg from 'images/portfolio/yes_master.png';
+import realMattersBg from 'images/portfolio/solidifi.svg';
+import revalueBg from 'images/portfolio/revalue.png';
 
 // Education
 import myGithub from 'images/education/github.jpg';
@@ -74,13 +85,15 @@ export const portfolioImages = [
     title: 'Voilah!',
     description: 'A fashion eshop from Singapore',
     source: voilah,
+    backdrop: voilahBg,
     alt: 'Voilah!',
     url: '#',
   },
   {
     title: 'United Asia',
     description: 'Rappers across Asia unite!',
-    source: unitedAsia,
+    source: uniteAsia,
+    backdrop: uniteAsiaBg,
     alt: 'United Asia',
     url: '#',
   },
@@ -88,6 +101,7 @@ export const portfolioImages = [
     title: 'Willey Printing',
     description: 'Traditional printing house in Hong Kong',
     source: willeyPrinting,
+    backdrop: willeyPrintingBg,
     alt: 'Willey Printing',
     url: '#',
   },
@@ -95,6 +109,7 @@ export const portfolioImages = [
     title: 'Ave Concept',
     description: 'High-end female intimate lifestyle products from Copenhagen',
     source: aveConcept,
+    backdrop: aveConceptBg,
     alt: 'Ave Concept',
     url: '#',
   },
@@ -102,6 +117,7 @@ export const portfolioImages = [
     title: 'Wrangler - True Wanderer',
     description: 'International motorbike contest, online registration website',
     source: wrangler,
+    backdrop: wranglerBg,
     alt: 'Wrangler True Wanderer',
     url: '#',
   },
@@ -109,6 +125,7 @@ export const portfolioImages = [
     title: 'Public Art Hong Kong (PAHK)',
     description: 'NGO website for HK art gallery',
     source: pahk,
+    backdrop: pahkBg,
     alt: 'Public Art Hong Kong',
     url: '#',
   },
@@ -116,6 +133,7 @@ export const portfolioImages = [
     title: 'YesMaster!',
     description: 'A web and mobile Ecommerce shop with payment',
     source: yesMaster,
+    backdrop: yesMasterBg,
     alt: 'YesMaster!',
     url: '#',
   },
@@ -123,13 +141,15 @@ export const portfolioImages = [
     title: 'Real Matters',
     description: 'Corporate real estate website in ReactJS',
     source: realMatters,
-    alt: 'Solidifi',
+    backdrop: realMattersBg,
+    alt: 'Real Matters',
     url: '#',
   },
   {
     title: 'Revalue',
     description: 'React Native real estate mobile app',
     source: revalue,
+    backdrop: revalueBg,
     alt: 'Revalue',
     url: '#',
   },
