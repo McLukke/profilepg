@@ -6,6 +6,10 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
+
+  @media (orientation: landscape) {
+    height: auto;
+  }
 }
 
 .image-container {
