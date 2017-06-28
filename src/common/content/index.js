@@ -144,7 +144,7 @@ export const myWorkExp = [
   },
   {
     id: 302,
-    title: 'Fearless',
+    title: 'Adventurous',
     description: 'I fearlessly jump into code. I own my code and I’m passionate about producing working systems. Im also a strong believer of helping and sharing my work and knowledge with others. Im never shy of asking for help and understanding complex systems. By being openly passionate I create positivity and optimism with team members and gain trust and respect.',
     svg: stand,
   },

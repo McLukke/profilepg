@@ -5,29 +5,54 @@
   background-color: $primary-gray;
   display: flex;
   min-height: 100%;
-  padding: 1rem;
+  padding: 3rem 1rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 1rem;
+  }
 }
 
 .section-wrapper {
-  padding: 1rem;
+  padding: 0;
 
   img {
     align-self: center;
-    padding-bottom: 4rem;
     text-align: center;
     width: 7rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 1rem;
   }
 }
 
 .column-wrapper {
-  padding: 0 1rem;
+  padding: 0 0 3rem 0;
+
+  @media (min-width: 768px) {
+    padding: 0 1rem;
+  }
 }
 
 .icon-wrapper {
   display: flex;
   flex-direction: row;
+  float: left;
+  margin-right: 2rem;
+  padding-bottom: 1rem;
+
+  >div {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
 
   @media (min-width: 992px) {
+    align-items: center;
     flex-direction: column;
+    float: none;
+    margin-right: 0;
   }
 }
