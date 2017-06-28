@@ -32,9 +32,9 @@
 }
 
 .portfolio-logos {
+  cursor: pointer;
   height: 100%;
   width: 100%;
-  cursor: pointer;
 }
 
 .text-wrapper {
@@ -58,4 +58,19 @@
 
 .hide-text-wrapper {
   transform: translate(0, -100%);
+}
+
+.job-detail {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-height: 85vh;
+
+  img {
+    width: 100%;
+
+    &.revalue {
+      width: 50%;
+    }
+  }
 }
