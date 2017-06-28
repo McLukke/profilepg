@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import cx from 'classnames';
 import Scroll from 'react-scroll';
 import { sections, portfolioImages } from 'content';
 import Row from 'react-bootstrap/lib/Row';
@@ -34,13 +35,16 @@ class Portfolio extends Component {
 
     return (
       <Scroll.Element name={sections[4].name} className={styles.base}>
-        <Modal
+        {selectedPortfolio && <Modal
           show={showModal}
+          bsSize="large"
           onHide={() => this.toggleModal(null)}
         >
-          {console.log('selectedPortfolio: ', selectedPortfolio)}
-          hello world
+          <div className={cx(styles['job-detail'])}>
+            <img className={styles.revalue} src={selectedPortfolio.backdrop} alt={selectedPortfolio.alt} />
+          </div>
         </Modal>
+        }
 
         <Row>
           <Col
