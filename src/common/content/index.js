@@ -138,7 +138,7 @@ export const portfolioImages = [
 export const myWorkExp = [
   {
     id: 301,
-    title: 'Team Lead',
+    title: 'Responsible',
     description: 'I believe the world of software development is naturally chaotic and it is our duty to transform chaos into clarity and confidence. There are many things that I know I cannot fix but I do understand the value of trade-offs. Each mission I embark on has a fine balance between its business value, quality and future options that I always plan effectively and strive for continual progress.',
     svg: lightbulb,
   },
