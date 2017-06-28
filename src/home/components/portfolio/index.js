@@ -1,16 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import Scroll from 'react-scroll';
-import cx from 'classnames';
 import { sections, portfolioImages } from 'content';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import SectionHeader from 'components/typography/section-header';
-import TextBlockHeader from 'components/typography/text-block-header';
-import TextBlockSubheader from 'components/typography/text-block-subheader';
+import Modal from 'react-bootstrap/lib/Modal';
 
 import styles from './styles.scss';
 
-class PortfolioImage extends Component {
+
+class Portfolio extends Component {
   static propTypes = {
     portfolio: PropTypes.shape({}),
   }
@@ -18,65 +16,65 @@ class PortfolioImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hovering: false,
+      showModal: false,
+      selectedPortfolio: null,
     };
   }
 
-  handleMouseEnter = () => this.setState({ hovering: true });
-
-  handleMouseExit = () => this.setState({ hovering: false });
+  toggleModal = (portfolio) => {
+    this.setState({
+      ...this.state,
+      showModal: !this.state.showModal,
+      selectedPortfolio: portfolio,
+    });
+  }
 
   render() {
-    const { portfolio } = this.props;
-    const { hovering } = this.state;
+    const { showModal, selectedPortfolio } = this.state;
 
     return (
-      <Col xs={6} lg={4} className={styles['portfolio-image-base']}>
-        <div className={styles['portfolio-image-wrapper']}>
-          <a
-            onMouseEnter={this.handleMouseEnter}
-            onMouseLeave={this.handleMouseExit}
-            className={styles['portfolio-link']}
-            href={portfolio.url}
+      <Scroll.Element name={sections[4].name} className={styles.base}>
+        <Modal
+          show={showModal}
+          onHide={() => this.toggleModal(null)}
+        >
+          {console.log('selectedPortfolio: ', selectedPortfolio)}
+          hello world
+        </Modal>
+
+        <Row>
+          <Col
+            xs={12}
+            lg={8}
+            lgOffset={2}
           >
-            <img
-              className={styles['portfolio-logos']}
-              src={portfolio.source}
-              role={portfolio.alt}
-            />
-            <div
-              className={cx(
-                styles['text-wrapper'],
-                { [styles['hide-text-wrapper']]: hovering },
+            <Row className={styles['content-wrapper']}>
+              {portfolioImages.map((portfolio, index) =>
+                <Col key={index} xs={6} lg={4} className={styles['portfolio-image-base']}>
+                  <div className={styles['portfolio-image-wrapper']}>
+                    <a
+                      href=""
+                      className={styles['portfolio-link']}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        this.toggleModal(portfolio);
+                      }}
+                    >
+                      <img
+                        className={styles['portfolio-logos']}
+                        src={portfolio.source}
+                        role={portfolio.alt}
+                      />
+                    </a>
+                  </div>
+                </Col>,
               )}
-            >
-              <TextBlockHeader>{portfolio.title}</TextBlockHeader>
-              <TextBlockSubheader>
-                {portfolio.description}
-              </TextBlockSubheader>
-            </div>
-          </a>
-        </div>
-      </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Scroll.Element>
     );
   }
 }
-
-const Portfolio = () =>
-  <Scroll.Element name={sections[4].name} className={styles.base}>
-    <Row>
-      <Col
-        xs={12}
-        lg={8}
-        lgOffset={2}
-      >
-        <Row className={styles['content-wrapper']}>
-          {portfolioImages.map((portfolio, index) =>
-            <PortfolioImage portfolio={portfolio} key={index} />,
-          )}
-        </Row>
-      </Col>
-    </Row>
-  </Scroll.Element>;
 
 export default Portfolio;
