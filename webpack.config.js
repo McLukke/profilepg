@@ -50,13 +50,22 @@ module.exports = {
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
       new ExtractTextPlugin('main-[contenthash].css'),
-      new webpack.optimize.OccurenceOrderPlugin(),
-      new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
+        mangle: true,
         compress: {
           warnings: ARGV.VERBOSE,
+          pure_getters: true,
+          unsafe: true,
+          unsafe_comps: true,
+          screw_ie8: true,
         },
+        output: {
+          comments: false,
+        },
+        exclude: [/\.min\.js$/gi], // skip pre-minified libs
       }),
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.optimize.DedupePlugin(),
       new webpack.optimize.AggressiveMergingPlugin(),
     ]
   ),
