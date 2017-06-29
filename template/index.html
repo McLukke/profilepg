@@ -15,10 +15,21 @@
     <% if (htmlWebpackPlugin.files.favicon) { %>
       <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon %>">
     <% } %>
+    <%
+      for (var chunk in htmlWebpackPlugin.files.chunks) {
+        var keys = Object.keys(htmlWebpackPlugin.files.chunks[chunk].css);
+
+        for (var key in keys) {
+    %>
+    <link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.files.chunks[chunk].css[key] %>"></link>
+    <%
+        }
+      }
+    %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
   </head>
   <body>
     <div id='root' />
+    <script src="/bundle.js"></script>
   </body>
-  <script src="/bundle.js"></script>
 </html>
