@@ -12,7 +12,8 @@
     "lint-js": "eslint src",
     "lint": "npm run lint-js && npm run lint-sass",
     "dev": "node server.js --dev",
-    "start": "npm-run-all --parallel dev"
+    "start": "npm-run-all --parallel dev",
+    "build": " webpack -p --progress --env.verbose"
   },
   "author": "Kenny Lu",
   "license": "MIT",
@@ -54,7 +55,7 @@
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.3",
+    "webpack": "^1.15.0",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.13.2"
