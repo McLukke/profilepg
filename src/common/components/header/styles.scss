@@ -13,14 +13,13 @@
   }
 
   .link {
-    border: 1px solid $text-red;
     color: $primary-gray;
     cursor: pointer;
     padding: .5rem;
     text-decoration: none;
 
     &:hover {
-      background-color: $text-red;
+      border-bottom: 2px solid $text-red;
       text-decoration: none;
     }
 
@@ -34,4 +33,9 @@
     display: flex;
     justify-content: space-around;
   }
+}
+
+.active {
+  border-bottom: 2px solid $text-red;
+  color: $charcoal;
 }

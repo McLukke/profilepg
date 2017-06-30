@@ -24,7 +24,7 @@ const Header = ({ showBg }) =>
             {sections.map((section, index) =>
               <Scroll.Link
                 key={index}
-                activeClass="active"
+                activeClass={styles.active}
                 className={styles.link}
                 to={section.name}
                 spy
