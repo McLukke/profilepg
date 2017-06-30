@@ -239,7 +239,7 @@ export const myEducation = [
   },
 ];
 
-export const mySkills = [
+export const myStats = [
   {
     name: 'HTML5',
     percentage: 74,
@@ -272,8 +272,8 @@ export const sections = [
     title: 'Work',
   },
   {
-    name: 'skills',
-    title: 'Skills',
+    name: 'stats',
+    title: 'Stats',
   },
   {
     name: 'portfolio',

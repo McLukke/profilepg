@@ -1,6 +1,6 @@
 import React from 'react';
 import Scroll from 'react-scroll';
-import { mySkills, sections } from 'content';
+import { myStats, sections } from 'content';
 import { Circle } from 'rc-progress';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
@@ -9,7 +9,7 @@ import TextBlockHeader from 'components/typography/text-block-header';
 
 import styles from './styles.scss';
 
-const Skills = () =>
+const Stats = () =>
   <Scroll.Element name={sections[3].name} className={styles.base}>
     <div className={styles['image-container']}>
       <img src={carBg} alt="" className={styles['car-bg']} />
@@ -23,7 +23,7 @@ const Skills = () =>
           mdOffset={2}
         >
           <Row>
-            {mySkills.map((skill, index) =>
+            {myStats.map((skill, index) =>
               <Col
                 key={index}
                 className={styles['progress-bar-wrapper']}
@@ -49,4 +49,4 @@ const Skills = () =>
     </div>
   </Scroll.Element>;
 
-export default Skills;
+export default Stats;

@@ -5,7 +5,7 @@ import Footer from 'components/footer';
 import LandingImage from '../landing-image';
 import Education from '../education';
 import Work from '../work';
-import Skills from '../skills';
+import Stats from '../stats';
 import Portfolio from '../portfolio';
 
 import styles from './styles.scss';
@@ -16,7 +16,7 @@ const HomePageContent = () =>
     <LandingImage />
     <Education />
     <Work />
-    <Skills />
+    <Stats />
     <Portfolio />
     <Footer />
   </section>;
