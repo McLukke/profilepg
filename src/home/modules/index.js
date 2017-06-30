@@ -1,5 +1,3 @@
-import { combineReducers } from 'react-redux';
-
 import actionTypes from './action-types';
 
 
