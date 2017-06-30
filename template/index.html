@@ -12,6 +12,7 @@
     <% if (htmlWebpackPlugin.options.title) { %>
     <meta name="description" content="<%= htmlWebpackPlugin.options.title %>"></meta>
     <% } %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
     <% if (htmlWebpackPlugin.files.favicon) { %>
       <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon %>">
     <% } %>
@@ -26,7 +27,6 @@
         }
       }
     %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
   </head>
   <body>
     <div id='root' />
