@@ -26,7 +26,7 @@ import yesMasterBg from 'images/portfolio/yes_master.png';
 import realMattersBg from 'images/portfolio/solidifi.svg';
 import revalueBg from 'images/portfolio/revalue.png';
 
-// Education
+// My Daily Tools
 import myGithub from 'images/education/github.jpg';
 import myNodejs from 'images/education/node.jpg';
 import myReact from 'images/education/reactjs.jpg';
@@ -176,7 +176,7 @@ export const myWorkExp = [
   },
 ];
 
-export const myEducation = [
+export const myDailyTools = [
   {
     id: 203,
     source: myNodejs,
@@ -264,8 +264,8 @@ export const sections = [
     title: 'Home',
   },
   {
-    name: 'education',
-    title: 'Education',
+    name: 'dailyTools',
+    title: 'Daily Tools',
   },
   {
     name: 'work',

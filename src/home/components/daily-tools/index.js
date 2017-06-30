@@ -1,12 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import cx from 'classnames';
 import Scroll from 'react-scroll';
-import { sections, myEducation } from 'content';
+import { sections, myDailyTools } from 'content';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import SectionHeader from 'components/typography/section-header';
-import TextBlockSubheader from 'components/typography/text-block-subheader';
-import TextBlockHeader from 'components/typography/text-block-header';
 
 import styles from './styles.scss';
 
@@ -116,13 +113,13 @@ class IndividualEduBlock extends Component {
   }
 }
 
-const Education = () =>
+const DailyTools = () =>
   <Scroll.Element name={sections[1].name} className={styles.base}>
     <Row className={styles['no-margins']}>
-      {myEducation.map((edu, index) =>
+      {myDailyTools.map((edu, index) =>
         <IndividualEduBlock key={edu.id} edu={edu} index={index} />,
       )}
     </Row>
   </Scroll.Element>;
 
-export default Education;
+export default DailyTools;
