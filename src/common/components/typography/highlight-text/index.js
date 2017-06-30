@@ -6,6 +6,7 @@ import styles from '../styles.scss';
 const HighlightText = ({
   classNames,
   italic,
+  menu,
   ...restProps
 }) =>
   <div
@@ -13,6 +14,7 @@ const HighlightText = ({
     className={cx(
       classNames,
       styles['highlight-text'],
+      { [styles['highlight-menu-text']]: menu },
       { [styles['italic-text']]: italic },
     )}
   />;
@@ -20,6 +22,7 @@ const HighlightText = ({
 HighlightText.propTypes = {
   classNames: PropTypes.string,
   italic: PropTypes.bool,
+  menu: PropTypes.bool,
 };
 
 export default HighlightText;

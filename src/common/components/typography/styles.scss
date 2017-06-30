@@ -52,6 +52,18 @@
   color: $primary-gray;
   font-family: 'SFTextRegular';
   font-size: 2rem;
+
+  &.highlight-menu-text {
+    font-size: 1rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 922px) {
+      font-size: 2rem;
+    }
+  }
 }
 
 .footer-title {

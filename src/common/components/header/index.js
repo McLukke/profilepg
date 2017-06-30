@@ -31,7 +31,7 @@ const Header = ({ showBg }) =>
                 smooth
                 duration={500}
               >
-                <HighlightText>{section.title}</HighlightText>
+                <HighlightText menu>{section.title}</HighlightText>
               </Scroll.Link>,
             )}
           </div>
