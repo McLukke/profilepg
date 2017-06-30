@@ -40,7 +40,7 @@ import myDocker from 'images/education/docker.jpg';
 import myApple from 'images/education/apple.jpg';
 import myAndroid from 'images/education/android.jpg';
 
-// Work
+// My Character
 import lightbulb from 'images/work/lightbulb.svg';
 import clipboard from 'images/work/clipboard.svg';
 import stand from 'images/work/stand.svg';
@@ -155,7 +155,7 @@ export const portfolioImages = [
   },
 ];
 
-export const myWorkExp = [
+export const myCharacter = [
   {
     id: 301,
     title: 'Responsible',
@@ -268,8 +268,8 @@ export const sections = [
     title: 'Daily Tools',
   },
   {
-    name: 'work',
-    title: 'Work',
+    name: 'character',
+    title: 'Character',
   },
   {
     name: 'stats',

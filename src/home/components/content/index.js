@@ -4,7 +4,7 @@ import Footer from 'components/footer';
 
 import LandingImage from '../landing-image';
 import DailyTools from '../daily-tools';
-import Work from '../work';
+import Character from '../character';
 import Stats from '../stats';
 import Portfolio from '../portfolio';
 
@@ -15,7 +15,7 @@ const HomePageContent = () =>
     <Header />
     <LandingImage />
     <DailyTools />
-    <Work />
+    <Character />
     <Stats />
     <Portfolio />
     <Footer />
