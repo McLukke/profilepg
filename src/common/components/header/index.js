@@ -15,10 +15,10 @@ const Header = ({ showBg }) =>
       <Row>
         <Col
           xs={12}
-          md={8}
-          mdOffset={2}
-          lg={6}
-          lgOffset={3}
+          md={10}
+          mdOffset={1}
+          lg={8}
+          lgOffset={2}
         >
           <div className={styles['link-wrapper']}>
             {sections.map((section, index) =>
