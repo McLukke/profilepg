@@ -5,6 +5,7 @@ import { sections, portfolioImages } from 'content';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import Modal from 'react-bootstrap/lib/Modal';
+import Button from 'react-bootstrap/lib/Button';
 
 import styles from './styles.scss';
 
@@ -40,9 +41,29 @@ class Portfolio extends Component {
           bsSize="large"
           onHide={() => this.toggleModal(null)}
         >
-          <div className={cx(styles['job-detail'])}>
-            <img className={styles.revalue} src={selectedPortfolio.backdrop} alt={selectedPortfolio.alt} />
-          </div>
+          <Modal.Title>
+            {selectedPortfolio.title}
+          </Modal.Title>
+
+          <Modal.Body>
+            <div className={cx(styles['job-detail'])}>
+              <img
+                className={cx({ [styles.revalue]: selectedPortfolio.alt === 'Revalue' })}
+                src={selectedPortfolio.backdrop}
+                alt={selectedPortfolio.alt}
+              />
+            </div>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button
+              onClick={() => this.toggleModal(null)}
+            >Close</Button>
+            <Button
+              bsStyle="danger"
+              onClick={() => window.open(selectedPortfolio.url)}
+            >Visit Site</Button>
+          </Modal.Footer>
         </Modal>
         }
 

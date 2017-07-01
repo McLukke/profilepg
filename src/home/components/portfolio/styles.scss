@@ -63,14 +63,30 @@
 .job-detail {
   align-items: center;
   display: flex;
+  height: 85vh;
   justify-content: center;
-  max-height: 85vh;
 
   img {
     width: 100%;
 
     &.revalue {
-      width: 50%;
+      width: 100%;
+
+      @media (min-width: 580px) {
+        width: 70%;
+      }
+
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    height: 80vh;
+
+    @media (orientation: portrait) {
+      height: auto;
     }
   }
 }
