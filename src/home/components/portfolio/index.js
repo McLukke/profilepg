@@ -41,17 +41,21 @@ class Portfolio extends Component {
           bsSize="large"
           onHide={() => this.toggleModal(null)}
         >
-          <Modal.Title>
+          <Modal.Header>
             {selectedPortfolio.title}
-          </Modal.Title>
+          </Modal.Header>
 
-          <Modal.Body>
-            <div className={cx(styles['job-detail'])}>
-              <img
-                className={cx({ [styles.revalue]: selectedPortfolio.alt === 'Revalue' })}
-                src={selectedPortfolio.backdrop}
-                alt={selectedPortfolio.alt}
-              />
+          <Modal.Body className={styles['job-detail']}>
+            <img
+              className={cx({ [styles.revalue]: selectedPortfolio.alt === 'Revalue' })}
+              src={selectedPortfolio.backdrop}
+              alt={selectedPortfolio.alt}
+            />
+
+            <div className={styles['description-text']}>
+              <div>Highlights:</div>
+              <br />
+              <div>{selectedPortfolio.description}</div>
             </div>
           </Modal.Body>
 

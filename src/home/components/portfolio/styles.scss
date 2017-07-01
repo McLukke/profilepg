@@ -89,4 +89,12 @@
       height: auto;
     }
   }
+
+  .description-text {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    width: 35%;
+    z-index: 0;
+  }
 }
