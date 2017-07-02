@@ -13,7 +13,27 @@
 }
 
 .background-image {
-  width: 100%;
+  height: 100%;
+  transform: translate(-40%);
+  width: auto;
+
+  @media (min-width: 550px) {
+    transform: translate(-35%);
+  }
+
+  @media (min-width: 680px) {
+    transform: translate(-30%);
+  }
+
+  @media (min-width: 720px) {
+    transform: translate(-25%);
+  }
+
+  @media (min-width: 768px) {
+    height: auto;
+    transform: translate(0);
+    width: 100%;
+  }
 }
 
 .text-wrapper {
