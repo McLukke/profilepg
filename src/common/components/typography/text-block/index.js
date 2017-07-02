@@ -12,7 +12,7 @@ const TextBlock = ({
     {...restProps}
     className={cx(
       classNames,
-      styles.justify,
+      { [styles.justify]: justify },
       styles['text-block'],
     )}
   />;

@@ -6,6 +6,9 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import Modal from 'react-bootstrap/lib/Modal';
 import Button from 'react-bootstrap/lib/Button';
+import TextBlockSubheader from 'components/typography/text-block-subheader';
+import TextBlock from 'components/typography/text-block';
+import TextBlockHeader from 'components/typography/text-block-header';
 
 import styles from './styles.scss';
 
@@ -42,7 +45,7 @@ class Portfolio extends Component {
           onHide={() => this.toggleModal(null)}
         >
           <Modal.Header>
-            {selectedPortfolio.title}
+            <TextBlockHeader noMargin>{selectedPortfolio.title}</TextBlockHeader>
           </Modal.Header>
 
           <Modal.Body className={styles['job-detail']}>
@@ -53,9 +56,8 @@ class Portfolio extends Component {
             />
 
             <div className={styles['description-text']}>
-              <div>Highlights:</div>
-              <br />
-              <div>{selectedPortfolio.description}</div>
+              <TextBlockSubheader>{selectedPortfolio.title}:</TextBlockSubheader>
+              <TextBlock>{selectedPortfolio.description}</TextBlock>
             </div>
           </Modal.Body>
 
