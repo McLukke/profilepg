@@ -35,12 +35,16 @@
 
   color: $charcoal;
   font-family: 'SFTextSemibold';
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 
   &.no-margin {
     margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
   }
 }
 
@@ -48,7 +52,11 @@
   @include text-base;
 
   font-family: 'SFTextRegular';
-  font-size: 2rem;
+  font-size: 1.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 .highlight-text {
@@ -56,7 +64,11 @@
 
   color: $primary-gray;
   font-family: 'SFTextRegular';
-  font-size: 2rem;
+  font-size: 1.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 
   &.highlight-menu-text {
     font-size: 1rem;
