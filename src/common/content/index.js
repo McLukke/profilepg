@@ -87,7 +87,7 @@ export const portfolioImages = [
     source: voilah,
     backdrop: voilahBg,
     alt: 'Voilah!',
-    url: '#',
+    url: 'https://www.voilah.com/',
   },
   {
     title: 'United Asia',
@@ -95,7 +95,7 @@ export const portfolioImages = [
     source: uniteAsia,
     backdrop: uniteAsiaBg,
     alt: 'United Asia',
-    url: '#',
+    url: 'https://uniteasia.org/',
   },
   {
     title: 'Willey Printing',
@@ -103,7 +103,7 @@ export const portfolioImages = [
     source: willeyPrinting,
     backdrop: willeyPrintingBg,
     alt: 'Willey Printing',
-    url: '#',
+    url: 'http://www.willey.com.hk/',
   },
   {
     title: 'Ave Concept',
@@ -111,7 +111,7 @@ export const portfolioImages = [
     source: aveConcept,
     backdrop: aveConceptBg,
     alt: 'Ave Concept',
-    url: '#',
+    url: 'https://www.aveconcept.com/',
   },
   {
     title: 'Wrangler - True Wanderer',
@@ -119,7 +119,7 @@ export const portfolioImages = [
     source: wrangler,
     backdrop: wranglerBg,
     alt: 'Wrangler True Wanderer',
-    url: '#',
+    url: 'https://www.wrangler-ap.com/in/truewanderer',
   },
   {
     title: 'Public Art Hong Kong (PAHK)',
@@ -127,7 +127,7 @@ export const portfolioImages = [
     source: pahk,
     backdrop: pahkBg,
     alt: 'Public Art Hong Kong',
-    url: '#',
+    url: 'http://publicart.org.hk/',
   },
   {
     title: 'YesMaster!',
@@ -135,7 +135,7 @@ export const portfolioImages = [
     source: yesMaster,
     backdrop: yesMasterBg,
     alt: 'YesMaster!',
-    url: '#',
+    url: 'https://www.yesmaster.com.hk',
   },
   {
     title: 'Real Matters',
@@ -143,7 +143,7 @@ export const portfolioImages = [
     source: realMatters,
     backdrop: realMattersBg,
     alt: 'Real Matters',
-    url: '#',
+    url: 'http://www.realmatters.com/',
   },
   {
     title: 'Revalue',
@@ -151,7 +151,7 @@ export const portfolioImages = [
     source: revalue,
     backdrop: revalueBg,
     alt: 'Revalue',
-    url: '#',
+    url: 'https://play.google.com',
   },
 ];
 

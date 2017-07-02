@@ -124,7 +124,7 @@
     width: 100%;
     z-index: 0;
 
-    @media (orientation: landscape) {
+    @media (min-width: 1367px) and (orientation: landscape) {
       background-color: transparent;
       opacity: 1;
     }
