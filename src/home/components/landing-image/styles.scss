@@ -14,25 +14,28 @@
 
 .background-image {
   height: 100%;
-  transform: translate(-40%);
+  transform: translate(-30%);
   width: auto;
-
-  @media (min-width: 550px) {
-    transform: translate(-35%);
-  }
-
-  @media (min-width: 680px) {
-    transform: translate(-30%);
-  }
 
   @media (min-width: 720px) {
     transform: translate(-25%);
+  }
+
+  @media (orientation: landscape) {
+    height: auto;
+    transform: translate(0, -15%);
+    width: 100%;
   }
 
   @media (min-width: 768px) {
     height: auto;
     transform: translate(0);
     width: 100%;
+
+    @media (orientation: landscape) {
+      height: auto;
+      width: 100%;
+    }
   }
 }
 
