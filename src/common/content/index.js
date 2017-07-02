@@ -16,14 +16,14 @@ import realMatters from 'images/portfolio/real_matters.jpg';
 import revalue from 'images/portfolio/revalue.jpg';
 
 // backdrops
-import voilahBg from 'images/portfolio/voilah.png';
-import uniteAsiaBg from 'images/portfolio/unite_asia.png';
-import willeyPrintingBg from 'images/portfolio/willey_printing.png';
-import aveConceptBg from 'images/portfolio/ave_concept.png';
-import wranglerBg from 'images/portfolio/wrangler.png';
-import pahkBg from 'images/portfolio/public_art_hk.png';
-import yesMasterBg from 'images/portfolio/yes_master.png';
-import realMattersBg from 'images/portfolio/solidifi.svg';
+import voilahBg from 'images/portfolio/1000x800voilah.jpg';
+import uniteAsiaBg from 'images/portfolio/1000x800unite_asia.jpg';
+import willeyPrintingBg from 'images/portfolio/1000x800willey_printing.jpg';
+import aveConceptBg from 'images/portfolio/1000x800ave_concept.jpg';
+import wranglerBg from 'images/portfolio/1000x800wrangler.jpg';
+import pahkBg from 'images/portfolio/1000x800public_art_hk.jpg';
+import yesMasterBg from 'images/portfolio/1000x800yes_master.jpg';
+import realMattersBg from 'images/portfolio/1000x800real_matters.jpg';
 import revalueBg from 'images/portfolio/revalue.png';
 
 // My Daily Tools
