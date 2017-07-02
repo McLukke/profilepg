@@ -4,14 +4,24 @@ import Preload from 'react-preload/lib/Preload';
 import Scroll from 'react-scroll';
 import Loader from 'components/loader';
 import formatError from 'utils/format-error';
-import { portfolioImages } from 'content';
+import {
+  footerContent,
+  portfolioImages,
+  myCharacter,
+  myDailyTools,
+} from 'content';
 
 import HomePageContent from '../components/content';
 import {
   toggleHeaderBg,
 } from '../modules';
 
-const allImages = portfolioImages.map(image => image.source);
+const allImages = [];
+portfolioImages.forEach(image => allImages.push(image.source));
+footerContent.socialMedia.forEach(image => allImages.push(image.src));
+myCharacter.forEach(image => allImages.push(image.svg));
+myDailyTools.forEach(image => allImages.push(image.source));
+
 
 class HomePageContainer extends Component {
   static propTypes = {
@@ -36,10 +46,7 @@ class HomePageContainer extends Component {
       0,
     );
 
-    console.log('maxVH: ', maxVH);
-
     Scroll.Events.scrollEvent.register('begin', function(scrollTop) {
-      console.log("begin", arguments);
       if (
         (
           maxVH &&
@@ -56,10 +63,6 @@ class HomePageContainer extends Component {
       }
     });
 
-    Scroll.Events.scrollEvent.register('end', function() {
-      console.log("end", arguments);
-    });
-
     window.addEventListener('scroll', this.handleScroll);
 
     Scroll.scrollSpy.update();
@@ -74,23 +77,17 @@ class HomePageContainer extends Component {
   handleScroll = ev => Scroll.Events.registered.begin(ev.srcElement.body.scrollTop);
 
   render() {
-    if (this.state.loading) {
-      return <Loader />;
-    }
-
-    return <HomePageContent />;
-
-    // return (
-    //   <Preload
-    //     loadingIndicator={<Loader />}
-    //     images={allImages}
-    //     onError={err => formatError(err)}
-    //     resolveOnError
-    //     mountChildren
-    //   >
-    //     <HomePageContent />
-    //   </Preload>
-    // );
+    return (
+      <Preload
+        loadingIndicator={(<Loader />)}
+        images={allImages}
+        onError={err => formatError(err)}
+        resolveOnError
+        mountChildren
+      >
+        <HomePageContent />
+      </Preload>
+    );
   }
 }
 
