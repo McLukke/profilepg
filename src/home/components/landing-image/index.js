@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Scroll from 'react-scroll';
 import { sections, homeContent } from 'content';
 import kennyBg from 'images/backgrounds/kenny_bg.jpg';
-// import kennyPortrait from 'images/backgrounds/kenny_bg2.jpg';
+import kennyPortrait from 'images/backgrounds/kenny_bg2.jpg';
 import SectionHeader from 'components/typography/section-header';
 import HighlightText from 'components/typography/highlight-text';
 
@@ -45,7 +45,7 @@ export default class LandingImage extends Component {
       <Scroll.Element name={sections[0].name} className={styles.base}>
         <div className={styles['image-container']}>
           <img
-            src={width >= 768 ? kennyBg : kennyBg}
+            src={width > 768 ? kennyBg : kennyPortrait}
             role="presentation"
             className={styles['background-image']}
           />
