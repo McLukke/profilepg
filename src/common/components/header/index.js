@@ -30,6 +30,9 @@ const Header = ({ showBg }) =>
                 spy
                 smooth
                 duration={500}
+                onSetActive={() => {
+                  window.funnelytics.events.trigger('go_home', {}, () => console.log('I DID IT'));
+                }}
               >
                 <HighlightText menu>{section.title}</HighlightText>
               </Scroll.Link>,
