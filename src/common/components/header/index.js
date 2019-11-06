@@ -9,19 +9,13 @@ import HighlightText from 'components/typography/highlight-text';
 
 import styles from './styles.scss';
 
-const Header = ({ showBg }) =>
+const Header = ({ showBg }) => (
   <nav className={cx(styles.base, { [styles['show-bg']]: showBg })}>
     <div className={styles['fixed-base']}>
       <Row>
-        <Col
-          xs={12}
-          md={10}
-          mdOffset={1}
-          lg={8}
-          lgOffset={2}
-        >
+        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
           <div className={styles['link-wrapper']}>
-            {sections.map((section, index) =>
+            {sections.map((section, index) => (
               <Scroll.Link
                 key={index}
                 activeClass={styles.active}
@@ -30,25 +24,21 @@ const Header = ({ showBg }) =>
                 spy
                 smooth
                 duration={500}
-                onSetActive={() => {
-                  window.funnelytics.events.trigger('go_home', {}, () => console.log('I DID IT'));
-                }}
               >
                 <HighlightText menu>{section.title}</HighlightText>
-              </Scroll.Link>,
-            )}
+              </Scroll.Link>
+            ))}
           </div>
         </Col>
       </Row>
     </div>
-  </nav>;
+  </nav>
+);
 
 Header.propTypes = {
   showBg: PropTypes.bool,
 };
 
-export default connect(
-  ({ homePage }) => ({
-    showBg: homePage.showBg,
-  }),
-)(Header);
+export default connect(({ homePage }) => ({
+  showBg: homePage.showBg,
+}))(Header);
